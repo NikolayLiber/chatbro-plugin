@@ -1,0 +1,28 @@
+{
+  "name": "chatbro-plugin",
+  "version": "1.0.0",
+  "description": "ChatBro live chat plugin for different CMSes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolayLiber/chatbro-plugin.git"
+  },
+  "keywords": [
+    "chat",
+    "live",
+    "chat",
+    "chatbro"
+  ],
+  "author": "Nikolay Liber",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/NikolayLiber/chatbro-plugin/issues"
+  },
+  "homepage": "https://github.com/NikolayLiber/chatbro-plugin#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}
