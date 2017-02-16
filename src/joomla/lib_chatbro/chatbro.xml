@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0.0" type="library" method="upgrade">
+  <name>Chatbro common library</name>
+  <libraryname>chatbro</libraryname>
+  <author>ChatBro Team</author>
+  <creationDate>Feb 2017</creationDate>
+  <copyright>(C) 2017 ChatBro.</copyright>
+  <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <authorEmail>fwnd80@gmail.com</authorEmail>
+  <authorUrl>https://www.chatbro.com</authorUrl>
+  <version>0.0.1</version>
+  <description>ChatBro dynamic popup chat</description>
+
+  <files>
+  </files>
+</extension>
