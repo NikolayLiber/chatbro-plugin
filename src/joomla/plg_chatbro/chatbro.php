@@ -15,7 +15,6 @@ class PlgSystemChatBro extends JPlugin {
       ob_end_clean();
 
       $app = JFactory::getApplication();
-
       $app->appendBody($script);
     }
 }
