@@ -2,5 +2,8 @@
 
 defined('_JEXEC') or die;
 
-class 
+class ChatBroController extends JControllerLegacy {
+  protected $default_view = "chatbro";
+}
+
 ?>
