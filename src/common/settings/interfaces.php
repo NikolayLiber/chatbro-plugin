@@ -1,24 +1,24 @@
 <?php
 
-interface ICBroSettingsStorage {
+interface ICBroSettingsStorage extends Iterator {
   // Shortcuts for get/set setting value
-  public function get($id);
-  public function set($id, $value);
+  function get($id);
+  function set($id, $value);
 
   // Add settings object to storage
-  public function addSetting($id);
+  function addSetting($setting);
   // Get setting object
-  public function getSetting($id);
+  function getSetting($id);
 }
 
 interface ICBroSetting {
-  public function id();
-  public function get();
-  public function set($value);
+  function id();
+  function get();
+  function set($value);
 }
 
 interface ICBroSettingsFactory {
-  public function create($params);
+  function createSetting($params);
 }
 
 ?>
