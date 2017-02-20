@@ -1,17 +1,33 @@
 <?php
 
-require_once('exceptions');
+require_once('exceptions.php');
 
 class CBroUtils {
   private $_http;
+  private static $_instance;
 
-  public function __construct($http) {
-    $this->$_http = $http;
+  protected function __construct($http) {
+    $this->_http = $http;
+  }
+
+  public static function init($http) {
+    if (!self::$_instance)
+      self::$_instance = new CBroUtils($http);
+
+    return self::$_instance;
+  }
+
+  public static function get_instance() {
+    if (!self::$_instance)
+      throw new Exception("CBroUtils is not initialized");
+
+    return self::$_instance;
   }
 
   public function gen_guid() {
-    $guid = $this->_gen_uuid();
-    $this->call_constructor($guid);
+    $instance = self::get_instance();
+    $guid = $instance->_gen_uuid();
+    $instance->call_constructor($guid);
     return $guid;
   }
 
@@ -19,7 +35,7 @@ class CBroUtils {
     $url = "https://www.chatbro.com/constructor/{$guid}";
 
     try {
-      $this->$_http->get($url);
+      $this->_http->get($url);
     }
     catch(CBroHttpError $e) {
       throw new Exception('Failed to call chat constructor: ' . $e->getMessage());

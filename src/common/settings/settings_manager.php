@@ -1,7 +1,7 @@
 <?php
 
-require_once('interfaces');
-require_once('exceptions');
+require_once('interfaces.php');
+require_once('exceptions.php');
 
 
 class CBroInputType {
@@ -12,7 +12,7 @@ class CBroInputType {
 };
 
 
-class CBroSettingsStorage implements ICBroSettingsStorage {
+class CBroSettingsManager implements ICBroSettingsManager {
   const guid = "chatbro_chat_guid";
   const display_to_guests = "chatbro_chat_display_to_guests";
   const display = "chatbro_chat_display";
@@ -24,22 +24,22 @@ class CBroSettingsStorage implements ICBroSettingsStorage {
   private $_settings;
 
   public function __construct($factory) {
-    $this->$_settings = array();
+    $this->_settings = array();
     // Iterator position
-    $this->$_pos = 0;
+    $this->_pos = 0;
 
-    $this->addSetting($factory->createSetting(array(
+    $this->add_setting($factory->create_setting(array(
       'id' => self::guid,
       'type' => CBroInputType::text,
       'label' => 'Chat secret key',
-      'sanitize_callback' => array('ChatBroUtils', 'sanitize_guid'),
-      'default' => false,
+      'sanitizer' => array('ChatBroUtils', 'sanitize_guid'),
+      'generator' => array('CBroUtils', 'gen_guid'),
       'required' => true,
       'pattern' => "[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$",
       'pattern_error' => "Invalid chat key"
     )));
 
-    $this->addSetting($factory->createSetting(array(
+    $this->add_setting($factory->create_setting(array(
       'id' => self::display,
       'type' => CBroInputType::select,
       'label' => 'Show popup chat',
@@ -54,7 +54,7 @@ class CBroSettingsStorage implements ICBroSettingsStorage {
       'required' => true
     )));
 
-    $this->addSetting($factory->createSetting(array(
+    $this->add_setting($factory->create_setting(array(
       'id' => self::user_profile_path,
       'type' => CBroInputType::text,
       'label' => 'User profile path',
@@ -63,72 +63,72 @@ class CBroSettingsStorage implements ICBroSettingsStorage {
       'required' => false
     )));
 
-    $this->addSetting($factory->createSetting(array(
+    $this->add_setting($factory->create_setting(array(
       'id' => self::display_to_guests,
       'type' => CBroInputType::checkbox,
       'label' => 'Display chat to guests',
-      'sanitize_callback' => array('ChatBroUtils', 'sanitize_checkbox'),
+      'sanitizer' => array('ChatBroUtils', 'sanitize_checkbox'),
       'default' => true
     )));
 
-    $this->addSetting($factory->createSetting(array(
+    $this->add_setting($factory->create_setting(array(
       'id' => self::enable_shortcodes,
       'type' => InputType::checkbox,
       'label' => 'Enable shortcodes',
-      'sanitize_callback' => array('ChatBroUtils', 'sanitize_checkbox'),
+      'sanitizer' => array('ChatBroUtils', 'sanitize_checkbox'),
       'default' => true
     )));
   }
 
-  public function addSetting($setting) {
-    $this->$_settings[$setting->id()] = $setting;
+  public function add_setting($setting) {
+    $this->_settings[$setting->id()] = $setting;
   }
 
-  public function getSetting($id) {
-    if (!array_key_exists($id, $this->$_settings))
+  public function get_setting($id) {
+    if (!array_key_exists($id, $this->_settings))
       throw new CBroSettingNotFound();
 
-    return $this->$_settings[$id];
+    return $this->_settings[$id];
   }
 
   public function get($id) {
-    if (!array_key_exists($id, $this->$_settings))
+    if (!array_key_exists($id, $this->_settings))
       throw new CBroSettingNotFound();
 
-    $s = $this->$_settings[$id];
+    $s = $this->_settings[$id];
     return $s->get();
   }
 
   public function set($id, $value) {
-    if (!array_key_exists($id, $this->$_settings))
+    if (!array_key_exists($id, $this->_settings))
       throw new CBroSettingNotFound();
 
-    $s = $this->$_settings[$id];
+    $s = $this->_settings[$id];
     $s->set($value);
   }
 
   // Iterator implementation
   public function rewind() {
-    $this->$_pos = 0;
+    $this->_pos = 0;
   }
 
   public function current() {
-    $keys = array_keys($this->$_settings);
-    return $this->$_settings[$keys[$this->$_pos]];
+    $keys = array_keys($this->_settings);
+    return $this->_settings[$keys[$this->_pos]];
   }
 
   public function key() {
-    $keys = array_keys($this->$_settings);
-    return $keys[$this->$_pos];
+    $keys = array_keys($this->_settings);
+    return $keys[$this->_pos];
   }
 
   public function next() {
-    ++$this->$_pos;
+    ++$this->_pos;
   }
 
   public function valid() {
-    $keys = array_keys($this->$_settings);
-    return isset($keys[$this->$_pos]);
+    $keys = array_keys($this->_settings);
+    return isset($keys[$this->_pos]);
   }
 }
 
