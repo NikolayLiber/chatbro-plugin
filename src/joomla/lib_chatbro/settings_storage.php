@@ -2,47 +2,63 @@
 
 defined('_JEXEC') or die('Access Restricted');
 
-require_once('common/interfaces.php');
-require_once('common/settings_manager.php');
-require_once('setting.php');
+require_once('common/settings/interfaces.php');
+require_once('common/settings/exceptions.php');
 
-class CBroJoomlaSettingsStorage extends JModel implements ICBroSettingsManager, ICBroSettingFactory {
-  private $_manager;
-  private $_instance;
-  private $_settings;
+class CBroJoomlaSettingsStorage implements ICBroSettingsStorage {
+  private $postponed;
+  private $has_changes;
+  private $settings;
 
-  private function __construct() {
-    $_settings = JComponentHelper::getParams('com_chatbro');
-    $this->_manager = new CBroSettingsManager($this);
+  public function __construct() {
+    $this->postponed = false;
+    $this->has_changes = false;
+    $this->settings = JComponentHelper::getParams('com_chatbro', true);
+
+    if ($this->settings === false)
+      throw new Exception("Component com_chatbro not found");
   }
 
-  public function get_instance() {
-    if (!$this->_instance)
-      $this->_instance = new CBroJoomlaSettingsStorage();
+  public function get($id) {
+    $res = $this->settings->get($id);
 
-    return $this->_instance;
+    if ($res === null)
+      throw new CBroSettingNotFound();
+
+    return $res;
   }
 
-  public static function get($id) {
-    return self::get_instance()->_manager->get($id);
+  public function set($id, $value) {
+    $this->settings->set($id, $value);
+    $this->has_changes = true;
+
+    if (!$this->postponed)
+      $this->flush();
   }
 
-  public static function set($id, $value) {
-    self::get_instance()->_manager->set($id, $value);
+  public function postponeWrite() {
+    $this->postponed = true;
   }
 
-  public function add_setting($setting) {
-    $this->_manager->add_setting($setting);
+  public function flush() {
+    $this->postponed = false;
+
+    if (!$this->has_changes)
+      return;
+
+    $component_id = JComponentHelper::getComponent('com_chatbro')->id;
+    $table = JTable::getInstance('extension');
+    $table->load($component_id);
+    $table->bind(array('params' => $this->settings->toString()));
+
+    // check for error
+    if (!$table->check())
+      throw new Exception('Failed to save settings; ' . $table->getError());
+
+    // Save to database
+    if (!$table->store())
+      throw new Exception('Failed to save settings; ' . $table->getError());
   }
-
-  public static function get_setting($id) {
-    return self::get_instance()->_manager->get_setting($id);
-  }
-
-  public function create_setting($params) {
-    return new CBroJoomlaSetting($this, $params);
-  }
-
-
 }
+
 ?>

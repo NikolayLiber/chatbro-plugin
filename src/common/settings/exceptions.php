@@ -7,8 +7,12 @@ class CBroInvalidSetting extends Exception {
 }
 
 class CBroSettingNotFound extends Exception {
-  public function __construct() {
-    parent::__construct('Setting not found');
+  public function __construct($reason = null) {
+    $msg = 'Setting not found';
+
+    if ($reason)
+      $msg .= ": {$reason}";
+    parent::__construct($msg);
   }
 }
 

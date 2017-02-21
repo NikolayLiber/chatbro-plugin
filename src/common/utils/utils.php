@@ -11,9 +11,11 @@ class CBroUtils {
   }
 
   public static function init($http) {
-    if (!self::$_instance)
-      self::$_instance = new CBroUtils($http);
+    // Avoiding reinitialization of already initialized object
+    if (self::$_instance)
+      return;
 
+    self::$_instance = new CBroUtils($http);
     return self::$_instance;
   }
 
@@ -24,7 +26,7 @@ class CBroUtils {
     return self::$_instance;
   }
 
-  public function gen_guid() {
+  public static function gen_guid() {
     $instance = self::get_instance();
     $guid = $instance->_gen_uuid();
     $instance->call_constructor($guid);
