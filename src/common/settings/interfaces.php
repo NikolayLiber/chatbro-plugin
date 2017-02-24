@@ -6,7 +6,7 @@ interface ICBroSetting {
   function set($value);
 }
 
-interface ICBroSettingsStorage {
+interface ICBroSettingsBackend {
   function get($id);
   function set($id, $value);
   function postponeWrite();

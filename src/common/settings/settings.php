@@ -1,5 +1,6 @@
 <?php
 
+require_once(__DIR__ . '/../core/backendable.php');
 require_once('interfaces.php');
 require_once('exceptions.php');
 require_once('setting.php');
@@ -42,7 +43,7 @@ class CBroSettingsIterator implements Iterator {
   }
 }
 
-class CBroSettings {
+class CBroSettings extends CBroBackendable {
   const guid = "chatbro_chat_guid";
   const display_to_guests = "chatbro_chat_display_to_guests";
   const display = "chatbro_chat_display";
@@ -52,22 +53,13 @@ class CBroSettings {
   const plugin_version = 'chatbro_plugin_version';
 
   private $settings;
-  private $storage;
-  static private $instance;
 
-  private function __construct($storage) {
-    $this->storage = $storage;
+  protected function __construct($backend) {
+    parent::__construct($backend);
+
     $this->settings = array();
-  }
 
-  public static function init($storage) {
-    // Avoiding reinitialization of already initialized object
-    if (self::$instance)
-      return;
-
-    self::$instance = new CBroSettings($storage);
-
-    self::$instance->add_setting(new CBroSetting(self::$instance->storage, array(
+    $this->add_setting(new CBroSetting($backend, array(
       'id' => self::guid,
       'type' => CBroInputType::text,
       'label' => 'Chat secret key',
@@ -78,7 +70,7 @@ class CBroSettings {
       'pattern_error' => "Invalid chat key"
     )));
 
-    self::$instance->add_setting(new CBroSetting(self::$instance->storage, array(
+    $this->add_setting(new CBroSetting($backend, array(
       'id' => self::display,
       'type' => CBroInputType::select,
       'label' => 'Show popup chat',
@@ -93,7 +85,7 @@ class CBroSettings {
       'required' => true
     )));
 
-    self::$instance->add_setting(new CBroSetting(self::$instance->storage, array(
+    $this->add_setting(new CBroSetting($backend, array(
       'id' => self::user_profile_path,
       'type' => CBroInputType::text,
       'label' => 'User profile path',
@@ -102,7 +94,7 @@ class CBroSettings {
       'required' => false
     )));
 
-    self::$instance->add_setting(new CBroSetting(self::$instance->storage, array(
+    $this->add_setting(new CBroSetting($backend, array(
       'id' => self::display_to_guests,
       'type' => CBroInputType::checkbox,
       'label' => 'Display chat to guests',
@@ -110,7 +102,7 @@ class CBroSettings {
       'default' => true
     )));
 
-    self::$instance->add_setting(new CBroSetting(self::$instance->storage, array(
+    $this->add_setting(new CBroSetting($backend, array(
       'id' => self::enable_shortcodes,
       'type' => CBroInputType::checkbox,
       'label' => 'Enable shortcodes',
@@ -124,30 +116,30 @@ class CBroSettings {
   }
 
   public static function get_setting($id) {
-    if (!array_key_exists($id, self::$instance->settings))
+    if (!array_key_exists($id, self::get_instance()->settings))
       throw new CBroSettingNotFound();
 
-    return self::$instance->settings[$id];
+    return self::get_instance()->settings[$id];
   }
 
   public static function get($id) {
-    if (!array_key_exists($id, self::$instance->settings))
+    if (!array_key_exists($id, self::get_instance()->settings))
       throw new CBroSettingNotFound();
 
-    $s = self::$instance->settings[$id];
+    $s = self::get_instance()->settings[$id];
     return $s->get();
   }
 
   public static function set($id, $value) {
-    if (!array_key_exists($id, self::$instance->settings))
+    if (!array_key_exists($id, self::get_instance()->settings))
       throw new CBroSettingNotFound();
 
-    $s = self::$instance->settings[$id];
+    $s = self::get_instance()->settings[$id];
     $s->set($value);
   }
 
   public static function iterator() {
-    return new CBroSettingsIterator(array_keys(self::$instance->settings));
+    return new CBroSettingsIterator(array_keys(self::get_instance()->settings));
   }
 }
 

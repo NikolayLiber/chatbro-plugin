@@ -1,6 +1,6 @@
 <?php
 
-interface ICBroHttp {
-  function get($url);
+interface ICBroUtilsBackend {
+  function http_get($url);
 }
 ?>

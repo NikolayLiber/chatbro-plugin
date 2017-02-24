@@ -2,10 +2,10 @@
 
 defined('_JEXEC') or die('Access Restricted');
 
-require_once('common/settings/interfaces.php');
-require_once('common/settings/exceptions.php');
+require_once(__DIR__ . '/../common/settings/interfaces.php');
+require_once(__DIR__ . '/../common/settings/exceptions.php');
 
-class CBroJoomlaSettingsStorage implements ICBroSettingsStorage {
+class CBroJoomlaSettingsBackend implements ICBroSettingsBackend {
   private $postponed;
   private $has_changes;
   private $settings;

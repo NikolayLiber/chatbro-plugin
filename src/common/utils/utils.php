@@ -1,31 +1,9 @@
 <?php
 
+require_once(__DIR__ . '/../core/backendable.php');
 require_once('exceptions.php');
 
-class CBroUtils {
-  private $_http;
-  private static $_instance;
-
-  protected function __construct($http) {
-    $this->_http = $http;
-  }
-
-  public static function init($http) {
-    // Avoiding reinitialization of already initialized object
-    if (self::$_instance)
-      return;
-
-    self::$_instance = new CBroUtils($http);
-    return self::$_instance;
-  }
-
-  public static function get_instance() {
-    if (!self::$_instance)
-      throw new Exception("CBroUtils is not initialized");
-
-    return self::$_instance;
-  }
-
+class CBroUtils extends CBroBackendable {
   public static function gen_guid() {
     $instance = self::get_instance();
     $guid = $instance->_gen_uuid();
@@ -33,11 +11,11 @@ class CBroUtils {
     return $guid;
   }
 
-  public function call_contructor($guid) {
+  public function call_constructor($guid) {
     $url = "https://www.chatbro.com/constructor/{$guid}";
 
     try {
-      $this->_http->get($url);
+      self::get_backend()->http_get($url);
     }
     catch(CBroHttpError $e) {
       throw new Exception('Failed to call chat constructor: ' . $e->getMessage());
