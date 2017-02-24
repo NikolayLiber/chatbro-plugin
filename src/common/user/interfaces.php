@@ -1,7 +1,7 @@
 <?php
 
 interface ICBroUserBackend {
-  function is_logged_in();
+  function is_guest();
 }
 
 ?>
