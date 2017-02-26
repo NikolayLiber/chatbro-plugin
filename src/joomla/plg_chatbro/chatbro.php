@@ -1,6 +1,9 @@
 <?php
 
-defined('_JEXEC') or die;
+defined('_JEXEC') or die('Access Restricted');
+
+require_once(JPATH_LIBRARIES . '/chatbro/init.php');
+require_once(JPATH_LIBRARIES . '/chatbro/common/chat.php');
 
 class PlgSystemChatBro extends JPlugin {
     function onAfterRender() {
@@ -15,7 +18,8 @@ class PlgSystemChatBro extends JPlugin {
       ob_end_clean();
 
       $app = JFactory::getApplication();
-      $app->appendBody($script);
+      $app->appendBody(CBroChat::get_popup_chat_code());
+      // $app->appendBody($script);
     }
 }
 

@@ -23,7 +23,7 @@ class CBroJoomlaSettingsBackend implements ICBroSettingsBackend {
     $res = $this->settings->get($id);
 
     if ($res === null)
-      throw new CBroSettingNotFound();
+      throw new CBroSettingNotFound($id);
 
     return $res;
   }

@@ -1,0 +1,124 @@
+<?php
+
+require_once('settings/settings.php');
+require_once('user/user.php');
+require_once('utils/utils.php');
+
+class CBroChat {
+  private $guid;
+  private $hash;
+  private static $instance;
+
+  public function __construct($guid) {
+    $this->guid = $guid;
+    $this->hash = md5($guid);
+  }
+
+  public function generate_code($container_id = null, $static = false) {
+    $siteurl = CBroUtils::get_site_url();
+    $site_domain = CBroUtils::get_site_domain();
+    $site_user_avatar_url = CBroUser::avatar_url();
+    $profile_url = CBroUser::profile_url();
+
+    $permissions = array();
+
+    if (CBroUser::can_delete())
+        array_push($permissions, 'delete');
+
+    if (CBroUser::can_ban())
+        array_push($permissions, 'ban');
+
+    $params = "encodedChatGuid: '{$hash}', siteDomain: '{$site_domain}'";
+    $sig_source = "";
+
+    if (CBroUser::is_logged_in()) {
+        $sig_source = $site_domain . CBroUser::id() . CBroUser::display_name() . $site_user_avatar_url . $profile_url . implode('', $permissions);
+        $params .= ", siteUserFullName: '" . CBroUser::display_name() . "', siteUserExternalId: '" . CBroUser::id() . "'";
+
+        if ($site_user_avatar_url != "")
+            $params .= ", siteUserAvatarUrl: '{$site_user_avatar_url}'";
+
+        if ($profile_url != '')
+            $params .= ", siteUserProfileUrl: '{$profile_url}'";
+    }
+    else
+        $sig_source = $site_domain;
+
+    $signature = md5($sig_source . $guid);
+
+    if ($container_id)
+        $params .= ", containerDivId: '{$container_id}'";
+
+    if ($static)
+        $params .= ", isStatic: true";
+
+    $params .= ", signature: '{$signature}'";
+    $params .= ", platform: '" . CBroUtils::get_platform() . "'";
+
+    if (!empty($permissions))
+        $params .= ", permissions: ['" . implode("','", $permissions) . "']";
+
+    ob_start();
+
+    ?>
+    <script id="chatBroEmbedCode">
+    /* Chatbro Widget Embed Code Start */
+    function ChatbroLoader(chats,async) {async=async!==false;var params={embedChatsParameters:chats instanceof Array?chats:[chats],needLoadCode:typeof Chatbro==='undefined'};var xhr=new XMLHttpRequest();xhr.withCredentials = true;xhr.onload=function(){eval(xhr.responseText)};xhr.onerror=function(){console.error('Chatbro loading error')};xhr.open('POST','//www.chatbro.com/embed_chats/',async);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');xhr.send('parameters='+encodeURIComponent(JSON.stringify(params)))}
+    /* Chatbro Widget Embed Code End */
+    if (typeof chatBroHistoryPage === 'undefined' || !chatBroHistoryPage)
+        ChatbroLoader({<?php echo $params; ?>});
+    </script>
+    <?php
+
+    $code = ob_get_contents();
+    ob_end_clean();
+
+    return $code;
+  }
+
+  public function generate_popup_code() {
+    if (CBroUser::can_view())
+      return;
+
+    $where_to_display = ChatSettings::get(CBroSettings::display_setting);
+
+    switch($where_to_display) {
+        case '':
+        case 'everywhere':
+            break;
+
+        case 'frontpage_only':
+            if (!CBroUtils::is_front_page())
+                return;
+            break;
+
+        case 'except_listed':
+        case 'only_listed':
+            if (!CBroUtils::check_path())
+                return;
+            break;
+
+        default:
+            return;
+    }
+
+    return $this->generate_code();
+  }
+
+  private static function get_instance() {
+    if (!self::$instance)
+      self::$instance = new CBroChat(CBroSettings::get(CBroSettings::guid));
+
+    return self::$instance;
+  }
+
+  public static function get_popup_chat_code() {
+    return self::get_instance()->generate_popup_code();
+  }
+
+  public static function get_chat_code() {
+    return self::get_instance()->generate_chat_code();
+  }
+}
+
+?>

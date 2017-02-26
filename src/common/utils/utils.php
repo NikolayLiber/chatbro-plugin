@@ -11,6 +11,47 @@ class CBroUtils extends CBroBackendable {
     return $guid;
   }
 
+  public static function get_site_url() {
+    return self::get_backend()->get_site_url();
+  }
+
+  public static function get_site_domain() {
+    return self::get_backend()->get_site_domain();
+  }
+
+  public static function get_platform() {
+    return self::get_backend()->get_platform();
+  }
+
+  public static function is_front_page() {
+    return self::get_backend()->is_front_page();
+  }
+
+  public static function check_path() {
+    global $_SERVER;
+
+    $page_match = false;
+    $selected_pages = trim(CBroSettings::get(CBroSettings::selected_pages_setting));
+    $display = CBroSettings::get(CBroSettings::display_setting);
+
+    if ($selected_pages != '') {
+      if (function_exists('mb_strtolower')) {
+        $pages = mb_strtolower($selected_pages);
+        $path = mb_strtolower($_SERVER['REQUEST_URI']);
+      } else {
+        $pages = strtolower($selected_pages);
+        $path = strtolower($_SERVER['REQUEST_URI']);
+      }
+
+      $page_match = self::match_path($path, $pages);
+
+      if($display == 'except_listed')
+        $page_match = !$page_match;
+    }
+
+    return $page_match;
+  }
+
   public function call_constructor($guid) {
     $url = "https://www.chatbro.com/constructor/{$guid}";
 

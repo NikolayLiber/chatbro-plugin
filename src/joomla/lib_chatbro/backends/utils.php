@@ -21,6 +21,26 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
 
     return $response->body;
   }
+
+  public function get_site_url() {
+    return JURI::root();
+  }
+
+  public function get_site_domain() {
+    $uri = new JURI(JURI::current());
+    return $uri->getHost();
+  }
+
+  public function get_platform() {
+    return 'joomla-plugin-0.0.1';
+  }
+
+  public function is_front_page() {
+    $app = JFactory::getApplication();
+    $menu = $app->getMenu();
+    $lang = JFactory::getLanguage();
+    return $menu->getActive() == $menu->getDefault($lang->getTag());
+  }
 }
 
 ?>
