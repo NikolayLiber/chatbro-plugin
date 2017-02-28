@@ -8,7 +8,9 @@ require_once(JPATH_LIBRARIES . '/chatbro/common/chat.php');
 class PlgSystemChatBro extends JPlugin {
   function onAfterRender() {
     $app = JFactory::getApplication();
-    $app->appendBody(CBroChat::get_popup_chat_code());
+    
+    if ($app->isSite())
+      $app->appendBody(CBroChat::get_popup_chat_code());
   }
 }
 
