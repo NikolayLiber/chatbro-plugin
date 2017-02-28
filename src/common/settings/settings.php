@@ -123,11 +123,8 @@ class CBroSettings extends CBroBackendable {
   }
 
   public static function get($id) {
-    if (!array_key_exists($id, self::get_instance()->settings)) {
-      var_dump(self::get_instance());
-      die("!!");
+    if (!array_key_exists($id, self::get_instance()->settings))
       throw new CBroSettingNotFound($id . "!!!");
-    }
 
     $s = self::get_instance()->settings[$id];
     return $s->get();

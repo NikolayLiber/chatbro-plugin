@@ -2,25 +2,28 @@
 
 class CBroBackendable {
   private $backend;
-  private static $instance;
+  private static $instances = array();
 
   protected function __construct($backend) {
     $this->backend = $backend;
   }
 
   public static function init($backend) {
-    if (self::$instance)
+    $class = get_called_class();
+
+    if (array_key_exists($class, self::$instances))
       return;
 
-    $class = get_called_class();
-    self::$instance = new $class($backend);
+    self::$instances[$class] = new $class($backend);
   }
 
   protected static function get_instance() {
-    if (!self::$instance)
-      throw new Exception(get_called_class() . " is not initialized");
+    $class = get_called_class();
 
-    return self::$instance;
+    if (!array_key_exists($class, self::$instances))
+      throw new Exception("{$class} is not initialized");
+
+    return self::$instances[$class];
   }
 
   protected static function get_backend() {

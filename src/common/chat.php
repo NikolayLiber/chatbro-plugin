@@ -28,7 +28,7 @@ class CBroChat {
     if (CBroUser::can_ban())
         array_push($permissions, 'ban');
 
-    $params = "encodedChatGuid: '{$hash}', siteDomain: '{$site_domain}'";
+    $params = "encodedChatGuid: '{$this->hash}', siteDomain: '{$site_domain}'";
     $sig_source = "";
 
     if (CBroUser::is_logged_in()) {
@@ -44,7 +44,7 @@ class CBroChat {
     else
         $sig_source = $site_domain;
 
-    $signature = md5($sig_source . $guid);
+    $signature = md5($sig_source . $this->guid);
 
     if ($container_id)
         $params .= ", containerDivId: '{$container_id}'";
@@ -77,10 +77,10 @@ class CBroChat {
   }
 
   public function generate_popup_code() {
-    if (CBroUser::can_view())
-      return;
+    if (!CBroUser::can_view())
+      return "Cant view";
 
-    $where_to_display = ChatSettings::get(CBroSettings::display_setting);
+    $where_to_display = CBroSettings::get(CBroSettings::display);
 
     switch($where_to_display) {
         case '':
@@ -99,7 +99,7 @@ class CBroChat {
             break;
 
         default:
-            return;
+            return "Cant display";
     }
 
     return $this->generate_code();
