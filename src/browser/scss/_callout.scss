@@ -1,0 +1,80 @@
+.bs-callout {
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    padding: 1.5rem;
+
+    code {
+        border-radius: 3px;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    &+.bs-callout {
+        margin-top: -5px;
+    }
+}
+
+.bs-callout-small {
+    @extend .bs-callout;
+    padding: 1rem;
+}
+
+.bs-callout-default {
+    border-left-color: #777;
+
+    h3 {
+        color: #777;
+    }
+}
+
+.bs-callout-primary {
+    h3 {
+        border-left-color: #428bca;
+        color: #428bca;
+    }
+}
+
+
+.bs-callout-small-success {
+    border-left-color: #5cb85c;
+}
+
+.bs-callout-success {
+    @extend .bs-callout-small-success;
+
+    h3 {
+        color: #5cb85c;
+    }
+}
+
+.bs-callout-small-danger {
+    border-left-color: #d9534f;
+}
+
+.bs-callout-danger {
+    @extend .bs-callout-small-danger;
+
+    h3 {
+        color: #d9534f;
+    }
+}
+
+.bs-callout-warning h3 {
+    border-left-color: #f0ad4e;
+    color: #f0ad4e;
+}
+.bs-callout-info {
+    border-left-color: #5bc0de;
+
+    h3 {
+        color: #5bc0de;
+    }
+}

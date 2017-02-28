@@ -1,0 +1,11 @@
+#settings-tabs li span {
+  vertical-align: middle;
+
+  &.glyphicon {
+    font-size: larger;
+  }
+
+  &.tab-title {
+    padding-left: 1rem;
+  }
+}

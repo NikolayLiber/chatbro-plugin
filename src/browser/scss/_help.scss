@@ -1,0 +1,44 @@
+.affix {
+  @media screen and (max-width: 1199px) {
+    position: static;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    top: 45px;
+    padding-right: 54px;
+    // height: 90vh;
+  }
+}
+
+#contact-us .row {
+  padding: 15px 0;
+
+  @media screen and (max-width: 1199px) {
+    padding-right: 10px;
+
+    & > [class*='col-'] {
+      padding-right:0;
+      padding-left:0;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-right: 20px;
+  }
+}
+
+#support-chat {
+  height: 100%;
+  // @media screen and (max-width: 1199px) {
+  //   height: 70vh;
+  // }
+  //
+  // @media screen and (min-width: 1200px) {
+  //   height: 90vh;
+  // }
+}
+
+#chatbro-faq-panel h2 {
+  padding-bottom: 1.5rem;
+}

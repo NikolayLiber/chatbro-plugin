@@ -20,5 +20,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery-form": "^4.0.1",
+    "font-awesome": "^4.7.0",
+    "bootstrap-validator": "^0.11.9"
+  }
 }

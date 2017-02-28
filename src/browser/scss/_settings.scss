@@ -1,0 +1,23 @@
+#chatbro-shortcode-tip {
+  margin-top: 1.5rem;
+
+  h3 + span {
+      font-size: larger;
+      font-weight: bold;
+      color: #d9534f;
+    }
+}
+
+@media screen and (max-width: 782px) {
+  .tab-content .checkbox label {
+      padding-left: 35px;
+
+      input[type="checkbox"] {
+        margin-left: -35px;
+    }
+  }
+}
+
+#chatbro-permissions tr th:first-child {
+  width: 60%;
+}
