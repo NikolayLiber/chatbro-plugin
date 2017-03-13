@@ -15,6 +15,10 @@ class CBroJoomlaUserBackend implements ICBroUserBackend {
     return !$this->user->guest;
   }
 
+  public function is_admin() {
+    return $this->user->authorise('core.admin');
+  }
+
   public function avatar_url() {
     return "";
   }

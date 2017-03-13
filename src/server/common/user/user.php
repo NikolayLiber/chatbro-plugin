@@ -9,6 +9,10 @@ class CBroUser extends CBroBackendable {
     return self::get_backend()->is_logged_in();
   }
 
+  public static function is_admin() {
+    return self::get_backend()->is_admin();
+  }
+
   public static function can_view($display_to_guests = null) {
     if ($display_to_guests === null)
       $display_to_guests = CBroSettings::get(CBroSettings::display_to_guests);

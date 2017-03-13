@@ -84,6 +84,14 @@ class CBroUtils extends CBroBackendable {
       mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
     ));
   }
+
+  public static function enque_script($file) {
+    self::get_backend()->enque_script($file);
+  }
+
+  public static function enque_style($file) {
+    self::get_backend()->enque_style($file);
+  }
 }
 
 ?>

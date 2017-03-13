@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/../core/backendable.php');
+
 class CBroPermissions extends CBroBackendable {
   const cap_delete = "chatbro_delete_message";
   const cap_ban = "chatbro_ban_user";

@@ -41,6 +41,14 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
     $lang = JFactory::getLanguage();
     return $menu->getActive() == $menu->getDefault($lang->getTag());
   }
+
+  public function enque_script($file) {
+    JFactory::getDocument()->addScript('/media/com_chatbro/js/' . $file);
+  }
+
+  public function enque_style($file) {
+    JFactory::getDocument()->addStyleSheet('/media/com_chatbro/css/' . $file);
+  }
 }
 
 ?>
