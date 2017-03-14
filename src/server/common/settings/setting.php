@@ -47,6 +47,10 @@ class CBroSetting implements ICBroSetting {
   public function id() {
     return $this->id;
   }
+
+  public function get_params() {
+    return $this->params;
+  }
 }
 
 ?>

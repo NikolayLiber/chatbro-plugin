@@ -4,6 +4,7 @@ defined('_JEXEC') or die('Access Restricted');
 
 require_once(__DIR__  . '/../common/utils/exceptions.php');
 require_once(__DIR__  . '/../common/utils/interfaces.php');
+require_once(__DIR__  . '/../common/core/l10n/l10n.php');
 jimport('joomla.http');
 
 class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
@@ -48,6 +49,10 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
 
   public function enque_style($file) {
     JFactory::getDocument()->addStyleSheet('/media/com_chatbro/css/' . $file);
+  }
+
+  public function get_locale() {
+    return CBroL10N::get_locale();
   }
 }
 

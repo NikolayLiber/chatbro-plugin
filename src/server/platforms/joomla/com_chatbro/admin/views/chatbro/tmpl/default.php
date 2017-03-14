@@ -2,6 +2,14 @@
 
 defined('_JEXEC') or die;
 
-?>
+require_once(JPATH_LIBRARIES . '/chatbro/admin.php');
 
-<h1>ChatBro Administration</h1>
+$document = JFactory::getDocument();
+$document->setTitle('Chatbro');
+JToolBarHelper::title("Chatbro");
+
+$admin = new CBroJoomlaAdmin(false);
+$admin->display();
+// throw new Exception("AAA!!");
+
+?>

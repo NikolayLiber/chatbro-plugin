@@ -46,7 +46,7 @@ module.exports = function (grunt) {
       },
 
       joomla_devjs: {
-        src: ['_build/common/js/common.js', 'src/browser/common/js/*.js'],
+        src: ['_build/common/js/common.js', 'src/browser/common/js/*.js', 'src/browser/platforms/joomla/js/*.js'],
         dest: '_build/joomla/js/chatbro.js'
       }
     },

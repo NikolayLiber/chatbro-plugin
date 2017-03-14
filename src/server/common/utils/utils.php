@@ -92,6 +92,10 @@ class CBroUtils extends CBroBackendable {
   public static function enque_style($file) {
     self::get_backend()->enque_style($file);
   }
+
+  public static function get_locale() {
+    return self::get_backend()->get_locale();
+  }
 }
 
 ?>

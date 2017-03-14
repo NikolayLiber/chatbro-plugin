@@ -8,5 +8,6 @@ interface ICBroUtilsBackend {
   function is_front_page();
   function enque_script($file);
   function enque_style($file);
+  function get_locale();
 }
 ?>

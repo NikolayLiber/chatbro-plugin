@@ -4,6 +4,7 @@ defined('_JEXEC') or die('Access Restricted');
 
 require_once('common/settings/settings.php');
 require_once('common/core/l10n/l10n.php');
+require_once('common/core/l10n/functions.php');
 require_once('common/permissions/permissions.php');
 require_once('common/user/user.php');
 require_once('common/utils/utils.php');

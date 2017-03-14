@@ -4,6 +4,7 @@ interface ICBroSetting {
   function id();
   function get();
   function set($value);
+  function get_params();
 }
 
 interface ICBroSettingsBackend {

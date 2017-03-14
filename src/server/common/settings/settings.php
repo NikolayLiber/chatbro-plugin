@@ -89,7 +89,7 @@ class CBroSettings extends CBroBackendable {
       'id' => self::user_profile_path,
       'type' => CBroInputType::text,
       'label' => 'User profile path',
-      'default' => "",//self::default_profile_path,
+      'default' => "/profile",//self::default_profile_path,
       // 'addon' => get_home_url() . '/',
       'required' => false
     )));
@@ -124,7 +124,7 @@ class CBroSettings extends CBroBackendable {
 
   public static function get($id) {
     if (!array_key_exists($id, self::get_instance()->settings))
-      throw new CBroSettingNotFound($id . "!!!");
+      throw new CBroSettingNotFound($id);
 
     $s = self::get_instance()->settings[$id];
     return $s->get();
