@@ -37,11 +37,11 @@ class CBroSetting implements ICBroSetting {
     return $this->backend->get($this->id);
   }
 
-  public function set($value) {
-    if (array_key_exists('sanitizer', $this->params))
-      $value = call_user_func_array($this->params['sanitizer'], array($value));
-
+  public function set_sanitized($value) {
     $this->backend->set($this->id, $value);
+  }
+  public function set($value) {
+    $this->set_sanitized($this->id, $this->sanitize($value));
   }
 
   public function id() {
@@ -50,6 +50,13 @@ class CBroSetting implements ICBroSetting {
 
   public function get_params() {
     return $this->params;
+  }
+
+  public function sanitize($value) {
+    if (array_key_exists('sanitizer', $this->params))
+      $value = call_user_func_array($this->params['sanitizer'], array($value));
+
+    return $value;
   }
 }
 

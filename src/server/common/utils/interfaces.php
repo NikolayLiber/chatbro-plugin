@@ -9,5 +9,6 @@ interface ICBroUtilsBackend {
   function enque_script($file);
   function enque_style($file);
   function get_locale();
+  function get_request_var($var_name);
 }
 ?>

@@ -134,9 +134,9 @@ jQuery(document).ready(function ($) {
     $(this).width('')
   })
 
-  $.post(ajaxurl, {action: 'chatbro_get_faq'}, function (response) {
-    $('#chatbro-faq').html(response)
-  })
+  // $.post(ajaxurl, {action: 'chatbro_get_faq'}, function (response) {
+  //   $('#chatbro-faq').html(response)
+  // })
 
   adjustChatHeight()
 })

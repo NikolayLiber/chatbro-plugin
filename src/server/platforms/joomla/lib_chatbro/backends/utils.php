@@ -54,6 +54,10 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
   public function get_locale() {
     return CBroL10N::get_locale();
   }
+
+  public function get_request_var($var_name) {
+    return JRequest::getVar($var_name);
+  }
 }
 
 ?>

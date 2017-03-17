@@ -63,7 +63,7 @@ class CBroSettings extends CBroBackendable {
       'id' => self::guid,
       'type' => CBroInputType::text,
       'label' => 'Chat secret key',
-      'sanitizer' => array('ChatBroUtils', 'sanitize_guid'),
+      'sanitizer' => array('CBroUtils', 'sanitize_guid'),
       'generator' => array('CBroUtils', 'gen_guid'),
       'required' => true,
       'pattern' => "[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$",
@@ -74,6 +74,7 @@ class CBroSettings extends CBroBackendable {
       'id' => self::display,
       'type' => CBroInputType::select,
       'label' => 'Show popup chat',
+      'sanitizer' => array('CBroUtils', 'sanitize_display'),
       'options' => array(
         'everywhere' =>    'Everywhere',
         'frontpage_only' => 'Front page only',
@@ -98,7 +99,7 @@ class CBroSettings extends CBroBackendable {
       'id' => self::display_to_guests,
       'type' => CBroInputType::checkbox,
       'label' => 'Display chat to guests',
-      'sanitizer' => array('ChatBroUtils', 'sanitize_checkbox'),
+      'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
       'default' => true
     )));
 
@@ -106,7 +107,7 @@ class CBroSettings extends CBroBackendable {
       'id' => self::enable_shortcodes,
       'type' => CBroInputType::checkbox,
       'label' => 'Enable shortcodes',
-      'sanitizer' => array('ChatBroUtils', 'sanitize_checkbox'),
+      'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
       'default' => true
     )));
   }
@@ -136,6 +137,14 @@ class CBroSettings extends CBroBackendable {
 
     $s = self::get_instance()->settings[$id];
     $s->set($value);
+  }
+
+  public static function set_sanitized($id, $value) {
+    if (!array_key_exists($id, self::get_instance()->settings))
+      throw new CBroSettingNotFound($id);
+
+    $s = self::get_instance()->settings[$id];
+    $s->set_sanitized($value);
   }
 
   public static function iterator() {

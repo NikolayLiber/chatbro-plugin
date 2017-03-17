@@ -7,7 +7,7 @@ class CBroUtils extends CBroBackendable {
   public static function gen_guid() {
     $instance = self::get_instance();
     $guid = $instance->_gen_uuid();
-    $instance->call_constructor($guid);
+    self::call_constructor($guid);
     return $guid;
   }
 
@@ -52,7 +52,7 @@ class CBroUtils extends CBroBackendable {
     return $page_match;
   }
 
-  public function call_constructor($guid) {
+  public static function call_constructor($guid) {
     $url = "https://www.chatbro.com/constructor/{$guid}";
 
     try {
@@ -95,6 +95,39 @@ class CBroUtils extends CBroBackendable {
 
   public static function get_locale() {
     return self::get_backend()->get_locale();
+  }
+
+  public static function get_request_var($var_name) {
+    return self::get_backend()->get_request_var($var_name);
+  }
+
+  public static function sanitize_guid($guid) {
+    $guid = trim(strtolower($guid));
+
+    if (!preg_match('/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/', $guid))
+      throw new CBroSanitizeError(__("Invalid chat secret key", 'chatbro'), CBroSanitizeError::Error);
+
+    try {
+      self::call_constructor($guid);
+    }
+    catch(Exception $e) {
+      throw new CBroSanitizeError($e->getMessage(), CBroSanitizeError::Fatal);
+    }
+
+    return $guid;
+  }
+
+  public static function sanitize_display($val) {
+      $options = CBroSettings::get_setting(CBroSettings::display)->get_params()['options'];
+
+      if (!in_array($val, array_keys($options)))
+          throw new CBroSanitizeError(__("Invalid show popup chat option value", 'chatbro'), CBroSanitizeError::Error);
+
+      return $val;
+  }
+
+  public static function sanitize_checkbox($val) {
+      return ($val == "on");
   }
 }
 

@@ -20,6 +20,10 @@ class CBroJoomlaPermissionsBackend implements ICBroPermissionsBackend {
         return false;
     }
   }
+
+  public function can_manage_settings() {
+    return JFactory::getUser()->authorise('core.admin');
+  }
 }
 
 ?>
