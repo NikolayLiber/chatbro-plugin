@@ -10,5 +10,6 @@ interface ICBroUtilsBackend {
   function enque_style($file);
   function get_locale();
   function get_request_var($var_name);
+  function get_home_url();
 }
 ?>

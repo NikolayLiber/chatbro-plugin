@@ -91,7 +91,7 @@ class CBroSettings extends CBroBackendable {
       'type' => CBroInputType::text,
       'label' => 'User profile path',
       'default' => "/profile",//self::default_profile_path,
-      // 'addon' => get_home_url() . '/',
+      'addon' => CBroUtils::get_home_url(),
       'required' => false
     )));
 

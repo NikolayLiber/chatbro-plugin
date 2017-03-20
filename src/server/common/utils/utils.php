@@ -129,6 +129,10 @@ class CBroUtils extends CBroBackendable {
   public static function sanitize_checkbox($val) {
       return ($val == "on");
   }
+
+  public static function get_home_url() {
+    return self::get_backend()->get_home_url();
+  }
 }
 
 ?>

@@ -58,6 +58,10 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
   public function get_request_var($var_name) {
     return JRequest::getVar($var_name);
   }
+
+  public function get_home_url() {
+    return JURI::root();
+  }
 }
 
 ?>

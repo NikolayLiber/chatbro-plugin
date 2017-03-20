@@ -28,7 +28,7 @@ class CBroChat {
     if (CBroUser::can_ban())
         array_push($permissions, 'ban');
 
-    $params = "encodedChatGuid: '{$this->hash}', siteDomain: '{$site_domain}'";
+    $params = "encodedChatGuid: '{$this->hash}', siteDomain: '" . base64_encode($site_domain) . "'";
     $sig_source = "";
 
     if (CBroUser::is_logged_in()) {
@@ -36,10 +36,10 @@ class CBroChat {
         $params .= ", siteUserFullName: '" . CBroUser::display_name() . "', siteUserExternalId: '" . CBroUser::id() . "'";
 
         if ($site_user_avatar_url != "")
-            $params .= ", siteUserAvatarUrl: '{$site_user_avatar_url}'";
+            $params .= ", siteUserAvatarUrl: '" . base64_encode($site_user_avatar_url) . "'";
 
         if ($profile_url != '')
-            $params .= ", siteUserProfileUrl: '{$profile_url}'";
+            $params .= ", siteUserProfileUrl: '" . base64_encode($profile_url) . "'";
     }
     else
         $sig_source = $site_domain;
@@ -63,7 +63,8 @@ class CBroChat {
     ?>
     <script id="chatBroEmbedCode">
     /* Chatbro Widget Embed Code Start */
-    function ChatbroLoader(chats,async) {async=async!==false;var params={embedChatsParameters:chats instanceof Array?chats:[chats],needLoadCode:typeof Chatbro==='undefined'};var xhr=new XMLHttpRequest();xhr.withCredentials = true;xhr.onload=function(){eval(xhr.responseText)};xhr.onerror=function(){console.error('Chatbro loading error')};xhr.open('POST','//www.chatbro.com/embed_chats/',async);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');xhr.send('parameters='+encodeURIComponent(JSON.stringify(params)))}
+    function ChatbroLoader(chats,async) {function decodeProp(prop){if (chats.hasOwnProperty(prop)) chats[prop] = atob(chats[prop]);};decodeProp('siteDomain');decodeProp('siteUserAvatarUrl');decodeProp('siteUserProfileUrl');
+    async=async!==false;var params={embedChatsParameters:chats instanceof Array?chats:[chats],needLoadCode:typeof Chatbro==='undefined'};var xhr=new XMLHttpRequest();xhr.withCredentials = true;xhr.onload=function(){eval(xhr.responseText)};xhr.onerror=function(){console.error('Chatbro loading error')};xhr.open('POST','//www.chatbro.com/embed_chats/',async);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');xhr.send('parameters='+encodeURIComponent(JSON.stringify(params)))}
     /* Chatbro Widget Embed Code End */
     if (typeof chatBroHistoryPage === 'undefined' || !chatBroHistoryPage)
         ChatbroLoader({<?php echo $params; ?>});
@@ -78,7 +79,7 @@ class CBroChat {
 
   public function generate_popup_code() {
     if (!CBroUser::can_view())
-      return "Cant view";
+      return;
 
     $where_to_display = CBroSettings::get(CBroSettings::display);
 
@@ -99,7 +100,7 @@ class CBroChat {
             break;
 
         default:
-            return "Cant display";
+            return;
     }
 
     return $this->generate_code();
