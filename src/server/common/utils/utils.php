@@ -133,6 +133,10 @@ class CBroUtils extends CBroBackendable {
   public static function get_home_url() {
     return self::get_backend()->get_home_url();
   }
+
+  public static function get_default_profile_url() {
+    return self::get_backend()->get_default_profile_url();
+  }
 }
 
 ?>

@@ -10,6 +10,10 @@ class CBroJoomlaAdminBackend implements ICBroAdminBackend {
     return false;
   }
 
+  function has_shortcodes() {
+    return false;
+  }
+
   function get_login_url() {
     return "/login.php";
   }

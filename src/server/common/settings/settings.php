@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/../core/backendable.php');
+require_once(__DIR__ . '/../admin/admin.php');
 require_once('interfaces.php');
 require_once('exceptions.php');
 require_once('setting.php');
@@ -87,10 +88,19 @@ class CBroSettings extends CBroBackendable {
     )));
 
     $this->add_setting(new CBroSetting($backend, array(
+      'id' => self::selected_pages,
+      'type' => CBroInputType::textarea,
+      'label' => "Pages",
+      'help_block' => "Specify pages by using their paths. Enter one path per line. The '*' character is a wildcard. Example paths are /2012/10/my-post for a single post and /2012/* for a group of posts. The path should always start with a forward slash(/).",
+      'default' => false,
+      'required' => false
+    )));
+
+    $this->add_setting(new CBroSetting($backend, array(
       'id' => self::user_profile_path,
       'type' => CBroInputType::text,
       'label' => 'User profile path',
-      'default' => "/profile",//self::default_profile_path,
+      'default' => CBroUtils::get_default_profile_url(),
       'addon' => CBroUtils::get_home_url(),
       'required' => false
     )));
@@ -103,13 +113,15 @@ class CBroSettings extends CBroBackendable {
       'default' => true
     )));
 
-    $this->add_setting(new CBroSetting($backend, array(
-      'id' => self::enable_shortcodes,
-      'type' => CBroInputType::checkbox,
-      'label' => 'Enable shortcodes',
-      'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
-      'default' => true
-    )));
+    if (CBroAdmin::has_shortcodes()) {
+      $this->add_setting(new CBroSetting($backend, array(
+        'id' => self::enable_shortcodes,
+        'type' => CBroInputType::checkbox,
+        'label' => 'Enable shortcodes',
+        'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
+        'default' => true
+      )));
+    }
   }
 
   private function add_setting($setting) {

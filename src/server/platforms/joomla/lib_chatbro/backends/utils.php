@@ -62,6 +62,10 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
   public function get_home_url() {
     return JURI::root();
   }
+
+  public function get_default_profile_url() {
+    return "";
+  }
 }
 
 ?>

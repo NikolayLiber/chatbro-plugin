@@ -11,5 +11,6 @@ interface ICBroUtilsBackend {
   function get_locale();
   function get_request_var($var_name);
   function get_home_url();
+  function get_default_profile_url();
 }
 ?>

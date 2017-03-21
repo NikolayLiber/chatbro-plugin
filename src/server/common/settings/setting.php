@@ -26,6 +26,8 @@ class CBroSetting implements ICBroSetting {
         $value = call_user_func_array($this->params['generator'], array());
       elseif (array_key_exists('default', $this->params))
         $value = $this->params['default'];
+      elseif (!$this->params['required'])
+        return;
       else
         throw $e;
 
@@ -34,7 +36,16 @@ class CBroSetting implements ICBroSetting {
   }
 
   public function get() {
-    return $this->backend->get($this->id);
+    $value = null;
+    try {
+      $value = $this->backend->get($this->id);
+    }
+    catch(CBroSettingNotFound $e) {
+      if ($this->is_required())
+        throw $e;
+    }
+    
+    return $value;
   }
 
   public function set_sanitized($value) {
@@ -57,6 +68,10 @@ class CBroSetting implements ICBroSetting {
       $value = call_user_func_array($this->params['sanitizer'], array($value));
 
     return $value;
+  }
+
+  public function is_required() {
+    return $this->params['required'] === true;
   }
 }
 

@@ -17,10 +17,10 @@ require_once('backends/l10n.php');
 require_once('backends/admin.php');
 
 CBroUtils::init(new CBroJoomlaUtilsBackend());
+CBroAdmin::init(new CBroJoomlaAdminBackend());
 CBroSettings::init(new CBroJoomlaSettingsBackend());
 CBroUser::init(new CBroJoomlaUserBackend());
 CBroPermissions::init(new CBroJoomlaPermissionsBackend());
 CBroL10N::init(new CBroJoomlaL10NBackend());
-CBroAdmin::init(new CBroJoomlaAdminBackend());
 
 ?>
