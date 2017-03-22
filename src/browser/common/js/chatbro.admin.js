@@ -27,6 +27,7 @@ jQuery(document).ready(function ($) {
       var msgDiv = $('#chatbro-message')
       msgDiv.removeClass()
       msgDiv.html('')
+      msgDiv.hide()
 
       if (response.hasOwnProperty('message')) {
         if (response.hasOwnProperty('msg_type') && response['msg_type'] === 'error') {
@@ -36,6 +37,7 @@ jQuery(document).ready(function ($) {
         }
 
         msgDiv.html(response['message'])
+        msgDiv.show()
       }
 
       $('.with-errors').empty()

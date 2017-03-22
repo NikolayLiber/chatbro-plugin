@@ -25,4 +25,22 @@
 #chatbro-constructor {
   width: 100%;
   border: 0;
+  height: 85vh;
+}
+
+#settings-tabs, #plugin-settings .row > .col-lg-8 {
+  margin-top: 1.5rem;
+}
+
+#chatbro-message {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+#cbro-useful-tip {
+  padding-left: 0.7rem;
+}
+
+#chatbro-shortcode-tip .bs-callout h3 {
+  margin: 0 0 5px 0;
 }
