@@ -120,6 +120,14 @@ class CBroChat {
   public static function get_chat_code() {
     return self::get_instance()->generate_chat_code();
   }
+
+  public static function get_static_chat_code() {
+    $encoded_guid = self::get_instance()->hash;
+    $container_id = "chatbro-{$encoded_guid}-" . rand(0, 99999);
+    $code = $container_id ? "<div id=\"{$container_id}\"></div>" : "";
+
+    return $code . self::get_instance()->generate_code($container_id, true);
+  }
 }
 
 ?>

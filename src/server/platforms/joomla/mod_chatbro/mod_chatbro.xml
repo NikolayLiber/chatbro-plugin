@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" version="3.0.0" client="site" method="upgrade">
+  <name>ChatBro</name>
+  <version>3.0.0</version>
+  <description>ChatBro is a live group chat between your site members that could be syncronized with Telegram and VK</description>
+  <author>ChatBro Team</author>
+  <creationDate>Feb 2017</creationDate>
+  <copyright>(C) 2017 ChatBro.</copyright>
+  <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <authorEmail>fwnd80@gmail.com</authorEmail>
+  <authorUrl>https://www.chatbro.com</authorUrl>
+
+  <files>
+    <filename>mod_chatbro.xml</filename>
+    <filename>index.html</filename>
+    <filename module="mod_chatbro">mod_chatbro.php</filename>
+    <filename>tmpl/default.php</filename>
+    <filename>tmpl/index.html</filename>
+  </files>
+  <config>
+  </config>
+</extension>
