@@ -66,6 +66,10 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
   public function get_default_profile_url() {
     return "";
   }
+
+  public function get_support_chat_data_offset_top() {
+    return 105;
+  }
 }
 
 ?>

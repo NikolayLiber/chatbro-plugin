@@ -1,5 +1,7 @@
-@import "common";
-@import "callout";
-@import "modal";
-@import "settings";
-@import "help";
+#chatbro-admin {
+  @import "common";
+  @import "callout";
+  @import "modal";
+  @import "settings";
+  @import "help";  
+}

@@ -12,7 +12,7 @@
   "standard": {
     "globals": [
       "jQuery",
-      "ajaxurl"
+      "cBroGlobals"
     ]
   },
   "eslintConfig": {
@@ -22,7 +22,7 @@
       "jquery": true
     },
     "globals": {
-      "ajaxurl": true
+      "cBroGlobals": true
     }
   },
   "keywords": [

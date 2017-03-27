@@ -12,5 +12,10 @@ interface ICBroUtilsBackend {
   function get_request_var($var_name);
   function get_home_url();
   function get_default_profile_url();
+  /*
+    Возвращает значение атрибута data-offset-top (кол-во пикселей отступа от верха
+    экрана, доехав до которого чат перестает скроллироваться) для чата поддержки.
+  */
+  function get_support_chat_data_offset_top();
 }
 ?>

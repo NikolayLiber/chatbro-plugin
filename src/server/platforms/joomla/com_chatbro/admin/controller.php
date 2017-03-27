@@ -9,7 +9,12 @@ class ChatBroController extends JControllerLegacy {
   protected $default_view = "chatbro";
 
   public function save_settings() {
-    echo CBroAdmin::save_settings();      
+    echo CBroAdmin::save_settings();
+    JFactory::getApplication()->close();
+  }
+
+  public function get_faq() {
+    echo CBroAdmin::get_faq();
     JFactory::getApplication()->close();
   }
 }

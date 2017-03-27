@@ -52,11 +52,15 @@ class CBroUtils extends CBroBackendable {
     return $page_match;
   }
 
+  public static function http_get($url) {
+    return self::get_backend()->http_get($url);
+  }
+
   public static function call_constructor($guid) {
     $url = "https://www.chatbro.com/constructor/{$guid}";
 
     try {
-      self::get_backend()->http_get($url);
+      self::http_get($url);
     }
     catch(CBroHttpError $e) {
       throw new Exception('Failed to call chat constructor: ' . $e->getMessage());
@@ -136,6 +140,10 @@ class CBroUtils extends CBroBackendable {
 
   public static function get_default_profile_url() {
     return self::get_backend()->get_default_profile_url();
+  }
+
+  public static function get_support_chat_data_offset_top() {
+    return self::get_backend()->get_support_chat_data_offset_top();
   }
 }
 

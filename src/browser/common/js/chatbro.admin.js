@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
   $('#chatbro_chat_display').change()
 
   $('#chatbro-settings-form').ajaxForm({
-    url: ajaxurl,
+    url: cBroGlobals.saveSettingsUrl,
     type: 'POST',
 
     success: function (response) {
@@ -136,9 +136,9 @@ jQuery(document).ready(function ($) {
     $(this).width('')
   })
 
-  // $.post(ajaxurl, {action: 'chatbro_get_faq'}, function (response) {
-  //   $('#chatbro-faq').html(response)
-  // })
+  $.post(cBroGlobals.getFaqUrl, cBroGlobals.getFaqPostData, function (response) {
+    $('#chatbro-faq').html(response)
+  })
 
   adjustChatHeight()
 })
