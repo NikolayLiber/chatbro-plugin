@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<access component="com_chatbro">
+  <section name="component">
+    <action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC" />
+    <action name="chatbro.ban" title="COM_CHATBRO_BAN" description="COM_CHATBRO_BAN_COMPONENT_DESC" />
+    <action name="chatbro.delete" title="COM_CHATBRO_DELETE" description="COM_CHATBRO_DELETE_COMPONENT_DESC" />
+  </section>
+</access>

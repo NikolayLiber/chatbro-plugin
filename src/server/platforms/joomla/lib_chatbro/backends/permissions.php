@@ -10,8 +10,10 @@ class CBroJoomlaPermissionsBackend implements ICBroPermissionsBackend {
     // Temporary stub
     switch($capability) {
       case CBroPermissions::cap_ban:
+        return JFactory::getUser()->authorise('chatbro.ban');
+
       case CBroPermissions::cap_delete:
-        return JFactory::getUser()->authorise('core.admin');
+        return JFactory::getUser()->authorise('chatbro.delete');
 
       case CBroPermissions::cap_view:
         return true;
@@ -22,7 +24,7 @@ class CBroJoomlaPermissionsBackend implements ICBroPermissionsBackend {
   }
 
   public function can_manage_settings() {
-    return JFactory::getUser()->authorise('core.admin');
+    return JFactory::getUser()->authorise('core.manage');
   }
 }
 

@@ -19,7 +19,9 @@
     <menu link="index.php?option=com_chatbro">ChatBro</menu>
 
     <files folder="admin">
+      <folder>language</folder>
       <filename>index.html</filename>
+      <filename>access.xml</filename>
       <filename>chatbro.php</filename>
     </files>
   </administration>
