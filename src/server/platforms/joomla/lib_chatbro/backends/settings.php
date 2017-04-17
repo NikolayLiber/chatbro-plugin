@@ -6,6 +6,8 @@ require_once(__DIR__ . '/../common/settings/interfaces.php');
 require_once(__DIR__ . '/../common/settings/exceptions.php');
 
 class CBroJoomlaSettingsBackend implements ICBroSettingsBackend {
+  const view_access_level = 'chatbro_view_access_level';
+
   private $postponed;
   private $has_changes;
   private $settings;
@@ -58,6 +60,15 @@ class CBroJoomlaSettingsBackend implements ICBroSettingsBackend {
     // Save to database
     if (!$table->store())
       throw new Exception('Failed to save settings; ' . $table->getError());
+  }
+
+  public function add_extra_settings($settings) {
+    $settings->add_setting(new CBroSetting($this, array(
+      'id' => self::view_access_level,
+      'hidden' => true,
+      'required' => true,
+      'default' => 1
+    )));
   }
 }
 

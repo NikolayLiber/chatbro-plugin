@@ -14,6 +14,7 @@ interface ICBroSettingsBackend {
   function set($id, $value);
   function postponeWrite();
   function flush();
+  function add_extra_settings($settings);
 }
 
 ?>

@@ -1,0 +1,11 @@
+--- bootstrap.js	2016-09-30 18:17:52.000000000 +0500
++++ bootstrap1.js	2017-04-17 23:18:58.000000000 +0500
+@@ -905,7 +905,7 @@
+   // APPLY TO STANDARD DROPDOWN ELEMENTS
+   // ===================================
+ 
+-  $(document)
++  $('#chatbro-admin', document)
+     .on('click.bs.dropdown.data-api', clearMenus)
+     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)

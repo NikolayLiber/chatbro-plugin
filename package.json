@@ -48,6 +48,7 @@
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-symlink": "^1.0.0",
     "grunt-eslint": "^19.0.0",
+    "grunt-patch": "^0.1.7",
     "grunt-sass": "^2.0.0",
     "standard": "^8.6.0"
   }

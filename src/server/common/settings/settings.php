@@ -105,13 +105,13 @@ class CBroSettings extends CBroBackendable {
       'required' => false
     )));
 
-    $this->add_setting(new CBroSetting($backend, array(
-      'id' => self::display_to_guests,
-      'type' => CBroInputType::checkbox,
-      'label' => 'Display chat to guests',
-      'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
-      'default' => true
-    )));
+    // $this->add_setting(new CBroSetting($backend, array(
+    //   'id' => self::display_to_guests,
+    //   'type' => CBroInputType::checkbox,
+    //   'label' => 'Display chat to guests',
+    //   'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
+    //   'default' => true
+    // )));
 
     if (CBroAdmin::has_shortcodes()) {
       $this->add_setting(new CBroSetting($backend, array(
@@ -122,9 +122,12 @@ class CBroSettings extends CBroBackendable {
         'default' => true
       )));
     }
+
+    // Добавляем дополнительные настройки, специфичные для данной платформы
+    $backend->add_extra_settings($this);
   }
 
-  private function add_setting($setting) {
+  public function add_setting($setting) {
     $this->settings[$setting->id()] = $setting;
   }
 

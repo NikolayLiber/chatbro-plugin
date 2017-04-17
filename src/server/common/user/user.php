@@ -13,11 +13,8 @@ class CBroUser extends CBroBackendable {
     return self::get_backend()->is_admin();
   }
 
-  public static function can_view($display_to_guests = null) {
-    if ($display_to_guests === null)
-      $display_to_guests = CBroSettings::get(CBroSettings::display_to_guests);
-
-    return self::is_logged_in() ? CBroPermissions::can(CBroPermissions::cap_view) : $display_to_guests;
+  public static function can_view() {
+    return CBroPermissions::can(CBroPermissions::cap_view);
   }
 
   public static function can_ban() {

@@ -6,7 +6,6 @@ require_once(JPATH_LIBRARIES . '/chatbro/common/admin/admin.php');
 
 $document = JFactory::getDocument();
 $document->setTitle('Chatbro');
-JToolBarHelper::title("Chatbro");
 
 CBroAdmin::display();
 

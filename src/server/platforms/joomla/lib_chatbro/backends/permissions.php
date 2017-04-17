@@ -15,6 +15,7 @@ class CBroJoomlaPermissionsBackend implements ICBroPermissionsBackend {
       case CBroPermissions::cap_delete:
         return JFactory::getUser()->authorise('chatbro.delete');
 
+      // Permission to view is controlled by Joomla View Access Levels
       case CBroPermissions::cap_view:
         return true;
 

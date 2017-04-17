@@ -31,6 +31,17 @@ module.exports = function (grunt) {
       }
     },
 
+    patch: {
+      bootstrap: {
+        options: {
+          patch: 'patches/bootstrap.patch'
+        },
+        files: {
+          'bower_components/bootstrap/dist/js/bootstrap.js': 'bower_components/bootstrap/dist/js/bootstrap.js'
+        }
+      }
+    },
+
     sass: {
       common: {
         files: {
@@ -105,6 +116,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-eslint')
   grunt.loadNpmTasks('grunt-contrib-symlink')
   grunt.loadNpmTasks('grunt-contrib-less')
+  grunt.loadNpmTasks('grunt-patch')
 
   grunt.registerTask('build:joomla:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'concat:joomla_devcss'])
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])
