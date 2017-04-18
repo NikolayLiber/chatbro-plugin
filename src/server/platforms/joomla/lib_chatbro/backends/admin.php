@@ -42,6 +42,22 @@ class CBroJoomlaAdminBackend implements ICBroAdminBackend {
   }
 
   function render_permissions() {}
+
+  function get_help_text() {
+    ob_start();
+    ?>
+      <ul>
+        <li><?php _e('Enable chatbro plugin to add popup chat widget to your site.', 'chatbro'); ?></li>
+        <li><?php _e('Use chatbro module to add chat to desired place on your page.', 'chatbro'); ?></li>
+        <li><?php _e('Manage chat administrator permissions (ban user, delete messages) on Chatbro Component options page.', 'chatbro'); ?></li>
+      </ul>
+    <?php
+
+    $text = ob_get_contents();
+    ob_clean();
+
+    return $text;
+  }
 }
 
 ?>
