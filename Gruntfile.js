@@ -105,6 +105,50 @@ module.exports = function (grunt) {
             dest: 'src/server/platforms/joomla/com_chatbro/media' }
         ]
       }
+    },
+
+    po2mo: {
+      files: {
+        src: [
+          'src/server/common/languages/*.po',
+          '!node_modules/**'
+        ],
+        expand: true
+      }
+    },
+
+    pot: {
+      options: {
+        text_domain: 'chatbro', // Your text domain. Produces my-text-domain.pot
+        dest: 'src/server/common/languages/', // directory to place the pot file
+        keywords: [ // WordPress localisation functions
+          '',
+          '__:1',
+          '_e:1',
+          '_x:1,2c',
+          'esc_html__:1',
+          'esc_html_e:1',
+          'esc_html_x:1,2c',
+          'esc_attr__:1',
+          'esc_attr_e:1',
+          'esc_attr_x:1,2c',
+          '_ex:1,2c',
+          '_n:1,2',
+          '_nx:1,2,4c',
+          '_n_noop:1,2',
+          '_nx_noop:1,2,3c'
+        ],
+        msgmerge: true,
+        comment_tag: 'Translators:'
+      },
+      files: {
+        src: [
+          'src/**/*.php',
+          '!node_modules/**',
+          '!dist/**'
+        ], // Parse all php files
+        expand: true
+      }
     }
   })
 
@@ -117,6 +161,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-symlink')
   grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-patch')
+  grunt.loadNpmTasks('grunt-pot')
+  grunt.loadNpmTasks('grunt-po2mo')
 
   grunt.registerTask('build:joomla:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'concat:joomla_devcss'])
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])

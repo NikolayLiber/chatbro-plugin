@@ -6,7 +6,7 @@ require_once(__DIR__ . '/../common/core/l10n/interfaces.php');
 
 class CBroJoomlaL10NBackend implements ICBroL10NBackend {
   public function get_locale() {
-    return JFactory::getLanguage()->getTag();
+    return strtr(JFactory::getLanguage()->getTag(), array('-' => '_'));
   }
 
   public function get_user_locale($user_id = 0) {
@@ -14,7 +14,7 @@ class CBroJoomlaL10NBackend implements ICBroL10NBackend {
   }
 
   public function get_path_to_translations() {
-    return JPATH_LIBRARIES . '/chatbro/languages';
+    return JPATH_LIBRARIES . '/chatbro/common/languages';
   }
 }
 

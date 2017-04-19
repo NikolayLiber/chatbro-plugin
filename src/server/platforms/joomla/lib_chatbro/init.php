@@ -2,9 +2,9 @@
 
 defined('_JEXEC') or die('Access Restricted');
 
-require_once('common/settings/settings.php');
 require_once('common/core/l10n/l10n.php');
 require_once('common/core/l10n/functions.php');
+require_once('common/settings/settings.php');
 require_once('common/permissions/permissions.php');
 require_once('common/user/user.php');
 require_once('common/utils/utils.php');
@@ -17,10 +17,12 @@ require_once('backends/l10n.php');
 require_once('backends/admin.php');
 
 CBroUtils::init(new CBroJoomlaUtilsBackend());
+CBroL10N::init(new CBroJoomlaL10NBackend());
 CBroAdmin::init(new CBroJoomlaAdminBackend());
 CBroSettings::init(new CBroJoomlaSettingsBackend());
 CBroUser::init(new CBroJoomlaUserBackend());
 CBroPermissions::init(new CBroJoomlaPermissionsBackend());
-CBroL10N::init(new CBroJoomlaL10NBackend());
+
+CBroL10N::load_plugin_textdomain();
 
 ?>

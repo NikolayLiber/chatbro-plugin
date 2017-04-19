@@ -41,7 +41,8 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
-    "grunt": "^1.0.1",
+    "grunt": "^0.4.5",
+    "grunt-bower-concat": "^1.0.0",
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
@@ -49,6 +50,8 @@
     "grunt-contrib-symlink": "^1.0.0",
     "grunt-eslint": "^19.0.0",
     "grunt-patch": "^0.1.7",
+    "grunt-po2mo": "^0.1.2",
+    "grunt-pot": "^0.3.0",
     "grunt-sass": "^2.0.0",
     "standard": "^8.6.0"
   }
