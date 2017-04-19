@@ -1,0 +1,287 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: chatbro-wordpress-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-20 00:11+0500\n"
+"PO-Revision-Date: 2017-02-09 20:35+0500\n"
+"Last-Translator: Nikolay Liber\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Loco-Source-Locale: en\n"
+"X-Loco-Project-Id: 19129\n"
+"X-Loco-Api-Version: 1.0.15 20170125-2\n"
+
+#: src/server/common/admin/admin.php:38
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:38
+msgid "Chat Constructor"
+msgstr "Конструктор чата"
+
+#: src/server/common/admin/admin.php:41
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:41
+msgid "Plugin Settings"
+msgstr "Настройки плагина"
+
+#: src/server/common/admin/admin.php:44
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:44
+msgid "Help"
+msgstr "Помощь"
+
+#: src/server/common/admin/admin.php:113
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:113
+msgid "Frequently Asked Questions"
+msgstr "Частые вопросы"
+
+#: src/server/common/admin/admin.php:132
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:132
+msgid "You are about to change the secret key"
+msgstr "Вы собираетесь изменить секретный ключ"
+
+#: src/server/common/admin/admin.php:136
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:136
+#, fuzzy
+msgid ""
+"Please be noticed that your current chat configuration and content are "
+"identified by your secret key and if you lose it there\n"
+"            will be no way to restore access to you current chat unless you "
+"have registered an account at\n"
+"            <a href=\"https://chatbro.com\">Chatbro.com</a>. Please make "
+"sure that you have saved your old secret key and fully understand\n"
+"            what are you going to do."
+msgstr ""
+"Учтите, что текущие настройки и содержание чата привязано к секретному "
+"ключу. Если вы потеряете ключ и вы не зарегистрированы на <a href=\"https://"
+"chatbro.com\">Chatbro.com</a>, то восстановить доступ к текущему чату будет "
+"невозможно. Пожалуйста убедитесь в том, что вы сохранили старый секретный "
+"ключ и полностью осознаёте возможные последствия ваших действий."
+
+#: src/server/common/admin/admin.php:142
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:142
+msgid "Your old secret key: <span></span>"
+msgstr "Ваш старый секретный ключ: <span></span>"
+
+#: src/server/common/admin/admin.php:146
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:146
+msgid "Cancel"
+msgstr "Отмена"
+
+#: src/server/common/admin/admin.php:147
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:147
+msgid "Change Secret Key"
+msgstr "Изменить секретный ключ"
+
+#: src/server/common/admin/admin.php:170
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:170
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: src/server/common/admin/admin.php:186
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:186
+#, fuzzy
+msgid "Useful Tips"
+msgstr "Совет"
+
+#: src/server/common/admin/admin.php:304
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:304
+msgid "Permissions"
+msgstr "Права"
+
+#: src/server/common/admin/admin.php:308
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:308
+msgid "Role"
+msgstr "Роль"
+
+#: src/server/common/admin/admin.php:309
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:309
+msgid "View"
+msgstr "Просмотр"
+
+#: src/server/common/admin/admin.php:310
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:310
+msgid "Ban"
+msgstr "Бан"
+
+#: src/server/common/admin/admin.php:311
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:311
+msgid "Delete"
+msgstr "Удаление"
+
+#: src/server/common/admin/admin.php:342
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:342
+#, fuzzy
+msgid "Invalid token"
+msgstr "Неправильный ключ беседы"
+
+#: src/server/common/admin/admin.php:345
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:345
+msgid "You are not allowed to modify settings"
+msgstr "У вас нет прав на изменение настроек"
+
+#: src/server/common/admin/admin.php:412
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:412
+msgid "Settings was successfuly saved"
+msgstr "Настройки были успешно сохранены"
+
+#: src/server/common/admin/admin.php:433
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:433
+msgid "Failed to load FAQ: "
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:3
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:3
+msgid "Chat secret key"
+msgstr "Секретный ключ беседы"
+
+#: src/server/common/settings/settings_translations.php:4
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:4
+msgid "Display chat to guests"
+msgstr "Показывать чат незарегистрированным пользователям"
+
+#: src/server/common/settings/settings_translations.php:5
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:5
+msgid "Show popup chat"
+msgstr "Показывать чат"
+
+#: src/server/common/settings/settings_translations.php:6
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:6
+msgid "Everywhere"
+msgstr "Везде"
+
+#: src/server/common/settings/settings_translations.php:7
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:7
+msgid "Front page only"
+msgstr "Только на главной"
+
+#: src/server/common/settings/settings_translations.php:8
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:8
+msgid "Everywhere except those listed"
+msgstr "Везде кроме перечисленных страниц"
+
+#: src/server/common/settings/settings_translations.php:9
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:9
+msgid "Only the listed pages"
+msgstr "Только на перечисленных страницах"
+
+#: src/server/common/settings/settings_translations.php:10
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:10
+msgid "Disable"
+msgstr "Не показывать"
+
+#: src/server/common/settings/settings_translations.php:11
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:11
+msgid ""
+"Specify pages by using their paths. Enter one path per line. The '*' "
+"character is a wildcard. Example paths are /2012/10/my-post for a single "
+"post and /2012/* for a group of posts. The path should always start with a "
+"forward slash(/)."
+msgstr ""
+"Укажите пути до страниц по одному на каждой строке. Символ '*' "
+"подстановочный. Например /2012/10/my-post - один пост, /2012/* - группа "
+"постов. Путь всегда должен начинаться с прямого слэша (/)."
+
+#: src/server/common/settings/settings_translations.php:12
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:12
+msgid "User profile path"
+msgstr "Путь до профиля пользователя"
+
+#: src/server/common/settings/settings_translations.php:13
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:13
+msgid "Enable shortcodes"
+msgstr "Разрешить шорткоды"
+
+#: src/server/common/settings/settings_translations.php:14
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:14
+#, fuzzy
+msgid "Invalid chat key"
+msgstr "Неверный секретный ключ беседы"
+
+#: src/server/common/utils/utils.php:112
+#: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:112
+msgid "Invalid chat secret key"
+msgstr "Неверный секретный ключ беседы"
+
+#: src/server/common/utils/utils.php:128
+#: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:128
+msgid "Invalid show popup chat option value"
+msgstr "Неверное значение параметра \"Показывать чат\""
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:50
+msgid "Enable chatbro plugin to add popup chat widget to your site."
+msgstr ""
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:51
+#, fuzzy
+msgid "Use chatbro module to add chat to desired place on your page."
+msgstr ""
+"Используйте шорткод <em><b>[chatbro]</b></em> чтобы добавить чат в нужное "
+"место вашей страницы или поста. "
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:52
+msgid ""
+"Manage chat administrator permissions (ban user, delete messages) on Chatbro "
+"Component options page."
+msgstr ""
+
+#~ msgid ""
+#~ "To manage chat settings in the new version of the plugin, you should "
+#~ "submit a chat secret key. Please, log in to your account at <a href="
+#~ "\"https://www.chatbro.com/account\">chatbro.com</a> (use login button "
+#~ "below), copy the chat secret key and insert it into the respective field."
+#~ msgstr ""
+#~ "Для управления настройками чата в новой версии плагина необходим "
+#~ "секретный ключ беседы. Пожалуйста войдите в свой аккаунт на <a href="
+#~ "\"https://www.chatbro.com/account\">chatbro.com</a>, скопируйте секретный "
+#~ "ключ беседы и вставьте в соответсвующее поле."
+
+#~ msgid "Save secret key"
+#~ msgstr "Сохранить секретный ключ"
+
+#~ msgid "Only for registered members! "
+#~ msgstr "Только для зарегистрированных пользователей!"
+
+#~ msgid "Register"
+#~ msgstr "Зарегистрироваться"
+
+#~ msgid ""
+#~ "Use shortcode <span>[chatbro]</span> to add the chat widget to the "
+#~ "desired place of your page or post."
+#~ msgstr ""
+#~ "Для того, чтобы поместить чат в нужное место на вашей странице (в посте) "
+#~ "используйте шорткод <span>[chatbro]</span>."
+
+#~ msgid "Supported shortcode attributes:"
+#~ msgstr "Поддерживаемые атрибуты шорткода"
+
+#~ msgid ""
+#~ "<em><b>static</b></em> &ndash; static not movable chat widget (default "
+#~ "<em>true</em>)."
+#~ msgstr ""
+#~ "<em><b>static</b></em> &ndash; статичный (неподвижный) виджет чата по "
+#~ "умолчанию <em>true</em>."
+
+#~ msgid ""
+#~ "<em><b>registered_only</b></em> &ndash; display chat widget to logged in "
+#~ "users only (default <em>false</em>). If this attribute is explicitly set "
+#~ "it precedes the global <em>\"Display chat to guests\"</em> setting value."
+#~ msgstr ""
+#~ "<em><b>registered_only</b></em> &ndash; показывать чат только "
+#~ "зарегистрированным пользователям (по умолчанию <em>false</em>). Если этот "
+#~ "атрибут задан, то он «перекрывает» значение параметра «Показывать чат "
+#~ "незарегистрированным пользователям»."
+
+#~ msgid "Failed to call chat constructor"
+#~ msgstr "Не смог вызывать конструктор чата"
+
+#~ msgid "ChatBro"
+#~ msgstr "ChatBro"
+
+#~ msgid "ChatBro group chat"
+#~ msgstr "ChatBro чат между пользователями"
+
+#~ msgid "Failed to connect to chat server"
+#~ msgstr "Не смог соединиться с сервером чатов"

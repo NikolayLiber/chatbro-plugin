@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the chatbro2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: chatbro2 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-20 00:11+0500\n"
+"PO-Revision-Date: 2017-01-31 15:58+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/server/common/admin/admin.php:38
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:38
+msgid "Chat Constructor"
+msgstr "Pembuat Chat"
+
+#: src/server/common/admin/admin.php:41
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:41
+msgid "Plugin Settings"
+msgstr "Pengaturan Plugin"
+
+#: src/server/common/admin/admin.php:44
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:44
+msgid "Help"
+msgstr ""
+
+#: src/server/common/admin/admin.php:113
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:113
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: src/server/common/admin/admin.php:132
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:132
+msgid "You are about to change the secret key"
+msgstr "Anda akan mengganti kunci rahasia"
+
+#: src/server/common/admin/admin.php:136
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:136
+#, fuzzy
+msgid ""
+"Please be noticed that your current chat configuration and content are "
+"identified by your secret key and if you lose it there\n"
+"            will be no way to restore access to you current chat unless you "
+"have registered an account at\n"
+"            <a href=\"https://chatbro.com\">Chatbro.com</a>. Please make "
+"sure that you have saved your old secret key and fully understand\n"
+"            what are you going to do."
+msgstr ""
+"Mohon diperhatikan bahwa konfigurasi chat dan konten Anda saat ini diakses "
+"dengan kunci rahasia dan jika Anda kehilangan kunci itu,\n"
+"                        tidak ada cara untuk memulihkan akses Anda ke chat "
+"saat, kecuali Anda sudah mendaftarkan akun di\n"
+"                        <a href=\"https://chatbro.com\">Chatbro.com</a>. "
+"Pastikan Anda sudah menyimpan kunci rahasia lama Anda dan sepenuhnya "
+"memahami\n"
+"                        apa yang akan Anda lakukan."
+
+#: src/server/common/admin/admin.php:142
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:142
+msgid "Your old secret key: <span></span>"
+msgstr "Kunci rahasia lama Anda: <span></span>"
+
+#: src/server/common/admin/admin.php:146
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:146
+msgid "Cancel"
+msgstr "Batalkan"
+
+#: src/server/common/admin/admin.php:147
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:147
+msgid "Change Secret Key"
+msgstr "Ubah Kunci Rahasia"
+
+#: src/server/common/admin/admin.php:170
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:170
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#: src/server/common/admin/admin.php:186
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:186
+#, fuzzy
+msgid "Useful Tips"
+msgstr "Tips Bermanfaat"
+
+#: src/server/common/admin/admin.php:304
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:304
+msgid "Permissions"
+msgstr "Izin"
+
+#: src/server/common/admin/admin.php:308
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:308
+msgid "Role"
+msgstr "Peran"
+
+#: src/server/common/admin/admin.php:309
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:309
+msgid "View"
+msgstr "Lihat"
+
+#: src/server/common/admin/admin.php:310
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:310
+msgid "Ban"
+msgstr "Blokir"
+
+#: src/server/common/admin/admin.php:311
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:311
+msgid "Delete"
+msgstr "Hapus"
+
+#: src/server/common/admin/admin.php:342
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:342
+#, fuzzy
+msgid "Invalid token"
+msgstr "Kunci chat tidak valid"
+
+#: src/server/common/admin/admin.php:345
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:345
+msgid "You are not allowed to modify settings"
+msgstr "Anda tidak diperbolehkan untuk mengubah pengaturan"
+
+#: src/server/common/admin/admin.php:412
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:412
+msgid "Settings was successfuly saved"
+msgstr "Pengaturan berhasil tersimpan"
+
+#: src/server/common/admin/admin.php:433
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:433
+msgid "Failed to load FAQ: "
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:3
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:3
+msgid "Chat secret key"
+msgstr "Kunci rahasia chat"
+
+#: src/server/common/settings/settings_translations.php:4
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:4
+msgid "Display chat to guests"
+msgstr "Tampilkan chat pada tamu"
+
+#: src/server/common/settings/settings_translations.php:5
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:5
+msgid "Show popup chat"
+msgstr "Tampilkan pop up chat"
+
+#: src/server/common/settings/settings_translations.php:6
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:6
+msgid "Everywhere"
+msgstr "Di mana pun"
+
+#: src/server/common/settings/settings_translations.php:7
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:7
+msgid "Front page only"
+msgstr "Hanya halaman depan"
+
+#: src/server/common/settings/settings_translations.php:8
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:8
+msgid "Everywhere except those listed"
+msgstr "Di mana pun kecuali yang terdapat dalam daftar"
+
+#: src/server/common/settings/settings_translations.php:9
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:9
+msgid "Only the listed pages"
+msgstr "Hanya halaman yang terdaftar"
+
+#: src/server/common/settings/settings_translations.php:10
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:10
+msgid "Disable"
+msgstr "Nonaktifkan"
+
+#: src/server/common/settings/settings_translations.php:11
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:11
+msgid ""
+"Specify pages by using their paths. Enter one path per line. The '*' "
+"character is a wildcard. Example paths are /2012/10/my-post for a single "
+"post and /2012/* for a group of posts. The path should always start with a "
+"forward slash(/)."
+msgstr ""
+"Tentukan halaman melalui jalurnya. Masukkan satu jalur per baris. Karakter "
+"'*' adalah wildcard. Contoh jalur adalah /2012/10/my-post untuk satu tulisan "
+"dan /2012/* untuk beberapa tulisan. Jalur harus selalu diawali dengan garis "
+"miring (/)."
+
+#: src/server/common/settings/settings_translations.php:12
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:12
+msgid "User profile path"
+msgstr "Gunakan jalur profil"
+
+#: src/server/common/settings/settings_translations.php:13
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:13
+msgid "Enable shortcodes"
+msgstr "Aktifkan shortcode"
+
+#: src/server/common/settings/settings_translations.php:14
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:14
+#, fuzzy
+msgid "Invalid chat key"
+msgstr "Kunci rahasia chat tidak valid"
+
+#: src/server/common/utils/utils.php:112
+#: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:112
+msgid "Invalid chat secret key"
+msgstr "Kunci rahasia chat tidak valid"
+
+#: src/server/common/utils/utils.php:128
+#: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:128
+msgid "Invalid show popup chat option value"
+msgstr "Pemunculan nilai pilihan pop up chat tidak valid"
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:50
+msgid "Enable chatbro plugin to add popup chat widget to your site."
+msgstr ""
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:51
+#, fuzzy
+msgid "Use chatbro module to add chat to desired place on your page."
+msgstr ""
+"Gunakan shortcode <span>[chatbro]</span> untuk menambahkan widget chat ke "
+"lokasi halaman atau tulisan yang diinginkan."
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:52
+msgid ""
+"Manage chat administrator permissions (ban user, delete messages) on Chatbro "
+"Component options page."
+msgstr ""
+
+#~ msgid ""
+#~ "To manage chat settings in the new version of the plugin, you should "
+#~ "submit a chat secret key. Please, log in to your account at <a href="
+#~ "\"https://www.chatbro.com/account\">chatbro.com</a> (use login button "
+#~ "below), copy the chat secret key and insert it into the respective field."
+#~ msgstr ""
+#~ "Untuk mengelola pengaturan chat dalam versi plugin yang baru, Anda harus "
+#~ "mengirimkan kunci rahasia chat. Silakan masuk ke akun Anda di <a href="
+#~ "\"https://www.chatbro.com/account\">chatbro.com</a>(menggunakan tombol "
+#~ "masuk di bawah ini), salin kunci rahasia chat, dan masukkan ke kolom yang "
+#~ "sesuai."
+
+#~ msgid "Save secret key"
+#~ msgstr "Simpan kunci rahasia"
+
+#~ msgid "Only for registered members! "
+#~ msgstr "Hanya untuk anggota terdaftar!"
+
+#~ msgid "Register"
+#~ msgstr "Daftar"
+
+#~ msgid "Supported shortcode attributes:"
+#~ msgstr "Atribut shortcode yang dapat digunakan:"
+
+#~ msgid ""
+#~ "<em><b>static</b></em> &ndash; static not movable chat widget (default "
+#~ "<em>true</em>)."
+#~ msgstr ""
+#~ "<em><b>static</b></em> &ndash; widget chat yang tidak dapat dipindahkan "
+#~ "(default <em>true</em>)."
+
+#~ msgid ""
+#~ "<em><b>registered_only</b></em> &ndash; display chat widget to logged in "
+#~ "users only (default <em>false</em>). If this attribute is explicitly set "
+#~ "it precedes the global <em>\"Display chat to guests\"</em> setting value."
+#~ msgstr ""
+#~ "<em><b>registered_only</b></em> &ndash; menampilkan widget chat hanya "
+#~ "untuk pengguna yang masuk (default <em>false</em>). Jika atribut ini "
+#~ "diatur dengan jelas, atribut ini menangguhkan nilai pengaturan global <em>"
+#~ "\"Tampilkan chat pada tamu\"</em>."
+
+#~ msgid "Failed to call chat constructor"
+#~ msgstr "Gagal menelepon pembuat chat"
+
+#, fuzzy
+#~ msgid "ChatBro group chat"
+#~ msgstr "Tampilkan pop up chat"
+
+#~ msgid "Failed to connect to chat server"
+#~ msgstr "Gagal terhubung ke server chat"

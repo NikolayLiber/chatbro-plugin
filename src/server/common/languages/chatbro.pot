@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the chatbro-plugin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: chatbro-plugin 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-20 00:11+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/server/common/admin/admin.php:38
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:38
+msgid "Chat Constructor"
+msgstr ""
+
+#: src/server/common/admin/admin.php:41
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:41
+msgid "Plugin Settings"
+msgstr ""
+
+#: src/server/common/admin/admin.php:44
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:44
+msgid "Help"
+msgstr ""
+
+#: src/server/common/admin/admin.php:113
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:113
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: src/server/common/admin/admin.php:132
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:132
+msgid "You are about to change the secret key"
+msgstr ""
+
+#: src/server/common/admin/admin.php:136
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:136
+msgid ""
+"Please be noticed that your current chat configuration and content are "
+"identified by your secret key and if you lose it there\n"
+"            will be no way to restore access to you current chat unless you "
+"have registered an account at\n"
+"            <a href=\"https://chatbro.com\">Chatbro.com</a>. Please make "
+"sure that you have saved your old secret key and fully understand\n"
+"            what are you going to do."
+msgstr ""
+
+#: src/server/common/admin/admin.php:142
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:142
+msgid "Your old secret key: <span></span>"
+msgstr ""
+
+#: src/server/common/admin/admin.php:146
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:146
+msgid "Cancel"
+msgstr ""
+
+#: src/server/common/admin/admin.php:147
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:147
+msgid "Change Secret Key"
+msgstr ""
+
+#: src/server/common/admin/admin.php:170
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:170
+msgid "Save Changes"
+msgstr ""
+
+#: src/server/common/admin/admin.php:186
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:186
+msgid "Useful Tips"
+msgstr ""
+
+#: src/server/common/admin/admin.php:304
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:304
+msgid "Permissions"
+msgstr ""
+
+#: src/server/common/admin/admin.php:308
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:308
+msgid "Role"
+msgstr ""
+
+#: src/server/common/admin/admin.php:309
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:309
+msgid "View"
+msgstr ""
+
+#: src/server/common/admin/admin.php:310
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:310
+msgid "Ban"
+msgstr ""
+
+#: src/server/common/admin/admin.php:311
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:311
+msgid "Delete"
+msgstr ""
+
+#: src/server/common/admin/admin.php:342
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:342
+msgid "Invalid token"
+msgstr ""
+
+#: src/server/common/admin/admin.php:345
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:345
+msgid "You are not allowed to modify settings"
+msgstr ""
+
+#: src/server/common/admin/admin.php:412
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:412
+msgid "Settings was successfuly saved"
+msgstr ""
+
+#: src/server/common/admin/admin.php:433
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:433
+msgid "Failed to load FAQ: "
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:3
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:3
+msgid "Chat secret key"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:4
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:4
+msgid "Display chat to guests"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:5
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:5
+msgid "Show popup chat"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:6
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:6
+msgid "Everywhere"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:7
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:7
+msgid "Front page only"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:8
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:8
+msgid "Everywhere except those listed"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:9
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:9
+msgid "Only the listed pages"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:10
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:10
+msgid "Disable"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:11
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:11
+msgid ""
+"Specify pages by using their paths. Enter one path per line. The '*' "
+"character is a wildcard. Example paths are /2012/10/my-post for a single "
+"post and /2012/* for a group of posts. The path should always start with a "
+"forward slash(/)."
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:12
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:12
+msgid "User profile path"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:13
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:13
+msgid "Enable shortcodes"
+msgstr ""
+
+#: src/server/common/settings/settings_translations.php:14
+#: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:14
+msgid "Invalid chat key"
+msgstr ""
+
+#: src/server/common/utils/utils.php:112
+#: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:112
+msgid "Invalid chat secret key"
+msgstr ""
+
+#: src/server/common/utils/utils.php:128
+#: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:128
+msgid "Invalid show popup chat option value"
+msgstr ""
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:50
+msgid "Enable chatbro plugin to add popup chat widget to your site."
+msgstr ""
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:51
+msgid "Use chatbro module to add chat to desired place on your page."
+msgstr ""
+
+#: src/server/platforms/joomla/lib_chatbro/backends/admin.php:52
+msgid ""
+"Manage chat administrator permissions (ban user, delete messages) on Chatbro "
+"Component options page."
+msgstr ""
