@@ -12,17 +12,21 @@
 
   <files folder="site">
     <filename>index.html</filename>
-    <filename>chatbro.php</filename>
+    <folder>media</folder>
   </files>
 
   <administration>
-    <menu link="index.php?option=com_chatbro">ChatBro</menu>
+    <menu link="index.php?option=com_chatbro">Chatbro Chat</menu>
 
     <files folder="admin">
       <folder>language</folder>
       <filename>index.html</filename>
+      <filename>controller.php</filename>
+      <filename>config.xml</filename>
       <filename>access.xml</filename>
       <filename>chatbro.php</filename>
+      <folder>views</folder>
+      <folder>language</folder>
     </files>
   </administration>
 

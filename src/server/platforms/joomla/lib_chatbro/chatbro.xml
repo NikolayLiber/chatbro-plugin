@@ -12,5 +12,9 @@
   <description>ChatBro dynamic popup chat</description>
 
   <files>
+    <filename>init.php</filename>
+    <folder>backends</folder>
+    <folder>common</folder>
+    <flolder>languages</folder>
   </files>
 </extension>

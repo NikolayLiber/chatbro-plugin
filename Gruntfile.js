@@ -149,6 +149,76 @@ module.exports = function (grunt) {
         ], // Parse all php files
         expand: true
       }
+    },
+
+    compress: {
+      lib_chatbro: {
+        options: {
+          archive: '_build/joomla/pkg_chatbro/packages/lib_chatbro.zip'
+        },
+
+        files: [
+          { expand: true,
+            cwd: 'src/server/common/',
+            src: ['**', '!**/*.po', '!**/*.pot', '!**/*~', '!**/~*', '!**/*.orig'],
+            dest: 'lib_chatbro/common'
+          },
+
+          { expand: true,
+            cwd: 'src/server/platforms/joomla/lib_chatbro',
+            src: ['**', '!common/**', '!**/*~', '!**/~*', '!**/*.orig'],
+            dest: 'lib_chatbro/'
+          }
+        ]
+      },
+
+      com_chatbro: {
+        options: {
+          archive: '_build/joomla/pkg_chatbro/packages/com_chatbro.zip'
+        },
+
+        files: [
+          { expand: true,
+            cwd: 'src/server/platforms/joomla/com_chatbro',
+            src: ['**', '!media/**', '!**/*~', '!**/~*', '!**/*.orig'],
+            dest: 'com_chatbro'
+          },
+
+          { expand: true,
+            cwd: '_build/joomla',
+            src: ['css/**', 'fonts/**', 'js/**', '!**/*~', '!**/~*', '!**/*.orig'],
+            dest: 'com_chatbro/media'
+          }
+        ]
+      },
+
+      mod_chatbro: {
+        options: {
+          archive: '_build/joomla/pkg_chatbro/packages/mod_chatbro.zip'
+        },
+
+        files: [
+          { expand: true,
+            cwd: 'src/server/platforms/joomla/mod_chatbro',
+            src: ['**', '!**/*~', '!**/~*', '!**/*.orig'],
+            dest: 'mod_chatbro/'
+          }
+        ]
+      },
+
+      plg_chatbro: {
+        options: {
+          archive: '_build/joomla/pkg_chatbro/packages/plg_chatbro.zip'
+        },
+
+        files: [
+          { expand: true,
+            cwd: 'src/server/platforms/joomla/plg_chatbro',
+            src: ['**', '!**/*~', '!**/~*', '!**/*.orig'],
+            dest: 'plg_chatbro/'
+          }
+        ]
+      }
     }
   })
 
@@ -163,6 +233,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-patch')
   grunt.loadNpmTasks('grunt-pot')
   grunt.loadNpmTasks('grunt-po2mo')
+  grunt.loadNpmTasks('grunt-contrib-compress')
 
   grunt.registerTask('build:joomla:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'concat:joomla_devcss'])
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])
