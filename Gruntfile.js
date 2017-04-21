@@ -218,6 +218,26 @@ module.exports = function (grunt) {
             dest: 'plg_chatbro/'
           }
         ]
+      },
+
+      pkg_chatbro: {
+        options: {
+          archive: 'dist/joomla/pkg_chatbro.zip'
+        },
+
+        files: [
+          { expand: true,
+            cwd: '_build/joomla/pkg_chatbro',
+            src: ['packages/*.zip', 'pkg_chatbro.xml'],
+            dest: 'pkg_chatbro'
+          },
+
+          { expand: true,
+            cwd: 'src/server/platforms/joomla',
+            src: ['pkg_chatbro.xml'],
+            dest: 'pkg_chatbro'
+          }
+        ]
       }
     }
   })
