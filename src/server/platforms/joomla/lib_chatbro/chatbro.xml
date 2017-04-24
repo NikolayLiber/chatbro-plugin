@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.0.0" type="library" method="upgrade">
+<extension version="3.3" type="library" method="upgrade">
   <name>Chatbro common library</name>
   <libraryname>chatbro</libraryname>
   <author>ChatBro Team</author>
@@ -15,6 +15,5 @@
     <filename>init.php</filename>
     <folder>backends</folder>
     <folder>common</folder>
-    <flolder>languages</folder>
   </files>
 </extension>

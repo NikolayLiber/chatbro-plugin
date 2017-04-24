@@ -44,11 +44,15 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
   }
 
   public function enque_script($file) {
-    JFactory::getDocument()->addScript('/media/com_chatbro/js/' . $file);
+    $root = JURI::root();
+    $root = substr($root, -1) == '/' ? $root : "{$root}/";
+    JFactory::getDocument()->addScript($root . 'media/com_chatbro/js/' . $file);
   }
 
   public function enque_style($file) {
-    JFactory::getDocument()->addStyleSheet('/media/com_chatbro/css/' . $file);
+    $root = JURI::root();
+    $root = substr($root, -1) == '/' ? $root : "{$root}/";
+    JFactory::getDocument()->addStyleSheet($root . 'media/com_chatbro/css/' . $file);
   }
 
   public function get_locale() {

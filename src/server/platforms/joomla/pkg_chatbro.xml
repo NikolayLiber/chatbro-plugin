@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<extension type="package" version="3.0.0" method="upgrade">
+<extension type="package" version="3.3" method="upgrade">
   <name>Chatbro Chat</name>
   <author>Chatbro Team</author>
   <creationDate>Apr 2017</creationDate>

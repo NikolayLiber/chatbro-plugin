@@ -188,6 +188,12 @@ module.exports = function (grunt) {
             cwd: '_build/joomla',
             src: ['css/**', 'fonts/**', 'js/**', '!**/*~', '!**/~*', '!**/*.orig'],
             dest: 'com_chatbro/media'
+          },
+
+          { expand: true,
+            cwd: 'src/server/platforms/joomla/com_chatbro',
+            src: ['index.html'],
+            dest: 'com_chatbro/media'
           }
         ]
       },
