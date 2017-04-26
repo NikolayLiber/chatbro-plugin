@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<extension type="module" version="3.3" client="site" method="upgrade">
+<extension type="module" version="<%- cfg.joomla_version %>" client="site" method="upgrade">
   <name>ChatBro</name>
-  <version>3.0.0</version>
+  <version><%- cfg.common_version %>.<%- cfg.joomla_plugin_minor_version %></version>
   <description>ChatBro is a live group chat between your site members that could be syncronized with Telegram and VK</description>
   <author>ChatBro Team</author>
   <creationDate>Feb 2017</creationDate>

@@ -1,3 +1,6 @@
+var pjs = require('./package.json')
+var compressExcluded = ['!**/*.po', '!**/*.pot', '!**/*~', '!**/~*', '!**/*.orig', '!**/*.tmpl.*']
+
 module.exports = function (grunt) {
   grunt.initConfig({
     bower: {
@@ -160,13 +163,13 @@ module.exports = function (grunt) {
         files: [
           { expand: true,
             cwd: 'src/server/common/',
-            src: ['**', '!**/*.po', '!**/*.pot', '!**/*~', '!**/~*', '!**/*.orig'],
+            src: ['**'].concat(compressExcluded),
             dest: 'lib_chatbro/common'
           },
 
           { expand: true,
             cwd: 'src/server/platforms/joomla/lib_chatbro',
-            src: ['**', '!common/**', '!**/*~', '!**/~*', '!**/*.orig'],
+            src: ['**', '!common/**'].concat(compressExcluded),
             dest: 'lib_chatbro/'
           }
         ]
@@ -180,13 +183,13 @@ module.exports = function (grunt) {
         files: [
           { expand: true,
             cwd: 'src/server/platforms/joomla/com_chatbro',
-            src: ['**', '!media/**', '!**/*~', '!**/~*', '!**/*.orig'],
+            src: ['**', '!media/**'].concat(compressExcluded),
             dest: 'com_chatbro'
           },
 
           { expand: true,
             cwd: '_build/joomla',
-            src: ['css/**', 'fonts/**', 'js/**', '!**/*~', '!**/~*', '!**/*.orig'],
+            src: ['css/**', 'fonts/**', 'js/**'].concat(compressExcluded),
             dest: 'com_chatbro/media'
           },
 
@@ -206,7 +209,7 @@ module.exports = function (grunt) {
         files: [
           { expand: true,
             cwd: 'src/server/platforms/joomla/mod_chatbro',
-            src: ['**', '!**/*~', '!**/~*', '!**/*.orig'],
+            src: ['**'].concat(compressExcluded),
             dest: 'mod_chatbro/'
           }
         ]
@@ -220,7 +223,7 @@ module.exports = function (grunt) {
         files: [
           { expand: true,
             cwd: 'src/server/platforms/joomla/plg_chatbro',
-            src: ['**', '!**/*~', '!**/~*', '!**/*.orig'],
+            src: ['**'].concat(compressExcluded),
             dest: 'plg_chatbro/'
           }
         ]
@@ -245,6 +248,26 @@ module.exports = function (grunt) {
           }
         ]
       }
+    },
+
+    template: {
+      versions: {
+        options: {
+          data: {
+            cfg: pjs.chatbroConfig
+          }
+        },
+
+        files: {
+          'src/server/common/core/version.php': ['src/server/common/core/version.tmpl.php'],
+          'src/server/platforms/joomla/lib_chatbro/backends/version.php': ['src/server/platforms/joomla/lib_chatbro/backends/version.tmpl.php'],
+          'src/server/platforms/joomla/com_chatbro/chatbro.xml': ['src/server/platforms/joomla/com_chatbro/chatbro.tmpl.xml'],
+          'src/server/platforms/joomla/lib_chatbro/chatbro.xml': ['src/server/platforms/joomla/lib_chatbro/chatbro.tmpl.xml'],
+          'src/server/platforms/joomla/mod_chatbro/mod_chatbro.xml': ['src/server/platforms/joomla/mod_chatbro/mod_chatbro.tmpl.xml'],
+          'src/server/platforms/joomla/plg_chatbro/chatbro.xml': ['src/server/platforms/joomla/plg_chatbro/chatbro.tmpl.xml'],
+          'src/server/platforms/joomla/pkg_chatbro.xml': ['src/server/platforms/joomla/pkg_chatbro.xml']
+        }
+      }
     }
   })
 
@@ -260,6 +283,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-pot')
   grunt.loadNpmTasks('grunt-po2mo')
   grunt.loadNpmTasks('grunt-contrib-compress')
+  grunt.loadNpmTasks('grunt-template')
 
   grunt.registerTask('build:joomla:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'concat:joomla_devcss'])
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])

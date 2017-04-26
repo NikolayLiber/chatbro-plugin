@@ -25,6 +25,11 @@
       "cBroGlobals": true
     }
   },
+  "chatbroConfig": {
+    "common_version": "3.0",
+    "joomla_plugin_minor_version": "0",
+    "joomla_version": "3.0"
+  },
   "keywords": [
     "chat",
     "live",
@@ -54,6 +59,7 @@
     "grunt-po2mo": "^0.1.2",
     "grunt-pot": "^0.3.0",
     "grunt-sass": "^2.0.0",
+    "grunt-template": "^1.0.0",
     "standard": "^8.6.0"
   }
 }

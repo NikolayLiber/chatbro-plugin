@@ -2,9 +2,11 @@
 
 defined('_JEXEC') or die('Access Restricted');
 
-require_once(__DIR__  . '/../common/utils/exceptions.php');
-require_once(__DIR__  . '/../common/utils/interfaces.php');
-require_once(__DIR__  . '/../common/core/l10n/l10n.php');
+require_once(__DIR__ . '/../common/utils/exceptions.php');
+require_once(__DIR__ . '/../common/utils/interfaces.php');
+require_once(__DIR__ . '/../common/core/l10n/l10n.php');
+require_once(__DIR__ . '/../common/core/version.php');
+require_once('version.php');
 jimport('joomla.http');
 
 class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
@@ -33,7 +35,7 @@ class CBroJoomlaUtilsBackend implements ICBroUtilsBackend {
   }
 
   public function get_platform() {
-    return 'joomla-plugin-0.0.1';
+    return 'joomla-plugin-' . chatbro_common_version . '.' . chatbro_joomla_minor_version;
   }
 
   public function is_front_page() {

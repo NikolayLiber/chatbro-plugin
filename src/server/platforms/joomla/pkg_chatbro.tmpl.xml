@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<extension type="package" version="3.3" method="upgrade">
+<extension type="package" version="<%- cfg.joomla_version %>" method="upgrade">
   <name>Chatbro Chat</name>
   <author>Chatbro Team</author>
   <creationDate>Apr 2017</creationDate>
   <packagename>chatbro</packagename>
-  <version>3.0.0</version>
+  <version><%- cfg.common_version %>.<%- cfg.joomla_plugin_minor_version %></version>
   <url>https://www.chatbro.com</url>
   <packager>Chatbro Team</packager>
   <packagerurl>https://www.chatbro.com</packagerurl>
