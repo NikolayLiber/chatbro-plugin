@@ -265,7 +265,7 @@ module.exports = function (grunt) {
           'src/server/platforms/joomla/lib_chatbro/chatbro.xml': ['src/server/platforms/joomla/lib_chatbro/chatbro.tmpl.xml'],
           'src/server/platforms/joomla/mod_chatbro/mod_chatbro.xml': ['src/server/platforms/joomla/mod_chatbro/mod_chatbro.tmpl.xml'],
           'src/server/platforms/joomla/plg_chatbro/chatbro.xml': ['src/server/platforms/joomla/plg_chatbro/chatbro.tmpl.xml'],
-          'src/server/platforms/joomla/pkg_chatbro.xml': ['src/server/platforms/joomla/pkg_chatbro.xml']
+          'src/server/platforms/joomla/pkg_chatbro.xml': ['src/server/platforms/joomla/pkg_chatbro.tmpl.xml']
         }
       }
     }

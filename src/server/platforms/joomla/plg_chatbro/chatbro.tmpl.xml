@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.3" type="plugin" group="system" method="upgrade">
+<extension version="<%- cfg.joomla_version %>" type="plugin" group="system" method="upgrade">
   <name>ChatBro</name>
   <author>ChatBro Team</author>
   <creationDate>Feb 2017</creationDate>
@@ -7,7 +7,7 @@
   <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
   <authorEmail>fwnd80@gmail.com</authorEmail>
   <authorUrl>https://www.chatbro.com</authorUrl>
-  <version>1.0.0</version>
+  <version><%- cfg.common_version %>.<%- cfg.joomla_plugin_minor_version %></version>
   <description>ChatBro dynamic popup chat</description>
   <files>
     <filename plugin="chatbro">chatbro.php</filename>
