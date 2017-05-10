@@ -9,3 +9,6 @@ src/server/platforms/joomla/lib_chatbro/backends/version.php
 src/server/platforms/joomla/com_chatbro/chatbro.xml
 src/server/platforms/joomla/mod_chatbro/mod_chatbro.xml
 src/server/platforms/joomla/lib_chatbro/chatbro.xml
+chatbro_update.xml
+pkg_chatbro.xml
+chatbro.xml
