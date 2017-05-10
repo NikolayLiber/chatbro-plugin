@@ -18,6 +18,7 @@ class CBroAdmin extends CBroBackendable {
     ?>
     <div id="chatbro-admin">
       <?php
+        self::get_backend()->generated_scripts();
         $this->render_tabs();
       ?>
         <div class="tab-content">

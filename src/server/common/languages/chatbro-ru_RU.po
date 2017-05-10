@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: chatbro-wordpress-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-20 00:11+0500\n"
-"PO-Revision-Date: 2017-02-09 20:35+0500\n"
+"PO-Revision-Date: 2017-04-28 20:10+0500\n"
 "Last-Translator: Nikolay Liber\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Loco-Source-Locale: en\n"
 "X-Loco-Project-Id: 19129\n"
 "X-Loco-Api-Version: 1.0.15 20170125-2\n"
@@ -44,7 +44,6 @@ msgstr "Вы собираетесь изменить секретный ключ
 
 #: src/server/common/admin/admin.php:136
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:136
-#, fuzzy
 msgid ""
 "Please be noticed that your current chat configuration and content are "
 "identified by your secret key and if you lose it there\n"
@@ -82,9 +81,8 @@ msgstr "Сохранить изменения"
 
 #: src/server/common/admin/admin.php:186
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:186
-#, fuzzy
 msgid "Useful Tips"
-msgstr "Совет"
+msgstr "Советы"
 
 #: src/server/common/admin/admin.php:304
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:304
@@ -113,9 +111,8 @@ msgstr "Удаление"
 
 #: src/server/common/admin/admin.php:342
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:342
-#, fuzzy
 msgid "Invalid token"
-msgstr "Неправильный ключ беседы"
+msgstr "Неправильный токен. Перезагрузите страницу."
 
 #: src/server/common/admin/admin.php:345
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:345
@@ -130,7 +127,7 @@ msgstr "Настройки были успешно сохранены"
 #: src/server/common/admin/admin.php:433
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:433
 msgid "Failed to load FAQ: "
-msgstr ""
+msgstr "Не смог загрузить FAQ"
 
 #: src/server/common/settings/settings_translations.php:3
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:3
@@ -196,7 +193,6 @@ msgstr "Разрешить шорткоды"
 
 #: src/server/common/settings/settings_translations.php:14
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:14
-#, fuzzy
 msgid "Invalid chat key"
 msgstr "Неверный секретный ключ беседы"
 
@@ -213,19 +209,22 @@ msgstr "Неверное значение параметра \"Показыва�
 #: src/server/platforms/joomla/lib_chatbro/backends/admin.php:50
 msgid "Enable chatbro plugin to add popup chat widget to your site."
 msgstr ""
+"Для того, чтобы добавить всплывающий чат на ваш сайт включите в настройках "
+"плагин chatbro"
 
 #: src/server/platforms/joomla/lib_chatbro/backends/admin.php:51
-#, fuzzy
 msgid "Use chatbro module to add chat to desired place on your page."
 msgstr ""
-"Используйте шорткод <em><b>[chatbro]</b></em> чтобы добавить чат в нужное "
-"место вашей страницы или поста. "
+"Для добавление чата в нужное место на вашей странице используйте модуль "
+"chatbro."
 
 #: src/server/platforms/joomla/lib_chatbro/backends/admin.php:52
 msgid ""
 "Manage chat administrator permissions (ban user, delete messages) on Chatbro "
 "Component options page."
 msgstr ""
+"Назначить пользователю права администратора чата (бан, удаление сообщений) "
+"можно на странице настроек компонента Chatbro."
 
 #~ msgid ""
 #~ "To manage chat settings in the new version of the plugin, you should "

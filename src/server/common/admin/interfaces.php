@@ -8,6 +8,7 @@ interface ICBroAdminBackend {
   function render_permissions();
   function check_token();
   function get_help_text();
+  function generated_scripts();
 }
 
 ?>

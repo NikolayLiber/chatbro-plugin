@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="<%- cfg.joomla_version %>" method="upgrade">
-  <name>ChatBro</name>
+  <name>COM_CHATBRO</name>
   <version><%- cfg.common_version %>.<%- cfg.joomla_plugin_minor_version %></version>
-  <description>ChatBro is a live group chat between your site members that could be syncronized with Telegram and VK</description>
+  <description>COM_CHATBRO_DESCRIPTION</description>
   <author>ChatBro Team</author>
   <creationDate>Feb 2017</creationDate>
-  <copyright>(C) 2017 ChatBro.</copyright>
   <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-  <authorEmail>fwnd80@gmail.com</authorEmail>
   <authorUrl>https://www.chatbro.com</authorUrl>
 
   <files folder="site">
@@ -22,7 +20,7 @@
   </media>
 
   <administration>
-    <menu link="index.php?option=com_chatbro">Chatbro Chat</menu>
+    <menu img="../media/com_chatbro/images/chatbro.png" link="index.php?option=com_chatbro">COM_CHATBRO</menu>
 
     <files folder="admin">
       <folder>language</folder>

@@ -58,6 +58,21 @@ class CBroJoomlaAdminBackend implements ICBroAdminBackend {
 
     return $text;
   }
+
+  function generated_scripts() {
+    $root = JURI::root();
+    $root = substr($root, -1) == '/' ? $root : "{$root}/";
+
+    ?>
+      <script>
+        var cBroGlobals = {
+          saveSettingsUrl: '<?php echo "{$root}administrator/index.php?option=com_chatbro&task=save_settings"; ?>',
+          getFaqUrl: '<?php echo "{$root}/administrator/index.php?option=com_chatbro&task=get_faq"; ?>',
+          getFaqPostData: {}
+        }
+      </script>
+    <?php
+  }
 }
 
 ?>

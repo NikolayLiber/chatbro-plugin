@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension type="package" version="<%- cfg.joomla_version %>" method="upgrade">
-  <name>Chatbro Chat</name>
+  <name>COM_CHATBRO</name>
   <author>Chatbro Team</author>
   <creationDate>Apr 2017</creationDate>
   <packagename>chatbro</packagename>
@@ -8,12 +8,15 @@
   <url>https://www.chatbro.com</url>
   <packager>Chatbro Team</packager>
   <packagerurl>https://www.chatbro.com</packagerurl>
-  <description>Live chat for your website. Turns your Telegram Chat or VK Chat into Live Chat on your website. Allows your visitors to Chat in live group Chat with you and each other. Add chat to your blog. Live chat assistance. Chat with customers on your website. Website chat live chat group chat telegram chat wordpress chat. Chat tool chat widget.</description>
-  <update>https://www.chatbro.com/joomla/update</update>
+  <description>COM_CHATBRO_DESCRIPTION</description>
   <files folder="packages">
     <file type="component" id="com_chatbro">com_chatbro.zip</file>
     <file type="module" id="chatbro" client="site">mod_chatbro.zip</file>
-    <file type="library" id="chatbro">lib_chatbro.zip</file>
     <file type="plugin" id="chatbro">plg_chatbro.zip</file>
+    <file type="library" id="chatbro">lib_chatbro.zip</file>
   </files>
+
+  <updateservers>
+    <server type="extension" name="Chatbro Update Server">https://www.chatbro.com/joomla/update/chatbro_update.xml</server>
+  </updateservers>
 </extension>

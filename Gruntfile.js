@@ -1,5 +1,7 @@
 var pjs = require('./package.json')
 var compressExcluded = ['!**/*.po', '!**/*.pot', '!**/*~', '!**/~*', '!**/*.orig', '!**/*.tmpl.*']
+var joomlaJsFiles = ['_build/common/js/common.js', 'src/browser/common/js/*.js', 'src/browser/platforms/joomla/js/*.js']
+var joomlaCssFiles = ['_build/common/css/common.css', '_build/common/css/chatbro.css', '_build/common/css/chatbro-bootstrap.css', '_build/common/css/joomla.css']
 
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -69,13 +71,29 @@ module.exports = function (grunt) {
 
     concat: {
       joomla_devcss: {
-        src: ['_build/common/css/common.css', '_build/common/css/chatbro.css', '_build/common/css/chatbro-bootstrap.css', '_build/common/css/joomla.css'],
+        src: joomlaCssFiles,
         dest: '_build/joomla/css/chatbro.css'
       },
 
       joomla_devjs: {
-        src: ['_build/common/js/common.js', 'src/browser/common/js/*.js', 'src/browser/platforms/joomla/js/*.js'],
+        src: joomlaJsFiles,
         dest: '_build/joomla/js/chatbro.js'
+      }
+    },
+
+    uglify: {
+      joomla: {
+        files: {
+          '_build/joomla/js/chatbro.js': joomlaJsFiles
+        }
+      }
+    },
+
+    cssmin: {
+      joomla: {
+        files: {
+          '_build/joomla/css/chatbro.css': joomlaCssFiles
+        }
       }
     },
 
@@ -189,7 +207,7 @@ module.exports = function (grunt) {
 
           { expand: true,
             cwd: '_build/joomla',
-            src: ['css/**', 'fonts/**', 'js/**'].concat(compressExcluded),
+            src: ['css/**', 'fonts/**', 'js/**', 'images/**'].concat(compressExcluded),
             dest: 'com_chatbro/media'
           },
 
@@ -231,7 +249,7 @@ module.exports = function (grunt) {
 
       pkg_chatbro: {
         options: {
-          archive: 'dist/joomla/pkg_chatbro.zip'
+          archive: 'dist/joomla/pkg_chatbro_' + pjs.chatbroConfig.common_version + '.' + pjs.chatbroConfig.joomla_plugin_minor_version + '.zip'
         },
 
         files: [
@@ -265,8 +283,14 @@ module.exports = function (grunt) {
           'src/server/platforms/joomla/lib_chatbro/chatbro.xml': ['src/server/platforms/joomla/lib_chatbro/chatbro.tmpl.xml'],
           'src/server/platforms/joomla/mod_chatbro/mod_chatbro.xml': ['src/server/platforms/joomla/mod_chatbro/mod_chatbro.tmpl.xml'],
           'src/server/platforms/joomla/plg_chatbro/chatbro.xml': ['src/server/platforms/joomla/plg_chatbro/chatbro.tmpl.xml'],
-          'src/server/platforms/joomla/pkg_chatbro.xml': ['src/server/platforms/joomla/pkg_chatbro.tmpl.xml']
+          'src/server/platforms/joomla/pkg_chatbro.xml': ['src/server/platforms/joomla/pkg_chatbro.tmpl.xml'],
+          'src/server/platforms/joomla/chatbro_update.xml': ['src/server/platforms/joomla/chatbro_update.tmpl.xml']
         }
+      }
+    },
+
+    clean: {
+      build: {
       }
     }
   })
@@ -284,8 +308,17 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-po2mo')
   grunt.loadNpmTasks('grunt-contrib-compress')
   grunt.loadNpmTasks('grunt-template')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.loadNpmTasks('grunt-contrib-cssmin')
+  grunt.loadNpmTasks('grunt-contrib-clean')
+
+  grunt.registerTask('prepare', ['bower:install', 'patch:bootstrap'])
 
   grunt.registerTask('build:joomla:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'concat:joomla_devcss'])
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])
-  grunt.registerTask('build:joomla:dev', ['build:joomla:css:dev', 'build:joomla:js:dev', 'copy:fonts', 'symlink:joomla'])
+  grunt.registerTask('build:joomla:dev', ['build:joomla:css:dev', 'build:joomla:js:dev', 'copy:fonts', 'symlink:joomla', 'template:versions'])
+
+  grunt.registerTask('build:joomla:css:prod', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'cssmin:joomla'])
+  grunt.registerTask('build:joomla:js:prod', ['bower_concat:common_js', 'eslint', 'uglify:joomla'])
+  grunt.registerTask('build:joomla:prod', ['build:joomla:css:prod', 'build:joomla:js:prod', 'copy:fonts', 'template:versions', 'po2mo'])
 }

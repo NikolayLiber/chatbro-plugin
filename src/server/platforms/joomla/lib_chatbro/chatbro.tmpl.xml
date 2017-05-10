@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="<%- cfg.joomla_version %>" type="library" method="upgrade">
-  <name>Chatbro common library</name>
+  <name>COM_CHATBRO</name>
   <libraryname>chatbro</libraryname>
   <author>ChatBro Team</author>
   <creationDate>Feb 2017</creationDate>
@@ -9,7 +9,7 @@
   <authorEmail>fwnd80@gmail.com</authorEmail>
   <authorUrl>https://www.chatbro.com</authorUrl>
   <version><%- cfg.common_version %>.<%- cfg.joomla_plugin_minor_version %></version>
-  <description>ChatBro dynamic popup chat</description>
+  <description>COM_CHATBRO_DESCRIPTION</description>
 
   <files>
     <filename>init.php</filename>
