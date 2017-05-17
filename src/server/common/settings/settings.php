@@ -46,7 +46,6 @@ class CBroSettingsIterator implements Iterator {
 
 class CBroSettings extends CBroBackendable {
   const guid = "chatbro_chat_guid";
-  const display_to_guests = "chatbro_chat_display_to_guests";
   const display = "chatbro_chat_display";
   const selected_pages = 'chatbro_chat_selected_pages';
   const user_profile_path = 'chatbro_chat_user_profile_url';
@@ -104,14 +103,6 @@ class CBroSettings extends CBroBackendable {
       'addon' => CBroUtils::get_home_url(),
       'required' => false
     )));
-
-    // $this->add_setting(new CBroSetting($backend, array(
-    //   'id' => self::display_to_guests,
-    //   'type' => CBroInputType::checkbox,
-    //   'label' => 'Display chat to guests',
-    //   'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
-    //   'default' => true
-    // )));
 
     if (CBroAdmin::has_shortcodes()) {
       $this->add_setting(new CBroSetting($backend, array(

@@ -29,7 +29,8 @@
     "common_version": "3.0",
     "joomla_plugin_minor_version": "0",
     "joomla_version": "3.0",
-    "joomla_update_version": "3."
+    "joomla_update_version": "3.",
+    "wp_plugin_minor_version": "0"
   },
   "keywords": [
     "chat",

@@ -12,3 +12,6 @@ src/server/platforms/joomla/lib_chatbro/chatbro.xml
 chatbro_update.xml
 pkg_chatbro.xml
 chatbro.xml
+src/server/platforms/wordpress/common
+src/server/platforms/wordpress/index.php
+src/server/platforms/wordpress/backends/version.php

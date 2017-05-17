@@ -38,7 +38,7 @@ class CBroJoomlaSettingsBackend implements ICBroSettingsBackend {
       $this->flush();
   }
 
-  public function postponeWrite() {
+  public function postpone_write() {
     $this->postponed = true;
   }
 

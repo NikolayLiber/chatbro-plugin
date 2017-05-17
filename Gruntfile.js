@@ -125,6 +125,14 @@ module.exports = function (grunt) {
           { src: '_build/joomla',
             dest: 'src/server/platforms/joomla/com_chatbro/media' }
         ]
+      },
+
+      wordpress: {
+        files: [
+          { src: 'src/server/common',
+            dest: 'src/server/platforms/wordpress/common'
+          }
+        ]
       }
     },
 
@@ -269,7 +277,7 @@ module.exports = function (grunt) {
     },
 
     template: {
-      versions: {
+      common: {
         options: {
           data: {
             cfg: pjs.chatbroConfig
@@ -277,7 +285,18 @@ module.exports = function (grunt) {
         },
 
         files: {
-          'src/server/common/core/version.php': ['src/server/common/core/version.tmpl.php'],
+          'src/server/common/core/version.php': ['src/server/common/core/version.tmpl.php']
+        }
+      },
+
+      joomla: {
+        options: {
+          data: {
+            cfg: pjs.chatbroConfig
+          }
+        },
+
+        files: {
           'src/server/platforms/joomla/lib_chatbro/backends/version.php': ['src/server/platforms/joomla/lib_chatbro/backends/version.tmpl.php'],
           'src/server/platforms/joomla/com_chatbro/chatbro.xml': ['src/server/platforms/joomla/com_chatbro/chatbro.tmpl.xml'],
           'src/server/platforms/joomla/lib_chatbro/chatbro.xml': ['src/server/platforms/joomla/lib_chatbro/chatbro.tmpl.xml'],
@@ -285,6 +304,19 @@ module.exports = function (grunt) {
           'src/server/platforms/joomla/plg_chatbro/chatbro.xml': ['src/server/platforms/joomla/plg_chatbro/chatbro.tmpl.xml'],
           'src/server/platforms/joomla/pkg_chatbro.xml': ['src/server/platforms/joomla/pkg_chatbro.tmpl.xml'],
           'src/server/platforms/joomla/chatbro_update.xml': ['src/server/platforms/joomla/chatbro_update.tmpl.xml']
+        }
+      },
+
+      wordpress: {
+        options: {
+          data: {
+            cfg: pjs.chatbroConfig
+          }
+        },
+
+        files: {
+          'src/server/platforms/wordpress/backends/version.php': ['src/server/platforms/wordpress/backends/version.tmpl.php'],
+          'src/server/platforms/wordpress/index.php': ['src/server/platforms/wordpress/index.tmpl.php']
         }
       }
     },
@@ -316,9 +348,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build:joomla:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'concat:joomla_devcss'])
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])
-  grunt.registerTask('build:joomla:dev', ['build:joomla:css:dev', 'build:joomla:js:dev', 'copy:fonts', 'symlink:joomla', 'template:versions'])
+  grunt.registerTask('build:joomla:dev', ['build:joomla:css:dev', 'build:joomla:js:dev', 'copy:fonts', 'symlink:joomla', 'template:joomla'])
 
   grunt.registerTask('build:joomla:css:prod', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'cssmin:joomla'])
   grunt.registerTask('build:joomla:js:prod', ['bower_concat:common_js', 'eslint', 'uglify:joomla'])
-  grunt.registerTask('build:joomla:prod', ['build:joomla:css:prod', 'build:joomla:js:prod', 'copy:fonts', 'template:versions', 'po2mo'])
+  grunt.registerTask('build:joomla:prod', ['build:joomla:css:prod', 'build:joomla:js:prod', 'copy:fonts', 'template:joomla', 'po2mo'])
 }
