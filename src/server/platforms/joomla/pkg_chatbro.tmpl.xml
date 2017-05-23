@@ -10,10 +10,10 @@
   <packagerurl>https://www.chatbro.com</packagerurl>
   <description>COM_CHATBRO_DESCRIPTION</description>
   <files folder="packages">
-    <file type="component" id="com_chatbro">com_chatbro.zip</file>
     <file type="module" id="chatbro" client="site">mod_chatbro.zip</file>
     <file type="plugin" id="chatbro">plg_chatbro.zip</file>
     <file type="library" id="chatbro">lib_chatbro.zip</file>
+    <file type="component" id="com_chatbro">com_chatbro.zip</file>
   </files>
 
   <updateservers>

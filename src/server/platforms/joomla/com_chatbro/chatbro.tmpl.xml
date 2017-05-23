@@ -8,6 +8,8 @@
   <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
   <authorUrl>https://www.chatbro.com</authorUrl>
 
+  <scriptfile>script.php</scriptfile>
+
   <files folder="site">
     <filename>index.html</filename>
   </files>
@@ -23,7 +25,6 @@
     <menu img="../media/com_chatbro/images/chatbro.png" link="index.php?option=com_chatbro">COM_CHATBRO</menu>
 
     <files folder="admin">
-      <folder>language</folder>
       <filename>index.html</filename>
       <filename>controller.php</filename>
       <filename>config.xml</filename>

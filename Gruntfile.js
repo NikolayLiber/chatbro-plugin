@@ -181,7 +181,7 @@ module.exports = function (grunt) {
     },
 
     compress: {
-      lib_chatbro: {
+      joomla_lib_chatbro: {
         options: {
           archive: '_build/joomla/pkg_chatbro/packages/lib_chatbro.zip'
         },
@@ -201,7 +201,7 @@ module.exports = function (grunt) {
         ]
       },
 
-      com_chatbro: {
+      joomla_com_chatbro: {
         options: {
           archive: '_build/joomla/pkg_chatbro/packages/com_chatbro.zip'
         },
@@ -227,7 +227,7 @@ module.exports = function (grunt) {
         ]
       },
 
-      mod_chatbro: {
+      joomla_mod_chatbro: {
         options: {
           archive: '_build/joomla/pkg_chatbro/packages/mod_chatbro.zip'
         },
@@ -241,7 +241,7 @@ module.exports = function (grunt) {
         ]
       },
 
-      plg_chatbro: {
+      joomla_plg_chatbro: {
         options: {
           archive: '_build/joomla/pkg_chatbro/packages/plg_chatbro.zip'
         },
@@ -255,7 +255,7 @@ module.exports = function (grunt) {
         ]
       },
 
-      pkg_chatbro: {
+      joomla_pkg_chatbro: {
         options: {
           archive: 'dist/joomla/pkg_chatbro_' + pjs.chatbroConfig.common_version + '.' + pjs.chatbroConfig.joomla_plugin_minor_version + '.zip'
         },
@@ -353,4 +353,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build:joomla:css:prod', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'cssmin:joomla'])
   grunt.registerTask('build:joomla:js:prod', ['bower_concat:common_js', 'eslint', 'uglify:joomla'])
   grunt.registerTask('build:joomla:prod', ['build:joomla:css:prod', 'build:joomla:js:prod', 'copy:fonts', 'template:joomla', 'po2mo'])
+  grunt.registerTask('pack:joomla', ['compress:joomla_mod_chatbro', 'compress:joomla_com_chatbro', 'compress:joomla_lib_chatbro', 'compress:joomla_plg_chatbro', 'compress:joomla_pkg_chatbro'])
+  grunt.registerTask('package:joomla', ['build:joomla:prod', 'template:common', 'template:joomla', 'pack:joomla'])
 }
