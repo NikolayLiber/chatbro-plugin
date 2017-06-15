@@ -42,11 +42,11 @@ class CBroWPUtilsBackend implements ICBroUtilsBackend {
   }
 
   function enque_script($file) {
-    wp_enqueue_script('chatbro' . ++self::$scripts_count, plugin_dir_url( __FILE__ ) . $file);
+    wp_enqueue_script('chatbro' . ++self::$scripts_count, plugins_url('chatbro/js/' . $file));
   }
 
   function enque_style($file) {
-    wp_enqueue_style('chatbro' . ++self::$styles_count, plugin_dir_url( __FILE__ ) . $file);
+    wp_enqueue_style('chatbro' . ++self::$styles_count, plugins_url('chatbro/css/' . $file));
   }
 
   function get_locale() {

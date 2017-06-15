@@ -75,4 +75,6 @@ class CBroJoomlaAdminBackend implements ICBroAdminBackend {
   }
 }
 
+function save_permissions() {}
+
 ?>

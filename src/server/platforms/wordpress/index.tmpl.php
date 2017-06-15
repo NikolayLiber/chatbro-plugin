@@ -17,4 +17,7 @@ Domain Path: /common/languages/
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+require_once('init.php');
+CBroInit::init();
+
 ?>

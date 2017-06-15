@@ -2,6 +2,8 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+require_once('common/admin/admin.php');
+
 class CBroWPCommon {
   const display_to_guests = "chatbro_chat_display_to_guests";
 
@@ -11,6 +13,10 @@ class CBroWPCommon {
     } else {
         return get_option($name, $default);
     }
+  }
+
+  static function ajax_save_settings() {
+    die(CBroAdmin::save_settings());
   }
 }
 

@@ -3,6 +3,7 @@
 require_once(__DIR__ . '/../core/backendable.php');
 require_once(__DIR__ . '/../permissions/permissions.php');
 require_once(__DIR__ . '/../utils/utils.php');
+require_once('exceptions.php');
 
 class CBroAdmin extends CBroBackendable {
   public static function display() {
@@ -125,27 +126,29 @@ class CBroAdmin extends CBroBackendable {
 
   private function render_guid_confirmation_modal() {
     ?>
-    <div class="modal fade" id="chb-confirm-guid-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"><?php _e("You are about to change the secret key", "chatbro"); ?></h4>
-          </div>
-          <p class="modal-body">
-            <?php
-            _e('Please be noticed that your current chat configuration and content are identified by your secret key and if you lose it there
-            will be no way to restore access to you current chat unless you have registered an account at
-            <a href="https://chatbro.com">Chatbro.com</a>. Please make sure that you have saved your old secret key and fully understand
-            what are you going to do.', 'chatbro');
-            ?>
-            <p id="chb-old-key">
-                <?php _e("Your old secret key: <span></span>", "chatbro"); ?>
+    <div id="chb-confirm-guid-modal-wrapper">
+      <div class="modal fade" id="chb-confirm-guid-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel"><?php _e("You are about to change the secret key", "chatbro"); ?></h4>
+            </div>
+            <p class="modal-body">
+              <?php
+              _e('Please be noticed that your current chat configuration and content are identified by your secret key and if you lose it there
+              will be no way to restore access to you current chat unless you have registered an account at
+              <a href="https://chatbro.com">Chatbro.com</a>. Please make sure that you have saved your old secret key and fully understand
+              what are you going to do.', 'chatbro');
+              ?>
+              <p id="chb-old-key">
+                  <?php _e("Your old secret key: <span></span>", "chatbro"); ?>
+              </p>
             </p>
-          </p>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal"><?php _e("Cancel", "chatbro"); ?></button>
-            <button type="button" class="btn btn-primary"><?php _e("Change Secret Key", "chatbro"); ?></button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal"><?php _e("Cancel", "chatbro"); ?></button>
+              <button type="button" class="btn btn-primary"><?php _e("Change Secret Key", "chatbro"); ?></button>
+            </div>
           </div>
         </div>
       </div>
@@ -299,45 +302,6 @@ class CBroAdmin extends CBroBackendable {
     }
   }
 
-  private function render_permissions() {
-    ?>
-    <div id="permissions-group" class="form-group">
-      <label class="control-label col-sm-2"><?php _e("Permissions", "chatbro"); ?></label>
-      <div class="col-sm-10">
-        <table id="chatbro-permissions" class="table table-active">
-          <tr>
-            <th><?php _e("Role", "chatbro"); ?></th>
-            <th><?php _e("View", "chatbro"); ?></th>
-            <th><?php _e("Ban", "chatbro"); ?></th>
-            <th><?php _e("Delete", "chatbro"); ?></th>
-          </tr>
-          <?php
-          foreach(get_editable_roles() as $name => $info) {
-            $ctrlViewId = "chatbro_" . $name . "_view";
-            $ctrlBanId = "chatbro_" . $name . "_ban";
-            $ctrlDeleteId = "chatbro_" . $name . "_delete";
-
-            $role = get_role($name);
-
-            $chkView = $role->has_cap(self::cap_view) ? "checked" : "";
-            $chkBan = $role->has_cap(self::cap_ban) ? "checked" : "";
-            $chkDelete = $role->has_cap(self::cap_delete) ? "checked" : "";
-            ?>
-            <tr>
-              <td><?php echo $info["name"] ?></td>
-              <td><input id="<?php _e($ctrlViewId); ?>" name="<?php _e($ctrlViewId); ?>" type="checkbox" <?php echo $chkView; ?>></td>
-              <td><input id="<?php _e($ctrlBanId); ?>" name="<?php _e($ctrlBanId); ?>" <?php echo $chkBan; ?> type="checkbox"></td>
-              <td><input id="<?php _e($ctrlDeleteId); ?>" name="<?php _e($ctrlDeleteId); ?>"type="checkbox" <?php echo $chkDelete; ?>></td>
-            </tr>
-            <?php
-          }
-          ?>
-        </table>
-      </div>
-    </div>
-    <?php
-  }
-
   public static function save_settings() {
     if (!self::get_backend()->check_token())
       return '{"success":false,"message":"' . __("Invalid token","chatbro") . '","msg_type":"error"}';
@@ -386,29 +350,16 @@ class CBroAdmin extends CBroBackendable {
       foreach($new_vals as $option => $value)
         CBroSettings::set_sanitized($option, $value);
 
-      // // Saving permissions
-      // foreach(get_editable_roles() as $name => $info) {
-      //     $viewCap = $_POST['chatbro_' . $name . '_view'] == 'on' ? true : false;
-      //     $banCap = $_POST['chatbro_' . $name . '_ban'] == 'on' ? true : false;
-      //     $deleteCap = $_POST['chatbro_' . $name . '_delete'] == 'on' ? true : false;
-      //
-      //     $role = get_role($name);
-      //
-      //     if ($viewCap)
-      //         $role->add_cap(self::cap_view);
-      //     else
-      //         $role->remove_cap(self::cap_view);
-      //
-      //     if ($banCap)
-      //         $role->add_cap(self::cap_ban);
-      //     else
-      //         $role->remove_cap(self::cap_ban);
-      //
-      //     if ($deleteCap)
-      //         $role->add_cap(self::cap_delete);
-      //     else
-      //         $role->remove_cap(self::cap_delete);
-      // }
+        try {
+          self::get_backend()->save_permissions();
+        }
+        catch(CBroPermissionsSaveError $e) {
+          $reply['success'] = false;
+          $reply['message'] = $e->getMessage();
+          $reply['msg_type'] = 'error';
+
+          return json_encode($reply);
+        }
 
       $reply['message'] = "<strong>" . __("Settings was successfuly saved", "chatbro") . "</strong>";
       $reply['msg_type'] = "info";

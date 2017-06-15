@@ -32,9 +32,9 @@ class CBroWPSettingsBackend implements ICBroSettingsBackend {
   }
 
   function get($id) {
-    $val = CBroCommon::get_option($id, $this->non_existent_option);
+    $val = CBroWPCommon::get_option($id, $this->non_existent_option);
 
-    if (val === $this->non_existent_option)
+    if ($val === $this->non_existent_option)
       throw new CBroSettingNotFound($id);
 
     return $val;
@@ -50,7 +50,7 @@ class CBroWPSettingsBackend implements ICBroSettingsBackend {
   function flush() {}
 
   function add_extra_settings($settings) {
-    $settings->add_setting(new CBroSetting($backend, array(
+    $settings->add_setting(new CBroSetting($this, array(
       'id' => self::display_to_guests,
       'type' => CBroInputType::checkbox,
       'label' => 'Display chat to guests',

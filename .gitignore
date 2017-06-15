@@ -15,3 +15,7 @@ chatbro.xml
 src/server/platforms/wordpress/common
 src/server/platforms/wordpress/index.php
 src/server/platforms/wordpress/backends/version.php
+src/server/platforms/wordpress/favicon_small.png
+src/server/platforms/wordpress/css
+src/server/platforms/wordpress/fonts
+src/server/platforms/wordpress/js

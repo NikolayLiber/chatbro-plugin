@@ -1,7 +1,11 @@
 var pjs = require('./package.json')
 var compressExcluded = ['!**/*.po', '!**/*.pot', '!**/*~', '!**/~*', '!**/*.orig', '!**/*.tmpl.*']
-var joomlaJsFiles = ['_build/common/js/common.js', 'src/browser/common/js/*.js', 'src/browser/platforms/joomla/js/*.js']
-var joomlaCssFiles = ['_build/common/css/common.css', '_build/common/css/chatbro.css', '_build/common/css/chatbro-bootstrap.css', '_build/common/css/joomla.css']
+var commonCssFiles = ['_build/common/css/common.css', '_build/common/css/chatbro.css', '_build/common/css/chatbro-bootstrap.css']
+var commonJsFiles = ['_build/common/js/common.js', 'src/browser/common/js/*.js']
+var joomlaJsFiles = commonJsFiles.concat(['src/browser/platforms/joomla/js/*.js'])
+var joomlaCssFiles = commonCssFiles.concat(['_build/common/css/joomla.css'])
+var wordpressJsFiles = commonJsFiles
+var wordpressCssFiles = commonCssFiles.concat(['_build/common/css/wordpress.css'])
 
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -58,6 +62,12 @@ module.exports = function (grunt) {
         files: {
           '_build/common/css/joomla.css': 'src/browser/platforms/joomla/scss/joomla.scss'
         }
+      },
+
+      wordpress: {
+        files: {
+          '_build/common/css/wordpress.css': 'src/browser/platforms/wordpress/scss/wordpress.scss'
+        }
       }
     },
 
@@ -75,9 +85,19 @@ module.exports = function (grunt) {
         dest: '_build/joomla/css/chatbro.css'
       },
 
+      wordpress_devcss: {
+        src: wordpressCssFiles,
+        dest: '_build/wordpress/css/chatbro.css'
+      },
+
       joomla_devjs: {
         src: joomlaJsFiles,
         dest: '_build/joomla/js/chatbro.js'
+      },
+
+      wordpress_devjs: {
+        src: wordpressJsFiles,
+        dest: '_build/wordpress/js/chatbro.js'
       }
     },
 
@@ -86,6 +106,12 @@ module.exports = function (grunt) {
         files: {
           '_build/joomla/js/chatbro.js': joomlaJsFiles
         }
+      },
+
+      wordpress: {
+        files: {
+          '_build/wordpress/js/chatbro.js': wordpressJsFiles
+        }
       }
     },
 
@@ -93,6 +119,12 @@ module.exports = function (grunt) {
       joomla: {
         files: {
           '_build/joomla/css/chatbro.css': joomlaCssFiles
+        }
+      },
+
+      wordpress: {
+        files: {
+          '_build/wordpress/css/chatbro.css': wordpressCssFiles
         }
       }
     },
@@ -130,8 +162,15 @@ module.exports = function (grunt) {
       wordpress: {
         files: [
           { src: 'src/server/common',
-            dest: 'src/server/platforms/wordpress/common'
-          }
+            dest: 'src/server/platforms/wordpress/common' },
+          { src: '_build/wordpress/js',
+            dest: 'src/server/platforms/wordpress/js' },
+          { src: '_build/wordpress/css',
+            dest: 'src/server/platforms/wordpress/css' },
+          { src: '_build/common/fonts',
+            dest: 'src/server/platforms/wordpress/fonts' },
+          { src: 'src/browser/common/images/favicon_small.png',
+            dest: 'src/server/platforms/wordpress/favicon_small.png' }
         ]
       }
     },
@@ -350,9 +389,18 @@ module.exports = function (grunt) {
   grunt.registerTask('build:joomla:js:dev', ['bower_concat:common_js', 'eslint', 'concat:joomla_devjs'])
   grunt.registerTask('build:joomla:dev', ['build:joomla:css:dev', 'build:joomla:js:dev', 'copy:fonts', 'symlink:joomla', 'template:joomla'])
 
+  grunt.registerTask('build:wp:css:dev', ['bower_concat:common_css', 'sass:common', 'sass:wordpress', 'less:bootstrap', 'concat:wordpress_devcss'])
+  grunt.registerTask('build:wp:js:dev', ['bower_concat:common_js', 'eslint', 'concat:wordpress_devjs'])
+  grunt.registerTask('build:wp:dev', ['build:wp:css:dev', 'build:wp:js:dev', 'copy:fonts', 'symlink:wordpress', 'template:wordpress'])
+
   grunt.registerTask('build:joomla:css:prod', ['bower_concat:common_css', 'sass:common', 'sass:joomla', 'less:bootstrap', 'cssmin:joomla'])
   grunt.registerTask('build:joomla:js:prod', ['bower_concat:common_js', 'eslint', 'uglify:joomla'])
   grunt.registerTask('build:joomla:prod', ['build:joomla:css:prod', 'build:joomla:js:prod', 'copy:fonts', 'template:joomla', 'po2mo'])
+
+  grunt.registerTask('build:wp:css:prod', ['bower_concat:common_css', 'sass:common', 'sass:wordpress', 'less:bootstrap', 'cssmin:wordpress'])
+  grunt.registerTask('build:wp:js:prod', ['bower_concat:common_js', 'eslint', 'uglify:wordpress'])
+  grunt.registerTask('build:wp:prod', ['build:wp:css:prod', 'build:wp:js:prod', 'copy:fonts', 'template:wordpress', 'po2mo'])
+
   grunt.registerTask('pack:joomla', ['compress:joomla_mod_chatbro', 'compress:joomla_com_chatbro', 'compress:joomla_lib_chatbro', 'compress:joomla_plg_chatbro', 'compress:joomla_pkg_chatbro'])
   grunt.registerTask('package:joomla', ['build:joomla:prod', 'template:common', 'template:joomla', 'pack:joomla'])
 }

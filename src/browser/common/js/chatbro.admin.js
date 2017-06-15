@@ -106,7 +106,7 @@ jQuery(document).ready(function ($) {
 
   // Modal div must not be inside any element with relative or fixed postition
   // or it will be shown behind it's backdrop. Let's move it to the top level of the body.
-  var modal = $('#chb-confirm-guid-modal')
+  var modal = $('#chb-confirm-guid-modal-wrapper')
   $('body').append(modal)
 
   function adjustChatWidth () {
