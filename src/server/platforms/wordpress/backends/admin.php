@@ -68,6 +68,30 @@ class CBroWPAdminBackend implements ICBroAdminBackend {
   }
 
   function get_help_text() {
+    ob_start();
+    _e('Use shortcode <span>[chatbro]</span> to add the chat widget to the desired place of your page or post.', 'chatbro');
+    ?>
+      <h4><?php _e('Supported shortcode attributes:', 'chatbro'); ?></h4>
+      <ul>
+          <li>
+              <?php
+                // Translators: Attribute name "static" and attribut value "true" shouldn't be translated
+                _e('<em><b>static</b></em> &ndash; static not movable chat widget (default <em>true</em>).', 'chatbro');
+              ?>
+          </li>
+          <li>
+              <?php
+                // Translators: Attribute name "egistered_only" and attribut value "false" shouldn't be translated
+                _e('<em><b>registered_only</b></em> &ndash; display chat widget to logged in users only (default <em>false</em>). If this attribute is explicitly set it precedes the global <em>"Display chat to guests"</em> setting value.', 'chatbro');
+              ?>
+          </li>
+      </ul>
+    <?php
+
+    $text = ob_get_contents();
+    ob_clean();
+
+    return $text;
   }
 
   function generated_scripts() {
