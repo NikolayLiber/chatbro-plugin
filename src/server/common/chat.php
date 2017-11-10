@@ -63,8 +63,33 @@ class CBroChat {
     ?>
     <script id="chatBroEmbedCode">
     /* Chatbro Widget Embed Code Start */
-    function ChatbroLoader(chats,async) {function decodeProp(prop){if (chats.hasOwnProperty(prop)) chats[prop] = atob(chats[prop]);};decodeProp('siteDomain');decodeProp('siteUserAvatarUrl');decodeProp('siteUserProfileUrl');
-    async=async!==false;var params={embedChatsParameters:chats instanceof Array?chats:[chats],needLoadCode:typeof Chatbro==='undefined'};var xhr=new XMLHttpRequest();xhr.withCredentials = true;xhr.onload=function(){eval(xhr.responseText)};xhr.onerror=function(){console.error('Chatbro loading error')};xhr.open('POST','//www.chatbro.com/embed_chats/',async);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');xhr.send('parameters='+encodeURIComponent(JSON.stringify(params)))}
+        function ChatbroLoader(chats, async) {
+            function decodeProp(prop) {
+                if (chats.hasOwnProperty(prop)) chats[prop] = atob(chats[prop]);
+            };
+            decodeProp('siteDomain');
+            decodeProp('siteUserAvatarUrl');
+            decodeProp('siteUserProfileUrl');
+            async = !1 !== async;
+            var params = {
+                    embedChatsParameters: chats instanceof Array ? chats : [chats],
+                    lang: navigator.language || navigator.userLanguage,
+                    needLoadCode: "undefined" == typeof Chatbro,
+                    embedParamsVersion: localStorage.embedParamsVersion,
+                    chatbroScriptVersion: localStorage.chatbroScriptVersion
+                },
+                xhr = new XMLHttpRequest;
+            xhr.withCredentials = !0;
+            xhr.onload = function() {
+                eval(xhr.responseText);
+            };
+            xhr.onerror = function() {
+                console.error("Chatbro loading error");
+            };
+            xhr.open("GET", "//www.chatbro.com/embed.js?" +
+                btoa(unescape(encodeURIComponent(JSON.stringify(params)))), async);
+            xhr.send();
+        }
     /* Chatbro Widget Embed Code End */
     if (typeof chatBroHistoryPage === 'undefined' || !chatBroHistoryPage)
         ChatbroLoader({<?php echo $params; ?>});

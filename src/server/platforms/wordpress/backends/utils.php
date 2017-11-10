@@ -26,7 +26,7 @@ class CBroWPUtilsBackend implements ICBroUtilsBackend {
   }
 
   function get_site_domain() {
-    $url = self::get_option('siteurl');
+    $url = self::get_site_url();
     if (!preg_match('/^.+:\/\/([^\/\:]+)/', $url, $m))
         return '';
 
