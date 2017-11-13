@@ -14,6 +14,9 @@ require_once('backends/utils.php');
 require_once('backends/admin.php');
 require_once('wp_common.php');
 require_once('common/chat.php');
+require_once('shortcode.php');
+require_once('widget.php');
+
 
 class CBroInit {
   public static function load_textdomain() {
@@ -26,6 +29,9 @@ class CBroInit {
     CBroSettings::init(new CBroWPSettingsBackend());
     CBroUser::init(new CBroWPUserBackend());
     CBroPermissions::init(new CBroWPPermissionsBackend());
+
+    // Инициализируем шорткоды
+    CBroShortCode::get_instance();
   }
 
   public static function add_menu_option() {
@@ -43,6 +49,7 @@ class CBroInit {
     add_action('wp_footer', array('CBroInit', 'chat'));
     add_action('wp_ajax_chatbro_save_settings', array('CBroWPCommon', 'ajax_save_settings'));
     add_action('wp_ajax_chatbro_get_faq', array('CBroAdmin', 'get_faq'));
+    add_action('widgets_init', array('CBroWidget', 'register'));
   }
 }
 
