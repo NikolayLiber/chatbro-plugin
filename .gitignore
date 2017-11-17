@@ -19,3 +19,5 @@ src/server/platforms/wordpress/favicon_small.png
 src/server/platforms/wordpress/css
 src/server/platforms/wordpress/fonts
 src/server/platforms/wordpress/js
+readme.txt
+package-lock.json
