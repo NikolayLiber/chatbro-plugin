@@ -30,7 +30,191 @@
     "joomla_plugin_minor_version": "1",
     "joomla_version": "3.0",
     "joomla_update_version": "3.",
-    "wp_plugin_minor_version": "0"
+    "wp": {
+      "plugin_minor_version": "0",
+      "requires_at_least": "3.5",
+      "tested_up_to": "4.9",
+      "releases": [
+        { "version": "2.3.0",
+          "comments": ["* Updated chat embed code"]
+        },
+
+        { "version": "2.2.10",
+          "comments": ["* Encoding chat parameters containing urls to prevent chat parameters substitution by some plugins doing page post processing and replacing urls."]
+        },
+
+        { "version": "2.2.9",
+          "comments": ["* Minor bug fix"]
+        },
+
+        { "version": "2.2.8",
+          "comments": ["* More debug info added"]
+        },
+
+        { "version": "2.2.7",
+          "comments": ["* Some debug info added"]
+        },
+
+        { "version": "2.2.6",
+          "comments": ["* Italian translation added"]
+        },
+
+        { "version": "2.2.5",
+          "comments": ["* Removed some debug info"]
+        },
+
+        { "version": "2.2.4",
+          "comments": ["* Fixed an issue where chat was always displaying to guests despite of \"Display to guests\" setting value."]
+        },
+
+        { "version": "2.2.3",
+          "comments": ["* Compatibility with most plugins that replaces Gravatar avatars with locally"]
+        },
+
+        { "version": "2.2.2",
+          "comments": ["* Integration with WP User Avatar plugin."]
+        },
+
+        { "version": "2.2.1",
+          "comments": ["* Made separate support chats for English and Russian speaking users."]
+        },
+
+        { "version": "2.2.0",
+          "comments": ["* Added wordpress widget for chat"]
+        },
+
+        { "version": "2.1.1",
+          "comments": ["* Wordpress language pack integration"]
+        },
+
+        { "version": "2.1.0",
+          "comments": ["* Help tab added with FAQ that will be updating and live chat with developers"]
+        },
+
+        { "version": "2.0.3",
+          "comments": ["* Fixed an issue where login via facebook and other social networks fails with error \"Incorrect CSRF token\"."]
+        },
+
+        { "version": "2.0.2",
+          "comments": [
+            "* Fixed issue when chat wasn't shown to unregistered user",
+            "* Many minor bug fixes"
+          ]
+        },
+
+        { "version": "2.0.1",
+          "comments": ["* More informative error message on plugin activation fault."]
+        },
+
+        { "version": "2.0.0",
+          "comments": [
+            "* Redesigned UI.",
+            "* Shortcode [chatbro] added.",
+            "* Per role permissions configuration added."
+          ]
+        },
+
+        { "version": "1.1.11",
+          "comments": ["* Fixed issue when chat wasn't being created after plugin installation until user has gone to the chat constructor."]
+        },
+
+        { "version": "1.1.10",
+          "comments": ["* Fixed issue when the plugin wasn't been uninstalled correctly."]
+        },
+
+        { "version": "1.1.9",
+          "comments": ["* Fixed issue when spoofing protection signature was calculated incorrectly."]
+        },
+
+        { "version": "1.1.8",
+          "comments": ["* Issue when chat admin capabilities weren't added to Administrator after plugin upgrade was finaly fixed."]
+        },
+
+        { "version": "1.1.7",
+          "comments": ["* Fixed issue when plugin deactivation and reactivation were required after upgrade to add message delete and user ban capabilities to Administrator role."]
+        },
+
+        { "version": "1.1.6",
+          "comments": [
+            "* Admin user proper appears in chat created from plugin (without registration at [chatbro](http://chatbro.com)).",
+            "* Added capability to delete chat messages and ban users for WP Administrator role."
+          ]
+        },
+
+        { "version": "1.1.5",
+          "comments": ["* Fixed issue where fatal error was occured after plugin installation on systems that don't have cURL module installed. We didn't depend on cURL module anymore."]
+        },
+
+        { "version": "1.1.4",
+          "comments": ["* Wordpress 4.7 compatibility tested."]
+        },
+
+        { "version": "1.1.3",
+          "comments": ["* Fixed issue where chat weren't appeared on the page after plugin activation."]
+        },
+
+        { "version": "1.1.2",
+          "comments": ["* Gravatar issue fixed (avatars weren't displayed correctly)."]
+        },
+
+        { "version": "1.1.1",
+          "comments": ["* Minor bug fixes. PHP 5.2 compatibility issues fix."]
+        },
+
+        { "version": "1.1.0",
+          "comments": ["* Integration with chat constructor"]
+        },
+
+        { "version": "1.0.9",
+          "comments": ["* Integration of a user profile with WP-Recal"]
+        },
+
+        { "version": "1.0.8",
+          "comments": ["* New option: \"Show the message to guests with a request to be register\". [screenshot](http://dl2.joxi.net/drive/2016/07/05/0016/1447/1070503/03/a446d7a7d5.png)"]
+        },
+
+        { "version": "1.0.7",
+          "comments": ["* Bug fixes"]
+        },
+
+        { "version": "1.0.6",
+          "comments": [
+            "* Protection against CSRF attacks",
+            "* Find your secretKey in \"My chats\" on [chatbro.com >>](http://www.chatbro.com/account/) (you must be logged)"
+          ]
+        },
+
+        { "version": "1.0.5",
+          "comments": ["* Exclusion of broken links on user profiles"]
+        },
+
+        { "version": "1.0.4",
+          "comments": ["* Added the option of indexing chat. See screenshot #5"]
+        },
+
+        { "version": "1.0.3",
+          "comments": [
+            "* Appearance parameters are added:",
+            "- Message block background color",
+            "- Message block text color",
+            "- Input block background color",
+            "- Input block text color"
+          ]
+        },
+
+        { "version": "1.0.2",
+          "comments": ["* Integration of a user profile with BuddyPress, bbPress"]
+        },
+
+        { "version": "1.0.1",
+          "comments": ["* Fix: Broken avatars"]
+        },
+
+        { "version": "1.0.0",
+          "comments": ["* Initial release"]
+        }
+      ]
+    }
   },
   "keywords": [
     "chat",
@@ -66,5 +250,9 @@
     "grunt-sass": "^2.0.0",
     "grunt-template": "^1.0.0",
     "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "grunt-svn-fetch": "^1.0.0",
+    "grunt-sync": "^0.7.0"
   }
 }

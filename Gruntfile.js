@@ -139,7 +139,31 @@ module.exports = function (grunt) {
         src: ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'],
         dest: '_build/common/fonts/',
         filter: 'isFile',
-        flatten: true
+        flatten: true,
+        timestamp: true
+      },
+      wp_build: {
+        files: [
+          { expand: true,
+            cwd: 'src/server',
+            src: 'common/**',
+            dest: '_build/wordpress/'
+          },
+          { expand: true,
+            cwd: '_build/common',
+            src: 'fonts/**',
+            dest: '_build/wordpress/'
+          },
+          { expand: true,
+            cwd: 'src/server/platforms/wordpress',
+            filter: 'isFile',
+            src: ['**', '!**/*tmpl.php', '!common/**/*', '!css/**/*', '!fonts/**/*', '!js/**/*']
+          }
+        ],
+        options: {
+          timestamp: true,
+          mode: true
+        }
       }
     },
 
@@ -355,13 +379,36 @@ module.exports = function (grunt) {
 
         files: {
           'src/server/platforms/wordpress/backends/version.php': ['src/server/platforms/wordpress/backends/version.tmpl.php'],
-          'src/server/platforms/wordpress/index.php': ['src/server/platforms/wordpress/index.tmpl.php']
+          'src/server/platforms/wordpress/index.php': ['src/server/platforms/wordpress/index.tmpl.php'],
+          'src/server/platforms/wordpress/readme.txt': ['src/server/platforms/wordpress/readme.tmpl.txt']
         }
       }
     },
 
     clean: {
-      build: {
+      wp: ['./dist/wordpress', '_build/wordpress']
+    },
+
+    svn_fetch: {
+      options: {
+        repository: 'https://plugins.svn.wordpress.org/chatbro/',
+        path: './'
+      },
+      wp: {
+        map: { 'dist/wordpress': 'trunk' }
+      }
+    },
+
+    sync: {
+      wp: {
+        files: [
+
+        ],
+        pretend: true,
+        verbose: true,
+        failOnError: true,
+        updateAndDelete: true,
+        compareUsing: 'md5'
       }
     }
   })
@@ -382,6 +429,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-svn-fetch')
+  grunt.loadNpmTasks('grunt-sync')
 
   grunt.registerTask('prepare', ['bower:install', 'patch:bootstrap'])
 
@@ -403,4 +452,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('pack:joomla', ['compress:joomla_mod_chatbro', 'compress:joomla_com_chatbro', 'compress:joomla_lib_chatbro', 'compress:joomla_plg_chatbro', 'compress:joomla_pkg_chatbro'])
   grunt.registerTask('package:joomla', ['build:joomla:prod', 'template:common', 'template:joomla', 'pack:joomla'])
+
+  grunt.registerTask('package:wordpress', ['clean:wp', 'build:wordpress:prod', 'template:common', 'template:wordpress', 'svn_fetch:wp'])
 }
