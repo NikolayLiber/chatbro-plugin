@@ -15,14 +15,6 @@ class CBroWPSettingsBackend implements ICBroSettingsBackend {
       $this->non_existent_option = new CBroNonExistentOption();
   }
 
-  private static function add_option($name, $value = '', $v2 = '', $v3 = 'yes') {
-    if (is_multisite() && is_plugin_active_for_network(plugin_basename(__FILE__))) {
-      return add_site_option($name, $value, $v2, $v3);
-    } else {
-      return add_option($name, $value, $v2, $v3);
-    }
-  }
-
   private static function update_option($name, $value) {
     if (is_multisite() && is_plugin_active_for_network(plugin_basename(__FILE__))) {
       return update_site_option($name, $value);
@@ -41,7 +33,7 @@ class CBroWPSettingsBackend implements ICBroSettingsBackend {
   }
 
   function set($id, $value) {
-    if (!self::add_option($id, $value))
+    if (!CBroWPCommon::add_option($id, $value))
       self::update_option($id, $value);
   }
 
@@ -57,6 +49,10 @@ class CBroWPSettingsBackend implements ICBroSettingsBackend {
       'sanitizer' => array('CBroUtils', 'sanitize_checkbox'),
       'default' => true
     )));
+  }
+
+  function del($id) {
+    delete_option($id);
   }
 }
 

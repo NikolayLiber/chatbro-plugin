@@ -146,7 +146,7 @@ module.exports = function (grunt) {
         files: [
           { expand: true,
             cwd: 'src/server',
-            src: 'common/**',
+            src: ['common/**', '!common/languages/**/*.po*'],
             dest: '_build/wordpress/'
           },
           { expand: true,
@@ -157,7 +157,8 @@ module.exports = function (grunt) {
           { expand: true,
             cwd: 'src/server/platforms/wordpress',
             filter: 'isFile',
-            src: ['**', '!**/*tmpl.php', '!common/**/*', '!css/**/*', '!fonts/**/*', '!js/**/*']
+            src: ['**', '!**/*tmpl.php', '!common/**/*', '!css/**/*', '!fonts/**/*', '!js/**/*'],
+            dest: '_build/wordpress'
           }
         ],
         options: {
@@ -201,10 +202,7 @@ module.exports = function (grunt) {
 
     po2mo: {
       files: {
-        src: [
-          'src/server/common/languages/*.po',
-          '!node_modules/**'
-        ],
+        src: 'src/server/common/languages/*.po',
         expand: true
       }
     },
@@ -401,14 +399,26 @@ module.exports = function (grunt) {
 
     sync: {
       wp: {
-        files: [
-
-        ],
-        pretend: true,
+        files: [{
+          cwd: '_build/wordpress',
+          src: [
+            '**/*.php',
+            'js/**/*.js',
+            'css/**/*.css',
+            'common/languages/**/*.mo',
+            'favicon_small.png',
+            'fonts/**/*',
+            'readme.txt',
+            'index.html',
+            '!.svn/**'
+          ],
+          dest: 'dist/wordpress'
+        }],
         verbose: true,
         failOnError: true,
         updateAndDelete: true,
-        compareUsing: 'md5'
+        compareUsing: 'md5',
+        ignoreInDest: ['LICENCE.txt', '.svn/**']
       }
     }
   })
@@ -453,5 +463,5 @@ module.exports = function (grunt) {
   grunt.registerTask('pack:joomla', ['compress:joomla_mod_chatbro', 'compress:joomla_com_chatbro', 'compress:joomla_lib_chatbro', 'compress:joomla_plg_chatbro', 'compress:joomla_pkg_chatbro'])
   grunt.registerTask('package:joomla', ['build:joomla:prod', 'template:common', 'template:joomla', 'pack:joomla'])
 
-  grunt.registerTask('package:wordpress', ['clean:wp', 'build:wordpress:prod', 'template:common', 'template:wordpress', 'svn_fetch:wp'])
+  grunt.registerTask('package:wordpress', ['clean:wp', 'build:wp:prod', 'template:common', 'template:wordpress', 'po2mo', 'copy:wp_build', 'svn_fetch:wp', 'sync:wp'])
 }

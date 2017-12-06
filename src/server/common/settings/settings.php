@@ -130,31 +130,23 @@ class CBroSettings extends CBroBackendable {
   }
 
   public static function get($id) {
-    if (!array_key_exists($id, self::get_instance()->settings))
-      throw new CBroSettingNotFound($id);
-
-    $s = self::get_instance()->settings[$id];
-    return $s->get();
+    return self::get_setting($id)->get();
   }
 
   public static function set($id, $value) {
-    if (!array_key_exists($id, self::get_instance()->settings))
-      throw new CBroSettingNotFound($id);
-
-    $s = self::get_instance()->settings[$id];
-    $s->set($value);
+    self::get_setting($id)->set($value);
   }
 
   public static function set_sanitized($id, $value) {
-    if (!array_key_exists($id, self::get_instance()->settings))
-      throw new CBroSettingNotFound($id);
-
-    $s = self::get_instance()->settings[$id];
-    $s->set_sanitized($value);
+    self::get_setting($id)->set_sanitized($value);
   }
 
   public static function iterator() {
     return new CBroSettingsIterator(array_keys(self::get_instance()->settings));
+  }
+
+  public static function del($id) {
+    self::get_setting($id)->del();
   }
 }
 

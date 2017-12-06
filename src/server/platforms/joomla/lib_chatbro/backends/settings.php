@@ -70,6 +70,10 @@ class CBroJoomlaSettingsBackend implements ICBroSettingsBackend {
       'default' => 1
     )));
   }
+
+  public function del($id, $value) {
+    throw new Exception('CBroJoomlaSettingsBackend::del() is not implemented');
+  }
 }
 
 ?>

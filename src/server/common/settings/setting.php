@@ -44,7 +44,7 @@ class CBroSetting implements ICBroSetting {
       if ($this->is_required())
         throw $e;
     }
-    
+
     return $value;
   }
 
@@ -72,6 +72,10 @@ class CBroSetting implements ICBroSetting {
 
   public function is_required() {
     return $this->params['required'] === true;
+  }
+
+  public function del() {
+    $this->backend->del($this->id);
   }
 }
 

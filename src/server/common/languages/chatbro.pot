@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: chatbro-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-28 19:59+0500\n"
+"POT-Creation-Date: 2017-11-20 19:53+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,155 +17,155 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/server/common/admin/admin.php:38
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:38
+#: src/server/common/admin/admin.php:40
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:40
+#: src/server/platforms/wordpress/common/admin/admin.php:40
 msgid "Chat Constructor"
 msgstr ""
 
-#: src/server/common/admin/admin.php:41
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:41
+#: src/server/common/admin/admin.php:43
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:43
+#: src/server/platforms/wordpress/common/admin/admin.php:43
 msgid "Plugin Settings"
 msgstr ""
 
-#: src/server/common/admin/admin.php:44
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:44
+#: src/server/common/admin/admin.php:46
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:46
+#: src/server/platforms/wordpress/common/admin/admin.php:46
 msgid "Help"
 msgstr ""
 
-#: src/server/common/admin/admin.php:113
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:113
+#: src/server/common/admin/admin.php:115
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:115
+#: src/server/platforms/wordpress/common/admin/admin.php:115
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: src/server/common/admin/admin.php:132
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:132
+#: src/server/common/admin/admin.php:135
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:135
+#: src/server/platforms/wordpress/common/admin/admin.php:135
 msgid "You are about to change the secret key"
 msgstr ""
 
-#: src/server/common/admin/admin.php:136
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:136
+#: src/server/common/admin/admin.php:139
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:139
+#: src/server/platforms/wordpress/common/admin/admin.php:139
 msgid ""
 "Please be noticed that your current chat configuration and content are "
 "identified by your secret key and if you lose it there\n"
-"            will be no way to restore access to you current chat unless you "
-"have registered an account at\n"
-"            <a href=\"https://chatbro.com\">Chatbro.com</a>. Please make "
+"              will be no way to restore access to you current chat unless "
+"you have registered an account at\n"
+"              <a href=\"https://chatbro.com\">Chatbro.com</a>. Please make "
 "sure that you have saved your old secret key and fully understand\n"
-"            what are you going to do."
+"              what are you going to do."
 msgstr ""
 
-#: src/server/common/admin/admin.php:142
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:142
+#: src/server/common/admin/admin.php:145
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:145
+#: src/server/platforms/wordpress/common/admin/admin.php:145
 msgid "Your old secret key: <span></span>"
 msgstr ""
 
-#: src/server/common/admin/admin.php:146
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:146
+#: src/server/common/admin/admin.php:149
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:149
+#: src/server/platforms/wordpress/common/admin/admin.php:149
 msgid "Cancel"
 msgstr ""
 
-#: src/server/common/admin/admin.php:147
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:147
+#: src/server/common/admin/admin.php:150
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:150
+#: src/server/platforms/wordpress/common/admin/admin.php:150
 msgid "Change Secret Key"
 msgstr ""
 
-#: src/server/common/admin/admin.php:170
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:170
+#: src/server/common/admin/admin.php:174
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:174
+#: src/server/platforms/wordpress/common/admin/admin.php:174
 msgid "Save Changes"
 msgstr ""
 
-#: src/server/common/admin/admin.php:186
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:186
+#: src/server/common/admin/admin.php:190
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:190
+#: src/server/platforms/wordpress/common/admin/admin.php:190
 msgid "Useful Tips"
 msgstr ""
 
-#: src/server/common/admin/admin.php:304
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:304
-msgid "Permissions"
-msgstr ""
-
-#: src/server/common/admin/admin.php:308
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:308
-msgid "Role"
-msgstr ""
-
-#: src/server/common/admin/admin.php:309
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:309
-msgid "View"
+#: src/server/common/admin/admin.php:307
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:307
+#: src/server/platforms/wordpress/common/admin/admin.php:307
+msgid "Invalid token"
 msgstr ""
 
 #: src/server/common/admin/admin.php:310
 #: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:310
-msgid "Ban"
-msgstr ""
-
-#: src/server/common/admin/admin.php:311
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:311
-msgid "Delete"
-msgstr ""
-
-#: src/server/common/admin/admin.php:342
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:342
-msgid "Invalid token"
-msgstr ""
-
-#: src/server/common/admin/admin.php:345
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:345
+#: src/server/platforms/wordpress/common/admin/admin.php:310
 msgid "You are not allowed to modify settings"
 msgstr ""
 
-#: src/server/common/admin/admin.php:412
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:412
+#: src/server/common/admin/admin.php:364
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:364
+#: src/server/platforms/wordpress/common/admin/admin.php:364
 msgid "Settings was successfuly saved"
 msgstr ""
 
-#: src/server/common/admin/admin.php:433
-#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:433
+#: src/server/common/admin/admin.php:385
+#: src/server/platforms/joomla/lib_chatbro/common/admin/admin.php:385
+#: src/server/platforms/wordpress/common/admin/admin.php:385
 msgid "Failed to load FAQ: "
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:3
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:3
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:3
 msgid "Chat secret key"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:4
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:4
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:4
+#: src/server/platforms/wordpress/widget.php:62
 msgid "Display chat to guests"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:5
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:5
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:5
 msgid "Show popup chat"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:6
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:6
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:6
 msgid "Everywhere"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:7
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:7
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:7
 msgid "Front page only"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:8
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:8
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:8
 msgid "Everywhere except those listed"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:9
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:9
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:9
 msgid "Only the listed pages"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:10
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:10
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:10
 msgid "Disable"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:11
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:11
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:11
 msgid ""
 "Specify pages by using their paths. Enter one path per line. The '*' "
 "character is a wildcard. Example paths are /2012/10/my-post for a single "
@@ -175,26 +175,31 @@ msgstr ""
 
 #: src/server/common/settings/settings_translations.php:12
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:12
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:12
 msgid "User profile path"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:13
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:13
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:13
 msgid "Enable shortcodes"
 msgstr ""
 
 #: src/server/common/settings/settings_translations.php:14
 #: src/server/platforms/joomla/lib_chatbro/common/settings/settings_translations.php:14
+#: src/server/platforms/wordpress/common/settings/settings_translations.php:14
 msgid "Invalid chat key"
 msgstr ""
 
 #: src/server/common/utils/utils.php:112
 #: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:112
+#: src/server/platforms/wordpress/common/utils/utils.php:112
 msgid "Invalid chat secret key"
 msgstr ""
 
 #: src/server/common/utils/utils.php:128
 #: src/server/platforms/joomla/lib_chatbro/common/utils/utils.php:128
+#: src/server/platforms/wordpress/common/utils/utils.php:128
 msgid "Invalid show popup chat option value"
 msgstr ""
 
@@ -210,4 +215,57 @@ msgstr ""
 msgid ""
 "Manage chat administrator permissions (ban user, delete messages) on Chatbro "
 "Component options page."
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:30
+msgid "Permissions"
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:34
+msgid "Role"
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:35
+msgid "View"
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:36
+msgid "Ban"
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:37
+msgid "Delete"
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:72
+msgid ""
+"Use shortcode <span>[chatbro]</span> to add the chat widget to the desired "
+"place of your page or post."
+msgstr ""
+
+#: src/server/platforms/wordpress/backends/admin.php:74
+msgid "Supported shortcode attributes:"
+msgstr ""
+
+#. Translators: Attribute name "static" and attribut value "true" shouldn't be translated
+#: src/server/platforms/wordpress/backends/admin.php:79
+msgid ""
+"<em><b>static</b></em> &ndash; static not movable chat widget (default "
+"<em>true</em>)."
+msgstr ""
+
+#. Translators: Attribute name "egistered_only" and attribut value "false" shouldn't be translated
+#: src/server/platforms/wordpress/backends/admin.php:85
+msgid ""
+"<em><b>registered_only</b></em> &ndash; display chat widget to logged in "
+"users only (default <em>false</em>). If this attribute is explicitly set it "
+"precedes the global <em>\"Display chat to guests\"</em> setting value."
+msgstr ""
+
+#: src/server/platforms/wordpress/widget.php:20
+msgid "ChatBro"
+msgstr ""
+
+#: src/server/platforms/wordpress/widget.php:21
+msgid "ChatBro group chat"
 msgstr ""
