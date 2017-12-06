@@ -35,6 +35,10 @@ class CBroWPCommon {
   static function ajax_save_settings() {
     die(CBroAdmin::save_settings());
   }
+
+  static function get_faq() {
+    die(CBroAdmin::get_faq());
+  }
 }
 
 ?>

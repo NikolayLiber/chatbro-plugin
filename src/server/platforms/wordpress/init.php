@@ -73,9 +73,8 @@ class CBroInit {
     add_action('admin_menu', array('CBroInit', 'add_menu_option'));
     add_action('wp_footer', array('CBroInit', 'chat'));
     add_action('wp_ajax_chatbro_save_settings', array('CBroWPCommon', 'ajax_save_settings'));
-    add_action('wp_ajax_chatbro_get_faq', array('CBroAdmin', 'get_faq'));
+    add_action('wp_ajax_chatbro_get_faq', array('CBroWPCommon', 'get_faq'));
     add_action('widgets_init', array('CBroWidget', 'register'));
-    // register_uninstall_hook(__FILE__, array('CBroWPCommon', 'clenup_settings'));
   }
 }
 

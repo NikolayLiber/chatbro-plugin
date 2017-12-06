@@ -33,12 +33,12 @@
     "wp": {
       "plugin_minor_version": "0",
       "requires_at_least": "3.5",
-      "tested_up_to": "4.9",
+      "tested_up_to": "4.9.1",
       "releases": [
         { "version": "3.0.0",
           "comments": ["* New plugin core"]
         },
-        
+
         { "version": "2.3.0",
           "comments": ["* Updated chat embed code"]
         },
