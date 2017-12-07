@@ -30,6 +30,10 @@ Add [@chatbrobot](https://telegram.me/chatbrobot?startgroup=chat) to your Telegr
 = Group chat is better than privates with operators =
 Most people just read chat and see admin's reactions to realize that the website is functional and adequate. You can chat with visitor in private if needed.
 
+= Open Source =
+ChatBro plugin is an open source project. You can get the [source code](https://github.com/NikolayLiber/chatbro-plugin) from GitHub.
+Pull requests are welcome.
+
 == ChangeLog ==
 <% _.forEach(cfg.wp.releases, function(release) {
 %>
