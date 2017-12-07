@@ -31,8 +31,8 @@ class CBroUtils extends CBroBackendable {
     global $_SERVER;
 
     $page_match = false;
-    $selected_pages = trim(CBroSettings::get(CBroSettings::selected_pages_setting));
-    $display = CBroSettings::get(CBroSettings::display_setting);
+    $selected_pages = trim(CBroSettings::get(CBroSettings::selected_pages));
+    $display = CBroSettings::get(CBroSettings::display);
 
     if ($selected_pages != '') {
       if (function_exists('mb_strtolower')) {
