@@ -52,6 +52,21 @@ class CBroUtils extends CBroBackendable {
     return $page_match;
   }
 
+  static function match_path($path, $patterns)
+  {
+      $to_replace = array(
+          '/(\r\n?|\n)/',
+          '/\\\\\*/',
+      );
+      $replacements = array(
+          '|',
+          '.*',
+      );
+      $patterns_quoted = preg_quote($patterns, '/');
+      $regexps = '/^(' . preg_replace($to_replace, $replacements, $patterns_quoted) . ')$/';
+      return (bool)preg_match($regexps, $path);
+  }
+
   public static function http_get($url) {
     return self::get_backend()->http_get($url);
   }
