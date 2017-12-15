@@ -137,7 +137,8 @@ class CBroUtils extends CBroBackendable {
   }
 
   public static function sanitize_display($val) {
-      $options = CBroSettings::get_setting(CBroSettings::display)->get_params()['options'];
+    $p = CBroSettings::get_setting(CBroSettings::display)->get_params();
+      $options = $p['options'];
 
       if (!in_array($val, array_keys($options)))
           throw new CBroSanitizeError(__("Invalid show popup chat option value", 'chatbro'), CBroSanitizeError::Error);

@@ -102,7 +102,7 @@ class CBroChat {
     return $code;
   }
 
-  public function generate_popup_code() {
+  public function generate_sitewide_popup_code() {
     if (!CBroUser::can_view())
       return;
 
@@ -138,12 +138,16 @@ class CBroChat {
     return self::$instance;
   }
 
-  public static function get_popup_chat_code() {
-    return self::get_instance()->generate_popup_code();
+  public static function get_sitewide_popup_chat_code() {
+    return self::get_instance()->generate_sitewide_popup_code();
   }
 
+  // public static function get_popup_chat_code() {
+  //   return self::get_instance()->generate_chat_code();
+  // }
+
   public static function get_chat_code() {
-    return self::get_instance()->generate_chat_code();
+    return self::get_instance()->generate_code();
   }
 
   public static function get_static_chat_code() {

@@ -38,7 +38,8 @@ if (!class_exists("CBroShortCode")) {
       if (!CBroUser::can_view() || ($registered_only && !CBroUser::is_logged_in()))
         return "";
 
-      return $static ? CBroChat::get_static_chat_code() : CBroChat::get_popup_chat_code();
+      $code = $static ? CBroChat::get_static_chat_code() : CBroChat::get_chat_code();
+      return $code;
     }
   }
 }

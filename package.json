@@ -31,10 +31,14 @@
     "joomla_version": "3.0",
     "joomla_update_version": "3.",
     "wp": {
-      "plugin_minor_version": "2",
+      "plugin_minor_version": "3",
       "requires_at_least": "3.5",
       "tested_up_to": "4.9.1",
       "releases": [
+        { "version": "3.0.3",
+          "comments": ["* Bug fixes"]
+        },
+
         { "version": "3.0.2",
           "comments": ["* Minor bug fixes"]
         },

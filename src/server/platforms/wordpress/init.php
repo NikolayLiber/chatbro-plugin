@@ -64,7 +64,7 @@ class CBroInit {
   }
 
   public static function chat() {
-    echo CBroChat::get_popup_chat_code();
+    echo CBroChat::get_sitewide_popup_chat_code();
   }
 
   public static function init() {

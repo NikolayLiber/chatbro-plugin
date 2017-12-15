@@ -10,7 +10,7 @@ class PlgSystemChatBro extends JPlugin {
     $app = JFactory::getApplication();
 
     if ($app->isSite())
-      $app->appendBody(CBroChat::get_popup_chat_code());
+      $app->appendBody(CBroChat::get_sitewide_popup_chat_code());
   }
 }
 
