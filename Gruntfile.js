@@ -7,6 +7,9 @@ var joomlaCssFiles = commonCssFiles.concat(['_build/common/css/joomla.css'])
 var wordpressJsFiles = commonJsFiles
 var wordpressCssFiles = commonCssFiles.concat(['_build/common/css/wordpress.css'])
 
+var phpbb = require('./grunt/phpbb')
+var drupal = require('./grunt/drupal')
+
 module.exports = function (grunt) {
   grunt.initConfig({
     bower: {
@@ -380,7 +383,10 @@ module.exports = function (grunt) {
           'src/server/platforms/wordpress/index.php': ['src/server/platforms/wordpress/index.tmpl.php'],
           'src/server/platforms/wordpress/readme.txt': ['src/server/platforms/wordpress/readme.tmpl.txt']
         }
-      }
+      },
+
+      phpbb: phpbb.template,
+      drupal: drupal.template
     },
 
     clean: {

@@ -30,6 +30,7 @@
     "joomla_plugin_minor_version": "1",
     "joomla_version": "3.0",
     "joomla_update_version": "3.",
+    "php_version": "5.6",
     "wp": {
       "plugin_minor_version": "3",
       "requires_at_least": "3.5",
@@ -230,6 +231,16 @@
           "comments": ["* Initial release"]
         }
       ]
+    },
+
+    "phpbb": {
+      "plugin_minor_version": "0",
+      "release_date": "2018-05-05"
+    },
+
+    "drupal": {
+      "plugin_minor_version": "0",
+      "core_version": "8.x"
     }
   },
   "keywords": [
