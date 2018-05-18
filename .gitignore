@@ -21,3 +21,5 @@ src/server/platforms/wordpress/fonts
 src/server/platforms/wordpress/js
 readme.txt
 package-lock.json
+chatbro.info.yml
+composer.json
