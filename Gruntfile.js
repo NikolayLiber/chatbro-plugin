@@ -200,7 +200,9 @@ module.exports = function (grunt) {
           { src: 'src/browser/common/images/favicon_small.png',
             dest: 'src/server/platforms/wordpress/favicon_small.png' }
         ]
-      }
+      },
+
+      drupal: drupal.symlink
     },
 
     po2mo: {

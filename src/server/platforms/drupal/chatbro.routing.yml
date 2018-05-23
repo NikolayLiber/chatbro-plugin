@@ -1,0 +1,7 @@
+chatbro.content:
+  path: '/chatbro'
+  defaults:
+    _controller: '\Drupal\chatbro\Controller\CBroController::content'
+    _title: 'ChatBro'
+  requirements:
+    _permissions: 'access content'

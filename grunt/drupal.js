@@ -11,5 +11,14 @@ module.exports = {
     files: {
       'src/server/platforms/drupal/chatbro.info.yml': ['src/server/platforms/drupal/chatbro.info.tmpl.yml']
     }
+  },
+
+  symlink: {
+    files: [
+      {
+        src: 'src/server/common',
+        dest: 'src/server/platforms/drupal/src/common'
+      }
+    ]
   }
 }
