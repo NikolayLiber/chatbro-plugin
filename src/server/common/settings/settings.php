@@ -8,6 +8,7 @@ use ChatBro\Common\Settings\Interfaces\ICBroSettingsBackend;
 use ChatBro\Common\Settings\Interfaces\ICBroSetting;
 use ChatBro\Common\Settings\Exceptions\CBroSettingNotFound;
 use ChatBro\Common\Settings\Setting\CBroSetting;
+use ChatBro\Common\Utils\Utils\CBroUtils;
 
 use Iterator;
 

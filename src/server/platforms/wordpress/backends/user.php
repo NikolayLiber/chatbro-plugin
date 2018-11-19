@@ -2,6 +2,7 @@
 
 namespace ChatBro\Backends\User;
 use ChatBro\Common\User\Interfaces\ICBroUserBackend;
+use ChatBro\Common\Settings\Settings\CBroSettings;
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 

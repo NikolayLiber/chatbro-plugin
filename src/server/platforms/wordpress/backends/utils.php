@@ -36,7 +36,7 @@ class CBroWPUtilsBackend implements ICBroUtilsBackend {
   }
 
   function get_platform() {
-    return 'wordpress-plugin-' . chatbro_common_version . '.' . chatbro_wp_minor_version;
+    return 'wordpress-plugin-' . CBroCommonVersion::chatbro_common_version . '.' . chatbro_wp_minor_version;
   }
 
   function is_front_page() {

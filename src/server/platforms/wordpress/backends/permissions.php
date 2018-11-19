@@ -2,6 +2,10 @@
 
 namespace ChatBro\Backends\Permissions;
 use ChatBro\Common\Permissions\Interfaces\ICBroPermissionsBackend;
+use ChatBro\Common\Permissions\Permissions\CBroPermissions;
+use ChatBro\Common\Settings\Settings\CBroSettings;
+
+use ChatBro\WP_Common\CBroWPCommon;
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
