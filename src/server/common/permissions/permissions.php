@@ -1,6 +1,8 @@
 <?php
 
-require_once(__DIR__ . '/../core/backendable.php');
+namespace ChatBro\Common\Permissions\Permissions;
+
+use ChatBro\Common\Core\Backendable\CBroBackendable;
 
 class CBroPermissions extends CBroBackendable {
   const cap_delete = "chatbro_delete_message";

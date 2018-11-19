@@ -1,6 +1,10 @@
 <?php
 
-interface ICBroAdminBackend {
+namespace ChatBro\Common\Admin\Interfaces;
+
+use ChatBro\Common\Core\Interfaces\ICBroBackend;
+
+interface ICBroAdminBackend extends ICBroBackend {
   function has_permission_editor();
   function has_shortcodes();
   function get_login_url();

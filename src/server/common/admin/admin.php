@@ -1,9 +1,11 @@
 <?php
 
-require_once(__DIR__ . '/../core/backendable.php');
-require_once(__DIR__ . '/../permissions/permissions.php');
-require_once(__DIR__ . '/../utils/utils.php');
-require_once('exceptions.php');
+namespace ChatBro\Common\Admin\Admin;
+
+use ChatBro\Common\Core\Backendable\CBroBackendable;
+use ChatBro\Common\Permissions;
+use ChatBro\Common\Utils;
+use ChatBro\Common\Admin\Exceptions;
 
 class CBroAdmin extends CBroBackendable {
   public static function display() {

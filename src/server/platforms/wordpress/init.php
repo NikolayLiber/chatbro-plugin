@@ -1,23 +1,41 @@
 <?php
 
+namespace ChatBro\Init;
+use ChatBro\Common\Admin\Admin\CBroAdmin;
+use ChatBro\Common\Permissions\Permissions\CBroPermissions;
+use ChatBro\Common\Settings\Settings\CBroSettings;
+use ChatBro\Common\User\User\CBroUser;
+use ChatBro\Common\Utils\Utils\CBroUtils;
+use ChatBro\Common\Chat\CBroChat;
+
+use ChatBro\Backends\Admin\CBroWPAdminBackend;
+use ChatBro\Backends\Permissions\CBroWPPermissionsBackend;
+use ChatBro\Backends\Settings\CBroWPSettingsBackend;
+use ChatBro\Backends\User\CBroWPUserBackend;
+use ChatBro\Backends\Utils\CBroWPUtilsBackend;
+
+use ChatBro\WP_Common\CBroWPCommon;
+use ChatBro\ShortCode\CBroShortCode;
+use ChatBro\Widget\CBroWidget;
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 require_once(ABSPATH . '/wp-admin/includes/user.php');
 
-require_once('common/settings/settings.php');
-require_once('common/permissions/permissions.php');
-require_once('common/user/user.php');
-require_once('common/utils/utils.php');
-require_once('common/admin/admin.php');
-require_once('backends/permissions.php');
-require_once('backends/settings.php');
-require_once('backends/user.php');
-require_once('backends/utils.php');
-require_once('backends/admin.php');
-require_once('wp_common.php');
-require_once('common/chat.php');
-require_once('shortcode.php');
-require_once('widget.php');
+// require_once('common/settings/settings.php');
+// require_once('common/permissions/permissions.php');
+// require_once('common/user/user.php');
+// require_once('common/utils/utils.php');
+// require_once('common/admin/admin.php');
+// require_once('backends/permissions.php');
+// require_once('backends/settings.php');
+// require_once('backends/user.php');
+// require_once('backends/utils.php');
+// require_once('backends/admin.php');
+// require_once('wp_common.php');
+// require_once('common/chat.php');
+// require_once('shortcode.php');
+// require_once('widget.php');
 
 
 class CBroInit {
@@ -60,7 +78,7 @@ class CBroInit {
   }
 
   public static function add_menu_option() {
-    add_menu_page("ChatBro", "ChatBro", "manage_options", "chatbro_settings", array('CBroAdmin', 'display'), plugins_url()."/chatbro/favicon_small.png");
+    add_menu_page("ChatBro", "ChatBro", "manage_options", "chatbro_settings", array('ChatBro\Common\Admin\Admin\CBroAdmin', 'display'), plugins_url()."/chatbro/favicon_small.png");
   }
 
   public static function chat() {
@@ -68,13 +86,13 @@ class CBroInit {
   }
 
   public static function init() {
-    add_action('plugins_loaded', array('CBroInit', 'load_textdomain'));
-    add_action('init', array('CBroInit', 'do_init'));
-    add_action('admin_menu', array('CBroInit', 'add_menu_option'));
-    add_action('wp_footer', array('CBroInit', 'chat'));
-    add_action('wp_ajax_chatbro_save_settings', array('CBroWPCommon', 'ajax_save_settings'));
-    add_action('wp_ajax_chatbro_get_faq', array('CBroWPCommon', 'get_faq'));
-    add_action('widgets_init', array('CBroWidget', 'register'));
+    add_action('plugins_loaded', array('ChatBro\Init\CBroInit', 'load_textdomain'));
+    add_action('init', array('ChatBro\Init\CBroInit', 'do_init'));
+    add_action('admin_menu', array('ChatBro\Init\CBroInit', 'add_menu_option'));
+    add_action('wp_footer', array('ChatBro\Init\CBroInit', 'chat'));
+    add_action('wp_ajax_chatbro_save_settings', array('ChatBro\WP_Common\CBroWPCommon', 'ajax_save_settings'));
+    add_action('wp_ajax_chatbro_get_faq', array('ChatBro\WP_Common\CBroWPCommon', 'get_faq'));
+    add_action('widgets_init', array('ChatBro\Widget\CBroWidget', 'register'));
   }
 }
 

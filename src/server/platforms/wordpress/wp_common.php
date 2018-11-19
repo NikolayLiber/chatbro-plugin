@@ -1,9 +1,9 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+namespace ChatBro\WP_Common;
+use ChatBro\Common\Admin\Admin\CBroAdmin;
 
-require_once('common/settings/settings.php');
-require_once('common/admin/admin.php');
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class CBroWPCommon {
   const display_to_guests = "chatbro_chat_display_to_guests";

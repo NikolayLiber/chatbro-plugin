@@ -1,7 +1,9 @@
 <?php
 
-require_once(__DIR__ . '/../core/backendable.php');
-require_once('exceptions.php');
+namespace ChatBro\Common\Utils\Utils;
+
+use ChatBro\Common\Core\Backendable\CBroBackendable;
+use ChatBro\Common\Utils\Exceptions;
 
 class CBroUtils extends CBroBackendable {
   public static function gen_guid() {

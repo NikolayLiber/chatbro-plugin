@@ -1,8 +1,13 @@
 <?php
 
-require_once('settings/settings.php');
-require_once('user/user.php');
-require_once('utils/utils.php');
+namespace ChatBro\Common\Chat;
+
+use ChatBro\Common\Settings\Settings\CBroSettings;
+use ChatBro\Common\User\User\CBroUser;
+use ChatBro\Common\Utils\Utils\CBroUtils;
+
+use XMLHttpRequest;
+use JSON;
 
 class CBroChat {
   private $guid;

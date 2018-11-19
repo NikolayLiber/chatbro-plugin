@@ -1,5 +1,8 @@
 <?php
 
+namespace ChatBro\Common\Utils\Exceptions;
+use Exception;
+
 class CBroHttpError extends Exception {
   public function __construct($message) {
     parent::__construct($message);

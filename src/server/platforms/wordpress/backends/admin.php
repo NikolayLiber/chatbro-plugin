@@ -1,8 +1,9 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+namespace ChatBro\Backends\Admin;
+use ChatBro\Common\Admin\Interfaces\ICBroAdminBackend;
 
-require_once(__DIR__ . '/../common/admin/interfaces.php');
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class CBroWPAdminBackend implements ICBroAdminBackend {
   function has_permission_editor() {

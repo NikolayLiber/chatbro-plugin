@@ -1,10 +1,13 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+namespace ChatBro\Backends\Settings;
+use ChatBro\Common\Settings\Setting\CBroSetting;
+use ChatBro\Common\Settings\Setting\CBroSettings\CBroInputType;
+use ChatBro\Common\Settings\Exceptions\CBroSettingNotFound;
+use ChatBro\Common\Settings\Interfaces\ICBroSettingsBackend;
+use ChatBro\WP_Common\CBroWPCommon;
 
-require_once(__DIR__ . '/../common/settings/interfaces.php');
-require_once(__DIR__ . '/../common/settings/exceptions.php');
-require_once(__DIR__ . '/../wp_common.php');
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class CBroNonExistentOption {}
 

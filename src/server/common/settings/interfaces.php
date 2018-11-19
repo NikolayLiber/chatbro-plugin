@@ -1,5 +1,9 @@
 <?php
 
+namespace ChatBro\Common\Settings\Interfaces;
+
+use ChatBro\Common\Core\Interfaces\ICBroBackend;
+
 interface ICBroSetting {
   function id();
   function get();
@@ -10,7 +14,7 @@ interface ICBroSetting {
   function del();
 }
 
-interface ICBroSettingsBackend {
+interface ICBroSettingsBackend extends ICBroBackend {
   // Прочитать сохраненное значение параметра
   function get($id);
   // Сохранить значение параметра

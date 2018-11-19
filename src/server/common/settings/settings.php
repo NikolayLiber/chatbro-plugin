@@ -1,11 +1,15 @@
 <?php
 
-require_once(__DIR__ . '/../core/backendable.php');
-require_once(__DIR__ . '/../admin/admin.php');
-require_once('interfaces.php');
-require_once('exceptions.php');
-require_once('setting.php');
+namespace ChatBro\Common\Settings\Settings;
 
+use ChatBro\Common\Admin\Admin\CBroAdmin;
+use ChatBro\Common\Core\Backendable\CBroBackendable;
+use ChatBro\Common\Settings\Interfaces\ICBroSettingsBackend;
+use ChatBro\Common\Settings\Interfaces\ICBroSetting;
+use ChatBro\Common\Settings\Exceptions\CBroSettingNotFound;
+use ChatBro\Common\Settings\Setting\CBroSetting;
+
+use Iterator;
 
 class CBroInputType {
   const checkbox = 'checkbox';
@@ -54,7 +58,7 @@ class CBroSettings extends CBroBackendable {
 
   private $settings;
 
-  protected function __construct($backend) {
+  protected function __construct(ICBroSettingsBackend $backend) {
     parent::__construct($backend);
 
     $this->settings = array();
@@ -118,7 +122,7 @@ class CBroSettings extends CBroBackendable {
     $backend->add_extra_settings($this);
   }
 
-  public function add_setting($setting) {
+  public function add_setting(CBroSetting $setting) {
     $this->settings[$setting->id()] = $setting;
   }
 

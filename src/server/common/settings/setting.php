@@ -1,14 +1,18 @@
 <?php
 
-require_once('exceptions.php');
-require_once('interfaces.php');
+namespace ChatBro\Common\Settings\Setting;
+
+use ChatBro\Common\Settings\Interfaces\ICBroSettingsBackend;
+use ChatBro\Common\Settings\Interfaces\ICBroSetting;
+use ChatBro\Common\Settings\Exceptions\CBroSettingNotFound;
+use Exception;
 
 class CBroSetting implements ICBroSetting {
   private $backend;
   private $params;
   private $id;
 
-  public function __construct($backend, $params) {
+  public function __construct(ICBroSettingsBackend $backend, $params) {
     $this->params = $params;
     $this->backend = $backend;
 

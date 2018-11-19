@@ -1,10 +1,8 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+namespace ChatBro\Shortcode;
 
-require_once('common/settings/settings.php');
-require_once('common/user/user.php');
-require_once('common/chat.php');
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if (!class_exists("CBroShortCode")) {
   class CBroShortCode {

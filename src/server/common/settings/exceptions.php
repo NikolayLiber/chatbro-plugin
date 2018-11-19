@@ -1,5 +1,8 @@
 <?php
 
+namespace ChatBro\Common\Settings\Exceptions;
+use Exception;
+
 class CBroInvalidSetting extends Exception {
   public function __construct() {
     parent::__construct('Invalid setting');

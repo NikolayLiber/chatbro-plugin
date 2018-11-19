@@ -1,14 +1,18 @@
 <?php
 
+namespace ChatBro\Widget;
+
+use ChatBro\Common\Chat\CBroChat;
+use ChatBro\Common\Settings\Settings\CBroSettings;
+use ChatBro\Common\User\User\CBroUser;
+use ChatBro\Backends\Settings\CBroWPSettingsBackend;
+use WP_Widget;
+
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 require_once(ABSPATH . '/wp-includes/class-wp-widget.php');
 require_once(ABSPATH . '/wp-includes/formatting.php');
-
-require_once('common/settings/settings.php');
-require_once('common/user/user.php');
-require_once('common/chat.php');
-
 
 if (!class_exists('CBroWidget')) {
   class CBroWidget extends WP_Widget {
@@ -23,7 +27,7 @@ if (!class_exists('CBroWidget')) {
     }
 
     public static function register() {
-      register_widget('CBroWidget');
+      register_widget('ChatBro\Widget\CBroWidget');
     }
 
     private static function get_dtg($instance) {

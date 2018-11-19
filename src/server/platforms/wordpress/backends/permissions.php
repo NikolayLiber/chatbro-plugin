@@ -1,9 +1,10 @@
 <?php
 
+namespace ChatBro\Backends\Permissions;
+use ChatBro\Common\Permissions\Interfaces\ICBroPermissionsBackend;
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-require_once(__DIR__ . '/../common/permissions/interfaces.php');
-require_once(__DIR__ . '/../common/permissions/permissions.php');
 require_once(__DIR__ . '/../wp_common.php');
 
 class CBroWPPermissionsBackend implements ICBroPermissionsBackend {

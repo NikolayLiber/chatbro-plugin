@@ -1,6 +1,10 @@
 <?php
 
-interface ICBroUtilsBackend {
+namespace ChatBro\Common\Utils\Interfaces;
+
+use ChatBro\Common\Core\Interfaces\ICBroBackend;
+
+interface ICBroUtilsBackend extends ICBroBackend {
   function http_get($url);
   function get_site_url();
   function get_site_domain();

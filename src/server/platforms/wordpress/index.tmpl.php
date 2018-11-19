@@ -17,7 +17,26 @@ Domain Path: /common/languages/
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-require_once('init.php');
+spl_autoload_register(function($class) {
+  $c = explode('\\', $class);
+  // Strip class name
+  array_pop($c);
+
+  if (array_shift($c) != "ChatBro")
+    return FALSE;
+
+  $file = strtolower(array_pop($c)) . ".php";
+  $path = "";
+
+  foreach($c as $p)
+    $path .= strtolower($p) . DIRECTORY_SEPARATOR;
+
+  $path .= $file;
+  require_once($path);
+});
+
+use ChatBro\Init\CBroInit;
+
 CBroInit::init();
 
 ?>

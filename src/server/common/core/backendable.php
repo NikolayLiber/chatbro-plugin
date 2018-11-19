@@ -1,14 +1,19 @@
 <?php
 
+namespace ChatBro\Common\Core\Backendable;
+
+use ChatBro\Common\Core\Interfaces\ICBroBackend;
+use Exception;
+
 class CBroBackendable {
   private $backend;
   private static $instances = array();
 
-  protected function __construct($backend) {
+  protected function __construct(ICBroBackend $backend) {
     $this->backend = $backend;
   }
 
-  public static function init($backend) {
+  public static function init(ICBroBackend $backend) {
     $class = get_called_class();
 
     if (array_key_exists($class, self::$instances))

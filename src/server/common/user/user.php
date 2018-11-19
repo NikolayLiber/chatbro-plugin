@@ -1,8 +1,9 @@
 <?php
 
-require_once(__DIR__ . '/../core/backendable.php');
-require_once(__DIR__ . '/../settings/settings.php');
-require_once(__DIR__ . '/../permissions/permissions.php');
+namespace ChatBro\Common\User\User;
+
+use ChatBro\Common\Core\Backendable\CBroBackendable;
+use ChatBro\Common\Permissions\Permissions\CBroPermissions;
 
 class CBroUser extends CBroBackendable {
   public static function is_logged_in() {

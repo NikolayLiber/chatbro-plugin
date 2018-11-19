@@ -1,11 +1,13 @@
 <?php
 
+namespace ChatBro\Backends\Utils;
+
+use ChatBro\Common\Utils\Interfaces\ICBroUtilsBackend;
+use ChatBro\Common\Core\Version\CBroCommonVersion;
+use ChatBro\WP_Common\CBroWPCommon;
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-require_once(__DIR__ . '/../common/utils/exceptions.php');
-require_once(__DIR__ . '/../common/utils/interfaces.php');
-require_once(__DIR__ . '/../common/core/version.php');
-require_once(__DIR__ . '/../wp_common.php');
 require_once('version.php');
 
 class CBroWPUtilsBackend implements ICBroUtilsBackend {

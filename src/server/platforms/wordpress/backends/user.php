@@ -1,9 +1,9 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+namespace ChatBro\Backends\User;
+use ChatBro\Common\User\Interfaces\ICBroUserBackend;
 
-require_once(__DIR__ . '/../common/user/interfaces.php');
-require_once(__DIR__ . '/../common/settings/settings.php');
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class CBroWPUserBackend implements ICBroUserBackend {
   private $user;

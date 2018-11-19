@@ -1,5 +1,9 @@
 <?php
 
-const chatbro_common_version = '<%- cfg.common_version %>';
+namespace ChatBro\Common\Core\Version;
+
+class CBroCommonVersion {
+  const version = '<%- cfg.common_version %>';
+}
 
 ?>
