@@ -1,6 +1,8 @@
 <?php
 
 namespace ChatBro\Backends\Admin;
+
+use ChatBro\Common\Permissions\Permissions\CBroPermissions;
 use ChatBro\Common\Admin\Interfaces\ICBroAdminBackend;
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );

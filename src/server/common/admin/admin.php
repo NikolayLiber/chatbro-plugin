@@ -3,9 +3,14 @@
 namespace ChatBro\Common\Admin\Admin;
 
 use ChatBro\Common\Core\Backendable\CBroBackendable;
-use ChatBro\Common\Permissions;
-use ChatBro\Common\Utils;
-use ChatBro\Common\Admin\Exceptions;
+use ChatBro\Common\Settings\Settings\CBroSettings;
+use ChatBro\Common\Settings\Settings\CBroInputType;
+use ChatBro\Common\Permissions\Permissions\CBroPermissions;
+use ChatBro\Common\User\User\CBroUser;
+use ChatBro\Common\Utils\Utils\CBroUtils;
+use ChatBro\Common\Admin\Exceptions\CBroPermissionsSaveError;
+use ChatBro\Common\Utils\Exceptions\CBroHttpError;
+use ChatBro\Common\Utils\Exceptions\CBroSanitizeError;
 
 class CBroAdmin extends CBroBackendable {
   public static function display() {

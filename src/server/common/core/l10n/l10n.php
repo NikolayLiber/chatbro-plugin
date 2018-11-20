@@ -1,8 +1,10 @@
 <?php
 
+namespace ChatBro\Common\Core\L10N;
+use ChatBro\Common\Core\Backendable\CBroBackendable;
+use ChatBro\Common\User\User\CBroUser;
+
 require_once('pomo/mo.php');
-require_once(__DIR__ . '/../backendable.php');
-require_once(__DIR__ . '/../../user/user.php');
 
 class CBroL10N extends CBroBackendable {
   private static $l10n = array();

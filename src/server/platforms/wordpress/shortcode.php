@@ -6,6 +6,8 @@ use ChatBro\Common\Settings\Settings\CBroSettings;
 use ChatBro\Common\User\User\CBroUser;
 use ChatBro\Common\Chat\CBroChat;
 
+use ChatBro\Backends\Settings\CBroWPSettingsBackend;
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if (!class_exists("CBroShortCode")) {
