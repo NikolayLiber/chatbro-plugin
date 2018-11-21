@@ -1,0 +1,6 @@
+name: ChatBro Web Chat
+description: ChatBro Web Chat
+package: Custom
+type: module
+core: 8.x
+php: 5.6

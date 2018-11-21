@@ -1,0 +1,6 @@
+chatbro_com.admin:
+  title: 'ChatBro Chat settings'
+  description: 'ChatBro Chat settings'
+  parent: system.admin_config_development
+  route_name: chatbro_com.content
+  weight: 100

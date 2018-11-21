@@ -9,7 +9,7 @@ module.exports = {
     },
 
     files: {
-      'src/server/platforms/drupal/chatbro.info.yml': ['src/server/platforms/drupal/chatbro.info.tmpl.yml']
+      'src/server/platforms/drupal/chatbro_com.info.yml': ['src/server/platforms/drupal/chatbro_com.info.tmpl.yml']
     }
   },
 

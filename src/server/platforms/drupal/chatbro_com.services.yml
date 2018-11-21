@@ -1,5 +1,5 @@
 services:
   chatbro_init.event_subscriber:
-    class: Drupal\chatbro\EventSubscriber\CBroInit
+    class: Drupal\chatbro_com\EventSubscriber\CBroInit
     tags:
       - { name: 'event_subscriber' }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\chatbro\Controller;
+namespace Drupal\chatbro_com\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
